@@ -41,7 +41,7 @@ $("document").ready(function() {
         progress_bar: {
             in: [
                 // list the view-names of the views for which you want a progress bar
-                forced_choice_2A.name,
+                key_press_2C.name,
 				image_selection_2B.name,
             ],
              // Possible styles are "default", "separate" and "chunks"
