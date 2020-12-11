@@ -188,6 +188,12 @@ const key_press_2C = magpieViews.view_generator("key_press", {
 	data: trial_info.key_press,
 });
 
+const fractal_view_2D = fractal_view({
+	trials: 1,
+	name: 'fractal_view_2D',
+	data: trial_info.fractal_view,
+});
+
 // There are many more templates available:
 // forced_choice, slider_rating, dropdown_choice, testbox_input, rating_scale, image_selection, sentence_choice,
 // key_press, self_paced_reading and self_paced_reading_rating_scale

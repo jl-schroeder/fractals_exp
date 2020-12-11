@@ -6,14 +6,21 @@
 */
 const coin = _.sample(["head", "tail"]); // You can determine global (random) parameters here
 // Declare your variables here
+var image_list = [{p1:"images/sequence.png", p2:"images/correct_continuation.png", p3:"images/incorrect_continuation", answer:"left"}];
 
-
-
+// get individual ID for each participant
+var participantID = getRandomInt(999999);
 /* Helper functions
 *
 *
 */
 
+/*
+function getTime() {
+	var curr_Time = 0;
+	curr_Time = performance.now();
+	return curr_Time;
+} */
 
 /* For generating random participant IDs */
     // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript

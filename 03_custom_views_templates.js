@@ -9,3 +9,160 @@
 // and has to call magpie.findNextView() eventually to proceed to the next view (or the next trial in this view),
 // if it is an trial view it also makes sense to call magpie.trial_data.push(trial_data) to save the trial information
 
+const fractal_view = function(config) {
+    const view = {
+        name: config.name,
+        CT: 0,
+        trials: config.trials,
+        // The render functions gets the magpie object as well as the current trial in view counter as input
+        render: function (CT, magpie) {
+            // Here, you can do whatever you want, eventually you should call magpie.findNextView()
+            // to proceed to the next view and if it is an trial type view,
+            // you should save the trial information with magpie.trial_data.push(trial_data)
+			
+			$("main").html(`<div class='magpie-view'>
+			<h1 class='magpie-view-title'>
+			Which is the correct continuation? </h1>
+			<center>
+			<img src="images/sequence.png" alt="Sequence">
+			<br />
+			<br />
+			<img id="choice1" src="images/correct_continuation.png" alt="choice1" width="300" height="300">
+			<img id="choice2" src="images/incorrect_continuation.png" alt="choice2" width="300" height="300">
+			</center>
+			<center> 
+				<button id="leftButton">LEFT!!!</button> 
+				<button id="rightButton">RIGHT!!!</button>
+			</center>
+			<center> 
+				<div id="left"></div> 
+				<div id="right"></div> 
+			</center>
+									
+			</div>
+			`); // currently only specific pictures/fractals
+			
+			//js from here on
+			setTimeout(function () {
+			alert("If you feel ready to start the trial press OK or press ENTER");
+			}, 1);
+			var curr_Date = new Date();
+			var curr_Time = curr_Date.getTime();
+			var button_pressed = 0;
+			
+			var trial_data = null;
+			
+			// Variable to check for answer
+			//var correctAnswer = null;
+			
+					
+			
+			 //Js for button click
+			(function clickHandlerLeft() {
+				//alert(HEY!);
+				const button1 = document.getElementById("leftButton");
+				button1.addEventListener("click", event => {
+					//alert("button clicked"); //TESTING
+					var d2 = new Date();
+					var t2 = d2.getTime();
+					var timeDifference = (t2 - curr_Time);
+					var correctAnswer = false;
+					
+					document.getElementById("left").innerHTML = timeDifference.toString() + " ms";
+					button_pressed = 1;
+					
+					// get correct answer out of array
+					var correctness_check = image_list[CT].answer;
+					
+					// save in variable
+					if(correctness_check == "left"){
+						correctAnswer = true;
+					}
+					
+					// save data in trial_data
+					let trial_data = {
+						trial_name: config.name,
+						participant_ID: participantID,
+						trial_number: CT + 1,
+						RT: timeDifference,
+						correctness: correctAnswer
+					};
+					
+					// push the data to the csv
+					magpie.trial_data.push(trial_data);
+					magpie.findNextView();
+				});
+				
+			})();
+			
+			(function clickHandlerRight() {
+				//alert(HEY!);
+				const button2 = document.getElementById("rightButton");
+				button2.addEventListener("click", event => {
+					//alert("button clicked"); //TESTING
+					var d3 = new Date();
+					var t3 = d3.getTime();
+					var timeDifference = (t3 - curr_Time);
+					var correctAnswer = false;
+					
+					document.getElementById("right").innerHTML = timeDifference.toString() + " ms";
+					button_pressed = 1;
+					
+					alert("1");
+					// get correct answer out of array
+					var correctness_check = image_list[CT].answer;
+					
+					alert("2");
+					// save in variable
+					if(correctness_check == "right"){
+						correctAnswer = true;
+					}
+					alert("3");
+					
+					
+					// save data in trial_data
+					
+					let trial_data = {
+						trial_name: config.name,
+						participant_ID: participantID,
+						trial_number: CT + 1,
+						RT: timeDifference,
+						correctness: correctAnswer
+					};
+					alert("4");
+					
+					// push the data to the csv
+					magpie.trial_data.push(trial_data);
+					magpie.findNextView();
+					alert("5");
+				});
+				
+			})();
+						
+			
+			/*
+			if(button_pressed!=0){
+				alert("You have reached the end!");
+				//magpie.trial_data.push(trial_data);
+				magpie.findNextView();
+			} */
+			
+			
+			/*// do I need that?
+			function show_bias_image(src, width, height, alt) {
+				var img = document.createElement("img");
+				img.src = src;
+				img.width = width;
+				img.height = height;
+				img.alt = alt;
+				document.body.appendChild(img);
+			}*/
+			
+			// PUT THIS INTO FUNCTIONS?
+			
+			
+        }
+    };
+    // We have to return the view, so that it can be used in 05_views.js
+    return view;
+};

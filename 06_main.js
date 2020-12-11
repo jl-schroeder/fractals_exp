@@ -17,11 +17,12 @@ $("document").ready(function() {
         views_seq: [
             intro,
             instructions,
-            //forced_choice_2A,
-			fractal_instruction,
-			image_selection_2B,
-			key_press_instruction,
-			key_press_2C,
+            ////forced_choice_2A,
+			//fractal_instruction,
+			//image_selection_2B,
+			//key_press_instruction,
+			//key_press_2C,
+			fractal_view_2D,
 			// _.shuffle([task1, task2]), for shuffling tasks
             post_test,
             thanks,
