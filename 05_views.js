@@ -42,14 +42,14 @@ const instructions = magpieViews.view_generator("instructions", {
   text: `This are the general instructions.
             <br />
             <br />
-            So far we have 3 test implemented:
+            So far we have 3 tests implemented:
 			<br />
 			<br />
-			<strong>- The fractal continuation</strong>
+			<strong>- Image selection</strong>
 			<br />
-			<strong>- The fracal or non fractal decision (SART)</strong>
+			<strong>- The fracal or non fractal decision (SART) as a key press task</strong>
 			<br />
-			<strong>- ???</strong>`,
+			<strong>- EIT or VRT like task with button press</strong>`,
   buttonText: 'go to the first test'
 });
 
@@ -61,7 +61,7 @@ const fractal_instruction = magpieViews.view_generator("instructions", {
 	text: `This is the fractal instructions view.
             <br />
             <br />
-            What follows this?.`,
+            DESCRIPTION NEEDED!.`,
 	buttonText: "Continue",
 },
 // custom generator function
