@@ -22,6 +22,7 @@ $("document").ready(function() {
 		        image_selection_2B,
 		        key_press_instruction,
 		        key_press_2C,
+            fractal_view_instruction,
 			      fractal_view_2D,
 			// _.shuffle([task1, task2]), for shuffling tasks
             post_test,

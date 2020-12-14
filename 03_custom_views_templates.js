@@ -51,9 +51,9 @@ const fractal_view = function(config) {
       */
 
 			//js from here on
-			setTimeout(function () {
+			/*setTimeout(function () {
 			alert("If you feel ready to start the trial press OK or press ENTER. This task will then start automatically.");
-			}, 1);
+    }, 1); */
 			var curr_Date = new Date();
 			var curr_Time = curr_Date.getTime();
 			var button_pressed = 0;

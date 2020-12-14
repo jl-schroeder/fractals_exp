@@ -85,6 +85,30 @@ const fractal_instruction = magpieViews.view_generator("instructions", {
     }
 );
 
+const fractal_view_instruction = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'fractal_view_instruction',
+  title: 'Continuation Task - Instructions',
+  text: `In this task you have to look closely at the picture at the top.
+        <br />
+        These are the first 3 iterations steps.
+        <br />
+        <br />
+        Then you need to look at the two pictures below.
+        <br />
+        <br />
+        These pictures represent the next iteration step.
+        <br />
+        You than have to decide which one is the correct continuation.
+        <br />
+        For this you press either the LEFT or the RIGHT button.
+        <br />
+        <br />
+        <br />
+        If you feel ready, press the button below.`,
+        buttonText: "Begin trial",
+});
+
 const key_press_instruction = magpieViews.view_generator("instructions", {
 	trials: 1,
 	name: 'key_press_instruction',
