@@ -193,7 +193,6 @@ const fractal_view_2D = fractal_view({
 	trials: 2,
 	name: 'fractal_view_2D',
 	data: trial_info.fractal_view,
-  fix_duration: 250,
 });
 
 // There are many more templates available:

@@ -110,15 +110,20 @@ const fractal_view = function(config) {
 
 					// save in variable
 					if(correctness_check == "left"){
-						correctAnswer = true;
+						correctAnswer = "correct";
 					}
 
 					// save data in trial_data
 					let trial_data = {
 						trial_name: config.name,
+            pictureStim: stringSeq,
+            picture1: stringPic1,
+            picture2: stringPic2,
 						participant_ID: participantID,
 						trial_number: CT + 1,
 						RT: timeDifference,
+            key_pressed: correctness_check,
+            question: "Which is the correct continuation?",
 						correctness: correctAnswer
 					};
 
@@ -149,7 +154,7 @@ const fractal_view = function(config) {
 					//alert("2");
 					// save in variable
 					if(correctness_check == "right"){
-						correctAnswer = true;
+						correctAnswer = "correct";
 					}
 					//alert("3");
 
@@ -158,9 +163,14 @@ const fractal_view = function(config) {
 
 					let trial_data = {
 						trial_name: config.name,
+            pictureStim: stringSeq,
+            picture1: stringPic1,
+            picture2: stringPic2,
 						participant_ID: participantID,
 						trial_number: CT + 1,
 						RT: timeDifference,
+            key_pressed: correctness_check,
+            question: "Which is the correct continuation?",
 						correctness: correctAnswer
 					};
 					//alert("4");
