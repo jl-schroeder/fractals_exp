@@ -43,7 +43,8 @@ $("document").ready(function() {
             in: [
                 // list the view-names of the views for which you want a progress bar
                 key_press_2C.name,
-				image_selection_2B.name,
+				        image_selection_2B.name,
+                fractal_view_2D.name,
             ],
              // Possible styles are "default", "separate" and "chunks"
             style: "separate",
