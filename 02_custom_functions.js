@@ -6,7 +6,11 @@
 */
 const coin = _.sample(["head", "tail"]); // You can determine global (random) parameters here
 // Declare your variables here
-var image_list = [{p1:"images/sequence.png", p2:"images/correct_continuation.png", p3:"images/incorrect_continuation", answer:"left"}];
+var image_list = [{p1:"images/sequence.png", p2:"images/correct_continuation.png", p3:"images/incorrect_continuation.png", answer:"left"},
+{p1:"images/iteration_sequence.png", p2:"images/incorrect_iteration_continuation.png", p3:"images/correct_iteration_continuation.png", answer:"right"}
+];
+
+//{p1:"images/", p2:"images/", p3:"images/", answer:""}
 
 // get individual ID for each participant
 var participantID = getRandomInt(999999);
@@ -38,7 +42,7 @@ const generateID = function(len) {
 
 
 
-/* Hooks  
+/* Hooks
 *
 *
 */

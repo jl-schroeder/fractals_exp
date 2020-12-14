@@ -19,44 +19,78 @@ const fractal_view = function(config) {
             // Here, you can do whatever you want, eventually you should call magpie.findNextView()
             // to proceed to the next view and if it is an trial type view,
             // you should save the trial information with magpie.trial_data.push(trial_data)
-			
+
 			$("main").html(`<div class='magpie-view'>
 			<h1 class='magpie-view-title'>
 			Which is the correct continuation? </h1>
 			<center>
-			<img src="images/sequence.png" alt="Sequence">
-			<br />
-			<br />
-			<img id="choice1" src="images/correct_continuation.png" alt="choice1" width="300" height="300">
-			<img id="choice2" src="images/incorrect_continuation.png" alt="choice2" width="300" height="300">
+         <div id="seq"></div>
+			   <br />
+			   <br />
+         <center>
+          <span id="pic1"></span>
+          <span id="pic2"></span>
+        </center>
 			</center>
-			<center> 
-				<button id="leftButton">LEFT!!!</button> 
+			<center>
+				<button id="leftButton">LEFT!!!</button>
 				<button id="rightButton">RIGHT!!!</button>
 			</center>
-			<center> 
-				<div id="left"></div> 
-				<div id="right"></div> 
+			<center>
+				<div id="left"></div>
+				<div id="right"></div>
 			</center>
-									
+
 			</div>
 			`); // currently only specific pictures/fractals
-			
+
+      /* html save
+        <img src="images/sequence.png" alt="Sequence">
+      	<img id="choice1" src="images/correct_continuation.png" alt="choice1" width="300" height="300">
+        <img id="choice2" src="images/incorrect_continuation.png" alt="choice2" width="300" height="300">
+      */
+
 			//js from here on
 			setTimeout(function () {
-			alert("If you feel ready to start the trial press OK or press ENTER");
+			alert("If you feel ready to start the trial press OK or press ENTER. This task will then start automatically.");
 			}, 1);
 			var curr_Date = new Date();
 			var curr_Time = curr_Date.getTime();
 			var button_pressed = 0;
-			
+
 			var trial_data = null;
-			
+
+      const stringSeq = image_list[CT].p1;
+      const stringPic1 = image_list[CT].p2;
+      const stringPic2 = image_list[CT].p3;
+
+      // append images to html elements
+      var img = document.createElement("img");
+      img.src = stringSeq;//"images/sequence.png";
+      img.height = "180";
+      img.width = "600"
+      var src = document.getElementById("seq");
+      src.appendChild(img);
+
+      var img1 = document.createElement("img");
+      img1.src = stringPic1;//"images/correct_continuation.png";
+      img1.height = "300";
+      img1.width = "300";
+      var src1 = document.getElementById("pic1");
+      src1.appendChild(img1);
+
+      var img2 = document.createElement("img");
+      img2.src = stringPic2;//"images/incorrect_continuation.png";
+      img2.height = "300";
+      img2.width = "300";
+      var src2 = document.getElementById("pic2");
+      src2.appendChild(img2);
+
 			// Variable to check for answer
 			//var correctAnswer = null;
-			
-					
-			
+
+
+
 			 //Js for button click
 			(function clickHandlerLeft() {
 				//alert(HEY!);
@@ -67,18 +101,18 @@ const fractal_view = function(config) {
 					var t2 = d2.getTime();
 					var timeDifference = (t2 - curr_Time);
 					var correctAnswer = false;
-					
+
 					document.getElementById("left").innerHTML = timeDifference.toString() + " ms";
 					button_pressed = 1;
-					
+
 					// get correct answer out of array
 					var correctness_check = image_list[CT].answer;
-					
+
 					// save in variable
 					if(correctness_check == "left"){
 						correctAnswer = true;
 					}
-					
+
 					// save data in trial_data
 					let trial_data = {
 						trial_name: config.name,
@@ -87,14 +121,14 @@ const fractal_view = function(config) {
 						RT: timeDifference,
 						correctness: correctAnswer
 					};
-					
+
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);
 					magpie.findNextView();
 				});
-				
+
 			})();
-			
+
 			(function clickHandlerRight() {
 				//alert(HEY!);
 				const button2 = document.getElementById("rightButton");
@@ -104,24 +138,24 @@ const fractal_view = function(config) {
 					var t3 = d3.getTime();
 					var timeDifference = (t3 - curr_Time);
 					var correctAnswer = false;
-					
+
 					document.getElementById("right").innerHTML = timeDifference.toString() + " ms";
 					button_pressed = 1;
-					
-					alert("1");
+
+					//alert("1");
 					// get correct answer out of array
 					var correctness_check = image_list[CT].answer;
-					
-					alert("2");
+
+					//alert("2");
 					// save in variable
 					if(correctness_check == "right"){
 						correctAnswer = true;
 					}
-					alert("3");
-					
-					
+					//alert("3");
+
+
 					// save data in trial_data
-					
+
 					let trial_data = {
 						trial_name: config.name,
 						participant_ID: participantID,
@@ -129,25 +163,25 @@ const fractal_view = function(config) {
 						RT: timeDifference,
 						correctness: correctAnswer
 					};
-					alert("4");
-					
+					//alert("4");
+
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);
 					magpie.findNextView();
-					alert("5");
+					//alert("5");
 				});
-				
+
 			})();
-						
-			
+
+
 			/*
 			if(button_pressed!=0){
 				alert("You have reached the end!");
 				//magpie.trial_data.push(trial_data);
 				magpie.findNextView();
 			} */
-			
-			
+
+
 			/*// do I need that?
 			function show_bias_image(src, width, height, alt) {
 				var img = document.createElement("img");
@@ -157,10 +191,10 @@ const fractal_view = function(config) {
 				img.alt = alt;
 				document.body.appendChild(img);
 			}*/
-			
+
 			// PUT THIS INTO FUNCTIONS?
-			
-			
+
+
         }
     };
     // We have to return the view, so that it can be used in 05_views.js

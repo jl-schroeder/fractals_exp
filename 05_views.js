@@ -190,7 +190,7 @@ const key_press_2C = magpieViews.view_generator("key_press", {
 });
 
 const fractal_view_2D = fractal_view({
-	trials: 1,
+	trials: 2,
 	name: 'fractal_view_2D',
 	data: trial_info.fractal_view,
   fix_duration: 250,
