@@ -186,12 +186,14 @@ const key_press_2C = magpieViews.view_generator("key_press", {
 	trials: trial_info.key_press.length,
 	name: 'key_press_2C',
 	data: trial_info.key_press,
+  fix_duration: 250,
 });
 
 const fractal_view_2D = fractal_view({
 	trials: 1,
 	name: 'fractal_view_2D',
 	data: trial_info.fractal_view,
+  fix_duration: 250,
 });
 
 // There are many more templates available:
