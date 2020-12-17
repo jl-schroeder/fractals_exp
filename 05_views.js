@@ -187,7 +187,7 @@ const thanks = magpieViews.view_generator("thanks", {
 */
 
 
-// Here, we initialize a normal forced_choice view
+/*// Here, we initialize a normal forced_choice view
 const forced_choice_2A = magpieViews.view_generator("forced_choice", {
   // This will use all trials specified in `data`, you can user a smaller value (for testing), but not a larger value
   trials: trial_info.forced_choice.length,
@@ -198,7 +198,7 @@ const forced_choice_2A = magpieViews.view_generator("forced_choice", {
   // hook: {
   //     after_response_enabled: check_response
   // }
-});
+}); */
 
 const image_selection_2B = magpieViews.view_generator("image_selection", {
 	trials: trial_info.image_selection.length,
