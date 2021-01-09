@@ -30,6 +30,20 @@ const trial_info = {
 			j: "non-fractal",
 			expected: "non-fractal"
 		}
+	],
+	forced_choice: [
+		{
+			question: "Do you know what this is?" ,
+			picture: "images/correct_continuation.png",
+			option1: "Yes",
+			option2: "No"
+		},
+		{
+			question: "Do you know what a FRACTAL is?" ,
+			picture: "images/question_mark_01.png",
+			option1: "Yes",
+			option2: "No"
+		}
 	]
 
 };

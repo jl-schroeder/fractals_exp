@@ -17,6 +17,7 @@ $("document").ready(function() {
         views_seq: [
             intro,
             instructions,
+            forced_choice_preQ,
 		        fractal_instruction,
 		        image_selection_2B,
 		        key_press_instruction,

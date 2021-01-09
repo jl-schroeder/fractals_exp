@@ -199,6 +199,11 @@ const forced_choice_2A = magpieViews.view_generator("forced_choice", {
   //     after_response_enabled: check_response
   // }
 }); */
+const forced_choice_preQ = magpieViews.view_generator("forced_choice", {
+  trials: trial_info.forced_choice.length,
+  name: 'forced_choice_preQ',
+  data: trial_info.forced_choice,
+});
 
 const image_selection_2B = magpieViews.view_generator("image_selection", {
 	trials: trial_info.image_selection.length,
