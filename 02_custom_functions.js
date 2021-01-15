@@ -10,6 +10,13 @@ var image_list = [{p1:"images/sequence.png", p2:"images/correct_continuation.png
 {p1:"images/iteration_sequence.png", p2:"images/incorrect_iteration_continuation.png", p3:"images/correct_iteration_continuation.png", answer:"right"}
 ];
 
+var continuation_list = [{p1:"images/Tri_images/arrow_0.png" , p2:"images/Tri_images/arrow_1.png" , p3:"images/Tri_images/arrow_2.png" ,p4:"images/Tri_images/arrow_3.png" , p5:"images/Tri_images/circle_3.png", answer:"left"},
+{p1:"images/Tri_images/circle_0.png" , p2:"images/Tri_images/circle_1.png" , p3:"images/Tri_images/circle_3.png" ,p4:"images/Tri_images/square_4.png" , p5:"images/Tri_images/circle_4.png", answer:"right"},
+{p1:"images/Tri_images/square_0.png" , p2:"images/Tri_images/square_1.png" , p3:"images/Tri_images/square_3.png" ,p4:"images/Tri_images/square_4.png" , p5:"images/Tri_images/triangle_4.png", answer:"left"},
+];
+
+continuation_list = shuffle(continuation_list);
+
 //{p1:"images/", p2:"images/", p3:"images/", answer:""}
 
 // get individual ID for each participant
@@ -18,6 +25,27 @@ var participantID = getRandomInt(999999);
 *
 *
 */
+
+// funtion to shuffle an array
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
 
 /*
 function getTime() {

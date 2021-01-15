@@ -33,8 +33,8 @@ const experiment_replication = function(config) {
       var img1 = document.createElement("img");
 
       img1.src = imageArray[0];//"images/correct_continuation.png";
-      img1.height = "400";
-      img1.width = "400";
+      img1.height = "300";
+      img1.width = "300";
       var src1 = document.getElementById("picture1");
       src1.appendChild(img1);
       //setTimeout(function(){ alert("Hello"); }, 3000);
@@ -43,16 +43,16 @@ const experiment_replication = function(config) {
 
       setTimeout(function(){
         img1.src = imageArray[1];
-        img1.height = "400";
-        img1.width = "400";
+        img1.height = "300";
+        img1.width = "300";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },1000);
 
       setTimeout(function(){
         img1.src = imageArray[2];
-        img1.height = "400";
-        img1.width = "400";
+        img1.height = "300";
+        img1.width = "300";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },2000);
@@ -68,7 +68,7 @@ const experiment_replication = function(config) {
 
 
 
-      setTimeout(function(){magpie.findNextView();},4000);
+      setTimeout(function(){magpie.findNextView();},20000);
     }
   };
   // We have to return the view, so that it can be used in 05_views.js
@@ -126,29 +126,29 @@ const fractal_view = function(config) {
 
 			var trial_data = null;
 
-      //const stringSeq = image_list[CT].p1;
-      const stringPic1 = continuation_list[CT].p4;
-      const stringPic2 = continuation_list[CT].p5;
+      const stringSeq = image_list[CT].p1;
+      const stringPic1 = image_list[CT].p2;
+      const stringPic2 = image_list[CT].p3;
 
       // append images to html elements
-      /*var img = document.createElement("img");
+      var img = document.createElement("img");
       img.src = stringSeq;//"images/sequence.png";
       img.height = "180";
       img.width = "600"
       var src = document.getElementById("seq");
-      src.appendChild(img); */
+      src.appendChild(img);
 
       var img1 = document.createElement("img");
       img1.src = stringPic1;//"images/correct_continuation.png";
-      img1.height = "400";
-      img1.width = "400";
+      img1.height = "300";
+      img1.width = "300";
       var src1 = document.getElementById("pic1");
       src1.appendChild(img1);
 
       var img2 = document.createElement("img");
       img2.src = stringPic2;//"images/incorrect_continuation.png";
-      img2.height = "400";
-      img2.width = "400";
+      img2.height = "300";
+      img2.width = "300";
       var src2 = document.getElementById("pic2");
       src2.appendChild(img2);
 
@@ -172,7 +172,7 @@ const fractal_view = function(config) {
 					button_pressed = 1;
 
 					// get correct answer out of array
-					var correctness_check = continuation_list[CT].answer;
+					var correctness_check = image_list[CT].answer;
 
 					// save in variable
 					if(correctness_check == "left"){
@@ -182,6 +182,7 @@ const fractal_view = function(config) {
 					// save data in trial_data
 					let trial_data = {
 						trial_name: config.name,
+            pictureStim: stringSeq,
             picture1: stringPic1,
             picture2: stringPic2,
 						participant_ID: participantID,
@@ -191,11 +192,6 @@ const fractal_view = function(config) {
             question: "Which is the correct continuation?",
 						correctness: correctAnswer
 					};
-
-          // shuffle picture-list
-          /*var temp_list_save = continuation_list;
-          continuation_list = shuffle(temp_list_save);
-          console.log(temp_list_save); */
 
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);
@@ -219,7 +215,7 @@ const fractal_view = function(config) {
 
 					//alert("1");
 					// get correct answer out of array
-					var correctness_check = continuation_list[CT].answer;
+					var correctness_check = image_list[CT].answer;
 
 					//alert("2");
 					// save in variable
@@ -233,6 +229,7 @@ const fractal_view = function(config) {
 
 					let trial_data = {
 						trial_name: config.name,
+            pictureStim: stringSeq,
             picture1: stringPic1,
             picture2: stringPic2,
 						participant_ID: participantID,
@@ -243,11 +240,6 @@ const fractal_view = function(config) {
 						correctness: correctAnswer
 					};
 					//alert("4");
-
-          // shuffle picture-list
-        /*  var temp_list_save = continuation_list;
-          continuation_list = shuffle(temp_list_save);
-          console.log(temp_list_save); */
 
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);
