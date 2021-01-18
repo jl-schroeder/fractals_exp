@@ -18,12 +18,34 @@ $("document").ready(function() {
             intro,
             instructions,
             forced_choice_preQ,
-		        fractal_instruction,
-		        image_selection_2B,
+            fractal_view_instruction,
+            ///
+            experiment_replication_A2,
+            blank_screen_long_A3,
+            fractal_view_2D,
+            blank_screen_short_A2,
+            ///
+            experiment_replication_A2,
+            blank_screen_long_A3,
+			      fractal_view_2D,
+            blank_screen_short_A2,
+            ///
+            experiment_replication_A2,
+            blank_screen_long_A3,
+            fractal_view_2D,
+            blank_screen_short_A2,
+            ///
+            experiment_replication_A2,
+            blank_screen_long_A3,
+            fractal_view_2D,
+            blank_screen_short_A2,
+            ///
+            //key_press_iteration,
+            //fractal_continuation,
+		        //fractal_instruction,
+		        //image_selection_2B,
 		        key_press_instruction,
 		        key_press_2C,
-            fractal_view_instruction,
-			      fractal_view_2D,
 			// _.shuffle([task1, task2]), for shuffling tasks
             post_test,
             thanks,
@@ -46,9 +68,10 @@ $("document").ready(function() {
                 key_press_2C.name,
 				        image_selection_2B.name,
                 fractal_view_2D.name,
+                experiment_replication_A2.name,
             ],
              // Possible styles are "default", "separate" and "chunks"
-            style: "separate",
+            style: "default",
             width: 100
         }
     });
