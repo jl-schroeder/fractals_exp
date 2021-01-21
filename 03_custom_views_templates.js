@@ -103,9 +103,9 @@ const experiment_replication = function(config) {
 
 
       if(continuation_list[CT].p6 != null){
-        setTimeout(function(){magpie.findNextView();},6000);
+        setTimeout(function(){magpie.findNextView();},7000);
       } else {
-        setTimeout(function(){magpie.findNextView();},8000);
+        setTimeout(function(){magpie.findNextView();},9000);
       }
 
     }
@@ -169,13 +169,6 @@ const fractal_view = function(config) {
       const stringPic1 = continuation_list[CT].p4;
       const stringPic2 = continuation_list[CT].p5;
 
-      var dimensionCheck = false;
-      if(continuation_list[CT].p6 != null) {
-        dimensionCheck = true;
-      } else {
-        dimensionCheck = false;
-      }
-
       // append images to html elements
       /*var img = document.createElement("img");
       img.src = stringSeq;//"images/sequence.png";
@@ -235,7 +228,6 @@ const fractal_view = function(config) {
 						RT: timeDifference,
             key_pressed: correctness_check,
             question: "Which is the correct continuation?",
-            dimsionCheck: dimensionCheck,
 						correctness: correctAnswer
 					};
 
@@ -287,7 +279,6 @@ const fractal_view = function(config) {
 						RT: timeDifference,
             key_pressed: correctness_check,
             question: "Which is the correct continuation?",
-            dimsionCheck: dimensionCheck,
 						correctness: correctAnswer
 					};
 					//alert("4");

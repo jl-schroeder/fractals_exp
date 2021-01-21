@@ -72,17 +72,7 @@ const instructions = magpieViews.view_generator("instructions", {
 			<br />
 			<strong>- Image selection task</strong>
 			<br />
-			<strong>- EIT or VRT like task with button press</strong>
-      <br />
-			<br />
-      <br />
-      You will see a progress bar on the top right for most pages.
-      <br />
-      This indicates you how far you are in the experiment.
-			<br />
-      <br />
-      For continuation press the button below.
-			<br />`,
+			<strong>- EIT or VRT like task with button press</strong>`,
   buttonText: 'go to the first test'
 });
 
@@ -159,19 +149,11 @@ const key_press_instruction = magpieViews.view_generator("instructions", {
       <br />
       <br />
 			If you feel ready for the test trials press the button below.
+			<br />
+			<br />
+			<br />
 			As a reminder: Fractal vs Non-Fractal`,
-			buttonText: "Begin test trials",
-});
-
-const after_key_Press_testing = magpieViews.view_generator("instructions", {
-  trials: 1,
-  name: 'after_key_Press_testing',
-  title: 'After testing',
-  text: `If you feel ready for the actual trial, press the button below.
-        <br />
-        <br />
-        `,
-        buttonText: "Begin trial",
+			buttonText: "Begin trial",
 });
 
 
@@ -325,12 +307,6 @@ const key_press_iteration = magpieViews.view_generator("key_press", {
   trials: trial_info.key_press_test.length,
   name: 'key_press_iteration',
   data: trial_info.key_press_test,
-});
-
-const key_press_testing = magpieViews.view_generator("key_press", {
-  trials: 4,
-  name: 'key_press_testing',
-  data: _.shuffle(trial_info.key_press),
 });
 
 const fractal_continuation = magpieViews.view_generator("image_selection", {

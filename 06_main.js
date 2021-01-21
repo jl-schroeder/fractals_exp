@@ -45,8 +45,6 @@ $("document").ready(function() {
 		        //fractal_instruction,
 		        //image_selection_2B,
 		        key_press_instruction,
-            key_press_testing,
-            after_key_Press_testing,
 		        key_press_2C,
 			// _.shuffle([task1, task2]), for shuffling tasks
             post_test,
