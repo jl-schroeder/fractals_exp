@@ -44,6 +44,8 @@ $("document").ready(function() {
             //fractal_continuation,
 		        //fractal_instruction,
 		        //image_selection_2B,
+            key_press_testTrial,
+            
 		        key_press_instruction,
 		        key_press_2C,
 			// _.shuffle([task1, task2]), for shuffling tasks

@@ -11,6 +11,44 @@ const trial_info = {
 			option2: "right",
 		}
 	],
+	key_press_testing: [
+		{
+			question: "Is this a fractal? - <strong>TEST</strong>",
+			picture: "images/non_fractals/square_4_non_0.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal? - <strong>TEST</strong>",
+			picture: "images/Penta_images/arrow_down_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal? - <strong>TEST</strong>",
+			picture: "images/Tri_images/triangle_4.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal? - <strong>TEST</strong>",
+			picture: "images/Hexa_images/square_3_false.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+	],
 	key_press: [
 		{
 			question: "Is this a fractal?",

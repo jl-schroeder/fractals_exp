@@ -156,6 +156,30 @@ const key_press_instruction = magpieViews.view_generator("instructions", {
 			buttonText: "Begin trial",
 });
 
+const key_press_instruction_post_test = magpieViews.view_generator("instructions", {
+	trials: 1,
+	name: 'key_press_instruction_post_test',
+	title: 'Key-Press task - After test trials',
+	text: `These were the test trials.
+			<br />
+			<br />
+      <br />
+			Reminder:
+      <br />
+			<br />
+			Pressing the-"F"-key means the picture is a fractal.
+			<br />
+			Pressing the-"J"-key means the picture is not a fractal.
+			<br />
+			<br />
+      If you feel ready for the actual test press the button below.
+			<br />
+			<br />
+			<br />
+      `,
+			buttonText: "Begin task",
+});
+
 
 // In the post test questionnaire you can ask your participants addtional questions
 const post_test = magpieViews.view_generator("post_test", {
@@ -274,6 +298,13 @@ const key_press_2C = magpieViews.view_generator("key_press", {
 	trials: trial_info.key_press.length,
 	name: 'key_press_2C',
 	data: _.shuffle(trial_info.key_press),
+  fix_duration: 250,
+});
+
+const key_press_testTrial = magpieViews.view_generator("key_press", {
+	trials: trial_info.key_press_testing.length,
+	name: 'key_press_testTrial',
+	data: _.shuffle(trial_info.key_press_testing),
   fix_duration: 250,
 });
 
