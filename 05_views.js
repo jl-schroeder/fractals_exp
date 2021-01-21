@@ -297,7 +297,7 @@ const image_selection_2B = magpieViews.view_generator("image_selection", {
 const key_press_2C = magpieViews.view_generator("key_press", {
 	trials: trial_info.key_press.length,
 	name: 'key_press_2C',
-	data: _.shuffle(trial_info.key_press),
+	data: _.shuffle(trial_info.key_press), // For different groups: //_.sample([_.shuffle(trial_info.key_press_testing),_.shuffle(trial_info.key_press)]),
   fix_duration: 250,
 });
 

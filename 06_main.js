@@ -19,6 +19,7 @@ $("document").ready(function() {
             instructions,
             forced_choice_preQ,
             fractal_view_instruction,
+            //_.sample([forced_choice_preQ, key_press_testTrial]),
             ///
             experiment_replication_A2,
             blank_screen_long_A3,
@@ -44,9 +45,10 @@ $("document").ready(function() {
             //fractal_continuation,
 		        //fractal_instruction,
 		        //image_selection_2B,
+
+            key_press_instruction,
             key_press_testTrial,
-            
-		        key_press_instruction,
+		        key_press_instruction_post_test,
 		        key_press_2C,
 			// _.shuffle([task1, task2]), for shuffling tasks
             post_test,
