@@ -9,39 +9,6 @@
 // and has to call magpie.findNextView() eventually to proceed to the next view (or the next trial in this view),
 // if it is an trial view it also makes sense to call magpie.trial_data.push(trial_data) to save the trial information
 
-const blank_screen_short = function(config) {
-  const view = {
-    name: config.name,
-    CT:0,
-    trials: config.trials,
-    render: function(CT, magpie) {
-      $("main").html(`<div class='magpie-view'>
-    `);
-
-
-    setTimeout(function(){magpie.findNextView();},2000);
-    }
-  };
-  return view;
-};
-
-
-const blank_screen_long = function(config) {
-  const view = {
-    name: config.name,
-    CT:0,
-    trials: config.trials,
-    render: function(CT, magpie) {
-      $("main").html(`<div class='magpie-view'>
-    `);
-
-
-    setTimeout(function(){magpie.findNextView();},4000);
-    }
-  };
-  return view;
-};
-
 const experiment_replication = function(config) {
   const view = {
     name: config.name,
@@ -59,15 +26,15 @@ const experiment_replication = function(config) {
 
       //const stringPic1 = image_list[CT].p2;
 
-      var imageArray = [continuation_list[CT].p1, continuation_list[CT].p2, continuation_list[CT].p3, continuation_list[CT].p4, continuation_list[CT].p5, continuation_list[CT].p6]
+      var imageArray = [continuation_list[CT].p1, continuation_list[CT].p2, continuation_list[CT].p3, continuation_list[CT].p4, continuation_list[CT].p5]
 
       var i = 0;
 
       var img1 = document.createElement("img");
 
-      img1.src = continuation_list[CT].p1;//imageArray[0];//"images/correct_continuation.png";
-      img1.height = "400";
-      img1.width = "400";
+      img1.src = imageArray[0];//"images/correct_continuation.png";
+      img1.height = "300";
+      img1.width = "300";
       var src1 = document.getElementById("picture1");
       src1.appendChild(img1);
       //setTimeout(function(){ alert("Hello"); }, 3000);
@@ -75,39 +42,33 @@ const experiment_replication = function(config) {
       i++;
 
       setTimeout(function(){
-        img1.src = continuation_list[CT].p2;//imageArray[1];
-        img1.height = "400";
-        img1.width = "400";
+        img1.src = imageArray[1];
+        img1.height = "300";
+        img1.width = "300";
+        var src1 = document.getElementById("picture1");
+        src1.appendChild(img1);
+      },1000);
+
+      setTimeout(function(){
+        img1.src = imageArray[2];
+        img1.height = "300";
+        img1.width = "300";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },2000);
 
-      setTimeout(function(){
-        img1.src = continuation_list[CT].p3;//imageArray[2];
-        img1.height = "400";
-        img1.width = "400";
+      /*setTimeout(function(){
+        img1.src = imageArray[3];
+        img1.height = "300";
+        img1.width = "300";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
-      },4000);
-
-      if(continuation_list[CT].p6 != null){
-        setTimeout(function(){
-          img1.src = continuation_list[CT].p6;
-          img1.height = "400";
-          img1.width = "400";
-          var src1 = document.getElementById("picture1");
-          src1.appendChild(img1);
-        },6000);
-      }
+      },3000); */
 
 
 
-      if(continuation_list[CT].p6 != null){
-        setTimeout(function(){magpie.findNextView();},6000);
-      } else {
-        setTimeout(function(){magpie.findNextView();},8000);
-      }
 
+      setTimeout(function(){magpie.findNextView();},20000);
     }
   };
   // We have to return the view, so that it can be used in 05_views.js
@@ -138,8 +99,8 @@ const fractal_view = function(config) {
         </center>
 			</center>
 			<center>
-        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="leftButton">LEFT!!!</button> </div>
-        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="rightButton">RIGHT!!!</button> </div>
+				<button id="leftButton">LEFT!!!</button>
+				<button id="rightButton">RIGHT!!!</button>
 			</center>
 			<center>
 				<div id="left"></div>
@@ -165,36 +126,29 @@ const fractal_view = function(config) {
 
 			var trial_data = null;
 
-      //const stringSeq = image_list[CT].p1;
-      const stringPic1 = continuation_list[CT].p4;
-      const stringPic2 = continuation_list[CT].p5;
-
-      var dimensionCheck = false;
-      if(continuation_list[CT].p6 != null) {
-        dimensionCheck = true;
-      } else {
-        dimensionCheck = false;
-      }
+      const stringSeq = image_list[CT].p1;
+      const stringPic1 = image_list[CT].p2;
+      const stringPic2 = image_list[CT].p3;
 
       // append images to html elements
-      /*var img = document.createElement("img");
+      var img = document.createElement("img");
       img.src = stringSeq;//"images/sequence.png";
       img.height = "180";
       img.width = "600"
       var src = document.getElementById("seq");
-      src.appendChild(img); */
+      src.appendChild(img);
 
       var img1 = document.createElement("img");
       img1.src = stringPic1;//"images/correct_continuation.png";
-      img1.height = "400";
-      img1.width = "400";
+      img1.height = "300";
+      img1.width = "300";
       var src1 = document.getElementById("pic1");
       src1.appendChild(img1);
 
       var img2 = document.createElement("img");
       img2.src = stringPic2;//"images/incorrect_continuation.png";
-      img2.height = "400";
-      img2.width = "400";
+      img2.height = "300";
+      img2.width = "300";
       var src2 = document.getElementById("pic2");
       src2.appendChild(img2);
 
@@ -218,7 +172,7 @@ const fractal_view = function(config) {
 					button_pressed = 1;
 
 					// get correct answer out of array
-					var correctness_check = continuation_list[CT].answer;
+					var correctness_check = image_list[CT].answer;
 
 					// save in variable
 					if(correctness_check == "left"){
@@ -228,6 +182,7 @@ const fractal_view = function(config) {
 					// save data in trial_data
 					let trial_data = {
 						trial_name: config.name,
+            pictureStim: stringSeq,
             picture1: stringPic1,
             picture2: stringPic2,
 						participant_ID: participantID,
@@ -235,14 +190,8 @@ const fractal_view = function(config) {
 						RT: timeDifference,
             key_pressed: correctness_check,
             question: "Which is the correct continuation?",
-            dimsionCheck: dimensionCheck,
 						correctness: correctAnswer
 					};
-
-          // shuffle picture-list
-          /*var temp_list_save = continuation_list;
-          continuation_list = shuffle(temp_list_save);
-          console.log(temp_list_save); */
 
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);
@@ -266,7 +215,7 @@ const fractal_view = function(config) {
 
 					//alert("1");
 					// get correct answer out of array
-					var correctness_check = continuation_list[CT].answer;
+					var correctness_check = image_list[CT].answer;
 
 					//alert("2");
 					// save in variable
@@ -280,6 +229,7 @@ const fractal_view = function(config) {
 
 					let trial_data = {
 						trial_name: config.name,
+            pictureStim: stringSeq,
             picture1: stringPic1,
             picture2: stringPic2,
 						participant_ID: participantID,
@@ -287,15 +237,9 @@ const fractal_view = function(config) {
 						RT: timeDifference,
             key_pressed: correctness_check,
             question: "Which is the correct continuation?",
-            dimsionCheck: dimensionCheck,
 						correctness: correctAnswer
 					};
 					//alert("4");
-
-          // shuffle picture-list
-        /*  var temp_list_save = continuation_list;
-          continuation_list = shuffle(temp_list_save);
-          console.log(temp_list_save); */
 
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);

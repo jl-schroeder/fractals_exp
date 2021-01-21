@@ -23,14 +23,35 @@ const intro = magpieViews.view_generator("intro", {
   trials: 1,
   name: 'intro',
   // If you use JavaScripts Template String `I am a Template String`, you can use HTML <></> and javascript ${} inside
-  text: `This is a basic introduction view.
+  text: `Thank you for participating in this experiment.
             <br />
             <br />
-            The introduction view welcomes the participant and gives general information
-            about the experiment. You are in the <strong>${coin}</strong> group.
+            On the following slides you will be presented with a few tests, where you will get the dedicated Instructions
+            before the tests (TRAINING?).
+            <br />
+            Please read all the text carefully.
+            <br />
+            You will have to look at some structures and answer according to the instructions you get.
             <br />
             <br />
-            This is so far a basis to try out how to programm the experiment to test attention onto fractals.`,
+            You are in the <strong>${coin}</strong> group.
+            <br />
+            <br />
+            <br />
+            This experiment will currently not take longer than 5 minutes.
+            <br />
+            <br />
+            The data collected is strictly anonymous.
+            With participation in this study you consent to using you data on a strict anonymous basis.
+            <br />
+            <br />
+            You can stop the experiment at any time and than no data will be stored.
+            <br />
+            <br />
+            If you have any questions or concerns, please write me an email to: <strong> janlschroede@uni-osnabrueck.de</strong>.
+            <br />
+            <br />
+            Enjoy.`,
   buttonText: 'begin the experiment'
 });
 
@@ -39,17 +60,29 @@ const instructions = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions',
   title: 'General Instructions',
-  text: `This are the general instructions.
-            <br />
-            <br />
-            So far we have 3 tests implemented:
+  text: `On the next two pages you will be shown some pre-Test Questions.
+      <br />
+      We are asking these to check your current understanding of the concept.
+      <br />
+      <br />
+      Afterwards you will be presented with two different types of experiments.
 			<br />
+      You will get the corresponding instructions right before the tests.
+      <br />
 			<br />
-			<strong>- Image selection</strong>
+			<strong>- Image selection task</strong>
 			<br />
-			<strong>- The fracal or non fractal decision (SART) as a key press task</strong>
+			<strong>- EIT or VRT like task with button press</strong>
+      <br />
 			<br />
-			<strong>- EIT or VRT like task with button press</strong>`,
+      <br />
+      You will see a progress bar on the top right for most pages.
+      <br />
+      This indicates you how far you are in the experiment.
+			<br />
+      <br />
+      For continuation press the button below.
+			<br />`,
   buttonText: 'go to the first test'
 });
 
@@ -89,19 +122,19 @@ const fractal_view_instruction = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'fractal_view_instruction',
   title: 'Continuation Task - Instructions',
-  text: `In this task you have to look closely at the picture at the top.
+  text: `In this task you have to look closely at the pictures flasing on the screen.
         <br />
         These are the first 3 iterations steps.
         <br />
         <br />
-        Then you need to look at the two pictures below.
+        Then you need to look at the following two pictures after a short pause.
         <br />
         <br />
-        These pictures represent the next iteration step.
+        One of these pictures represent the correct next iteration step, the other is an incorrect step.
         <br />
         You than have to decide which one is the correct continuation.
         <br />
-        For this you press either the LEFT or the RIGHT button.
+        For this you press either the LEFT or the RIGHT button located below the pictures.
         <br />
         <br />
         <br />
@@ -113,7 +146,7 @@ const key_press_instruction = magpieViews.view_generator("instructions", {
 	trials: 1,
 	name: 'key_press_instruction',
 	title: 'Key-Press task',
-	text: `In this task you have to press eihter the "F" or the "J" key to solve it.
+	text: `In this task you have to press eihter the "F" or the "J" key to fullfill the test.
 			<br />
 			<br />
 			Pressing the-"F"-key means the picture is a fractal.
@@ -121,14 +154,24 @@ const key_press_instruction = magpieViews.view_generator("instructions", {
 			Pressing the-"J"-key means the picture is not a fractal.
 			<br />
 			<br />
-			If you feel ready press the button below.
-			<br />
-			<br />
-			<br />
-			As a reminder:
-			<br />
-			INSERT DESCRIPTION OF FRACTAL HERE`,
-			buttonText: "Begin trial",
+      First there will be a few test rounds,
+      afterwards you will be shown another instruction test, where you can then start the actual test.
+      <br />
+      <br />
+			If you feel ready for the test trials press the button below.
+			As a reminder: Fractal vs Non-Fractal`,
+			buttonText: "Begin test trials",
+});
+
+const after_key_Press_testing = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'after_key_Press_testing',
+  title: 'After testing',
+  text: `If you feel ready for the actual trial, press the button below.
+        <br />
+        <br />
+        `,
+        buttonText: "Begin trial",
 });
 
 
@@ -162,6 +205,40 @@ const thanks = magpieViews.view_generator("thanks", {
   title: 'Thank you for taking part in this experiment!',
   prolificConfirmText: 'Press the button'
 });
+
+
+
+/*const show_iteration = magpieViews.view_generator("instructions", {
+	trials: 1,
+	name: 'show_iteration',
+	title: 'show_iteration',
+	text: `This is the fractal instructions view.
+            <br />
+            <br />
+            DESCRIPTION NEEDED!.`,
+	buttonText: "Continue",
+},
+// custom generator function
+{
+        stimulus_container_generator: function (config, CT) {
+            return `<div class='magpie-view'>
+					<center><p> <font face="Arial" size="18px" color="#000000">Fractal iteration</font></p></center>
+                      <div class='magpie-view-stimulus-container'>
+                        <img src="images/sequence.png" height="288" width="963">
+                      </div>
+					<center><p> <font face="Arial" size="small" color="#000000">
+					Look at the picture above and when you have familiarized, try to answer the question on the next page.
+					<br />
+					<br />
+					Which is the correct next step?
+					<br />
+					<br />
+					To go there press the button <strong>"CONTINUE"</strong>.
+					</font></p></center>
+                    </div>`;}
+    }
+); */
+
 
 /** trial (magpie's Trial Type Views) below
 
@@ -214,14 +291,54 @@ const image_selection_2B = magpieViews.view_generator("image_selection", {
 const key_press_2C = magpieViews.view_generator("key_press", {
 	trials: trial_info.key_press.length,
 	name: 'key_press_2C',
-	data: trial_info.key_press,
+	data: _.shuffle(trial_info.key_press),
   fix_duration: 250,
 });
 
 const fractal_view_2D = fractal_view({
-	trials: 2,
+	trials: 1,
 	name: 'fractal_view_2D',
 	data: trial_info.fractal_view,
+});
+
+const experiment_replication_A2 = experiment_replication({
+  trials: 1,
+  name: 'experiment_replication_A2',
+  data: trial_info.experiment_replication,
+  pause: 2500,
+  fix_duration: 2500,
+});
+
+const blank_screen_short_A2 = blank_screen_short({
+  trials: 1,
+  name: 'blank_screen_A2',
+  data: trial_info.blank_screen_short,
+});
+
+const blank_screen_long_A3 = blank_screen_long({
+  trials: 1,
+  name: 'blank_screen_A3',
+  data: trial_info.blank_screen_long,
+});
+
+const key_press_iteration = magpieViews.view_generator("key_press", {
+  trials: trial_info.key_press_test.length,
+  name: 'key_press_iteration',
+  data: trial_info.key_press_test,
+});
+
+const key_press_testing = magpieViews.view_generator("key_press", {
+  trials: 4,
+  name: 'key_press_testing',
+  data: _.shuffle(trial_info.key_press),
+});
+
+const fractal_continuation = magpieViews.view_generator("image_selection", {
+	trials: trial_info.continuation_fractal.length,
+	name: 'fractal_continuation',
+	data: trial_info.continuation_fractal,
+  pause: 2500,
+  fix_duration: 2500,
 });
 
 // There are many more templates available:

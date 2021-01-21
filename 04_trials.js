@@ -29,21 +29,250 @@ const trial_info = {
 			f: "fractal",
 			j: "non-fractal",
 			expected: "non-fractal"
-		}
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/non_fractals/circle_4_non_0.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/non_fractals/square_4_non_0.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/hierarchical_iteration/circle_hi_2.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Tri_images/triangle_4.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Tri_images/circle_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Tri_images/arrow_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Quad_images/arrow_4.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Quad_images/circle_4.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Quad_images/circle_4_false.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Quad_images/arrow_4_false.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Penta_images/circle_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Penta_images/triangle_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/triangle_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/square_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/square_3_false.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/arrow_down_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/arrow_down_3_false.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/triangle_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/triangle_3_false.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/triangle_down_3.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "fractal"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Hexa_images/triangle_down_3_false.png",
+			key1: "f",
+			key2: "j",
+			f: "fractal",
+			j: "non-fractal",
+			expected: "non-fractal"
+		},
+
 	],
 	forced_choice: [
 		{
 			question: "Do you know what this is?" ,
-			picture: "images/correct_continuation.png",
+			picture: "images/Tri_images/triangle_3.png",
 			option1: "Yes",
 			option2: "No"
 		},
 		{
-			question: "Do you know what a FRACTAL is?" ,
+			question: "Do you know what a <strong>FRACTAL</strong> is?" ,
 			picture: "images/question_mark_01.png",
 			option1: "Yes",
 			option2: "No"
 		}
+	],
+
+	key_press_test: [
+		{
+			question: "Is this a fractal?",
+			picture: "images/Tri_images/circle_0.png",
+			key1: "f",
+			key2: "j",
+			f: "CONTINUE",
+			j: "CONTINUE",
+			expected: "CONTINUE"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Tri_images/circle_1.png",
+			key1: "f",
+			key2: "j",
+			f: "CONTINUE",
+			j: "CONTINUE",
+			expected: "CONTINUE"
+		},
+		{
+			question: "Is this a fractal?",
+			picture: "images/Tri_images/circle_2.png",
+			key1: "f",
+			key2: "j",
+			f: "CONTINUE",
+			j: "CONTINUE",
+			expected: "CONTINUE"
+		}
+	],
+	continuation_fractal: [
+		{
+			question: "Is this a fractal?",
+			picture1: "images/Tri_images/circle_3.png",
+			picture2: "images/Tri_images/circle_4.png",
+			option1: "LEFT",
+			option2: "RIGHT",
+		},
 	]
 
 };
