@@ -17,39 +17,95 @@ $("document").ready(function() {
         views_seq: [
             intro,
             instructions,
+            //fractal_view_2D, //TESTING
             forced_choice_preQ,
-            fractal_view_instruction,
-            //_.sample([forced_choice_preQ, key_press_testTrial]),
             ///
+            //key-press first test
+            key_press_instruction,
+            key_press_testTrial,
+		        key_press_instruction_post_test,
+            //1
+            key_press_first_one,
+            key_press_first_two,
+            //2
+            key_press_first_one,
+            key_press_first_two,
+            //3
+            key_press_first_one,
+            key_press_first_two,
+            //4
+            key_press_first_one,
+            key_press_first_two,
+            //5
+            key_press_first_one,
+            key_press_first_two,
+            //6
+            key_press_first_one,
+            key_press_first_two,
+            //7
+            key_press_first_one,
+            key_press_first_two,
+            ///
+            ///
+            fractal_view_instruction,
+            ///1
             experiment_replication_A2,
             blank_screen_long_A3,
             fractal_view_2D,
             blank_screen_short_A2,
-            ///
+            ///2
             experiment_replication_A2,
             blank_screen_long_A3,
 			      fractal_view_2D,
             blank_screen_short_A2,
-            ///
+            ///3
             experiment_replication_A2,
             blank_screen_long_A3,
             fractal_view_2D,
             blank_screen_short_A2,
-            ///
+            ///4
             experiment_replication_A2,
             blank_screen_long_A3,
             fractal_view_2D,
             blank_screen_short_A2,
-            ///
+            ///5
+            experiment_replication_A2,
+            blank_screen_long_A3,
+            fractal_view_2D,
+            blank_screen_short_A2,
+            ///6
+            experiment_replication_A2,
+            blank_screen_long_A3,
+            fractal_view_2D,
+            blank_screen_short_A2,
             //key_press_iteration,
             //fractal_continuation,
-		        //fractal_instruction,
 		        //image_selection_2B,
+            ///
+            second_key_press_instruction,
+            //1
+            key_press_second_one,
+            key_press_second_two,
+            //2
+            key_press_second_one,
+            key_press_second_two,
+            //3
+            key_press_second_one,
+            key_press_second_two,
+            //4
+            key_press_second_one,
+            key_press_second_two,
+            //5
+            key_press_second_one,
+            key_press_second_two,
+            //6
+            key_press_second_one,
+            key_press_second_two,
+            //7
+            key_press_second_one,
+            key_press_second_two,
+            //key_press_2C,
 
-            key_press_instruction,
-            key_press_testTrial,
-		        key_press_instruction_post_test,
-		        key_press_2C,
 			// _.shuffle([task1, task2]), for shuffling tasks
             post_test,
             thanks,
@@ -69,8 +125,11 @@ $("document").ready(function() {
         progress_bar: {
             in: [
                 // list the view-names of the views for which you want a progress bar
-                key_press_2C.name,
-				        image_selection_2B.name,
+				        //image_selection_2B.name,
+                key_press_first_one.name,
+                key_press_first_two.name,
+                key_press_second_one.name,
+                key_press_second_two.name,
                 fractal_view_2D.name,
                 experiment_replication_A2.name,
             ],
