@@ -45,6 +45,15 @@ $("document").ready(function() {
             //7
             key_press_first_one,
             key_press_first_two,
+            //8
+            key_press_first_one,
+            key_press_first_two,
+            //9
+            key_press_first_one,
+            key_press_first_two,
+            //10
+            key_press_first_one,
+            key_press_first_two,
             ///
             ///
             fractal_view_instruction,
@@ -78,6 +87,16 @@ $("document").ready(function() {
             blank_screen_long_A3,
             fractal_view_2D,
             blank_screen_short_A2,
+            ///7
+            experiment_replication_A2,
+            blank_screen_long_A3,
+            fractal_view_2D,
+            blank_screen_short_A2,
+            ///8
+            experiment_replication_A2,
+            blank_screen_long_A3,
+            fractal_view_2D,
+            blank_screen_short_A2,
             //key_press_iteration,
             //fractal_continuation,
 		        //image_selection_2B,
@@ -102,6 +121,15 @@ $("document").ready(function() {
             key_press_second_one,
             key_press_second_two,
             //7
+            key_press_second_one,
+            key_press_second_two,
+            //8
+            key_press_second_one,
+            key_press_second_two,
+            //9
+            key_press_second_one,
+            key_press_second_two,
+            //10
             key_press_second_one,
             key_press_second_two,
             //key_press_2C,
