@@ -282,7 +282,7 @@ const key_press_testTrial = magpieViews.view_generator("key_press", {
 // key_press task first time
 const key_press_first_one = magpieViews.view_generator("key_press", {
 	trials: Math.random()*(10-1)+1,
-	name: 'key_press_first',
+	name: 'key_press_first_one',
 	data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
@@ -290,7 +290,7 @@ const key_press_first_one = magpieViews.view_generator("key_press", {
 // key_press task second time
 const key_press_first_two = magpieViews.view_generator("key_press", {
 	trials: 1,
-	name: 'key_press_second',
+	name: 'key_press_first_two',
 	data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
@@ -298,7 +298,7 @@ const key_press_first_two = magpieViews.view_generator("key_press", {
 // key_press task second time
 const key_press_second_one = magpieViews.view_generator("key_press", {
 	trials: Math.random()*(15-1)+1,
-	name: 'key_press_first',
+	name: 'key_press_second_one',
 	data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
@@ -306,10 +306,75 @@ const key_press_second_one = magpieViews.view_generator("key_press", {
 // key_press task second time
 const key_press_second_two = magpieViews.view_generator("key_press", {
 	trials: 1,
-	name: 'key_press_second',
+	name: 'key_press_second_two',
 	data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
+
+/////////////////////////
+// key_press task first time
+const key_press_first_one_comp_3 = magpieViews.view_generator("key_press", {
+	trials: Math.random()*(10-1)+1,
+	name: 'key_press_first_one_comp_3',
+	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+
+// key_press task second time
+const key_press_first_two_comp_3 = magpieViews.view_generator("key_press", {
+	trials: 1,
+	name: 'key_press_first_two_comp_3',
+	data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+
+// key_press task second time
+const key_press_second_one_comp_3 = magpieViews.view_generator("key_press", {
+	trials: Math.random()*(15-1)+1,
+	name: 'key_press_second_one_comp_3',
+	data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+
+// key_press task second time
+const key_press_second_two_comp_3 = magpieViews.view_generator("key_press", {
+	trials: 1,
+	name: 'key_press_second_two_comp_3',
+	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+// key_press task first time
+const key_press_first_one_comp_4 = magpieViews.view_generator("key_press", {
+	trials: Math.random()*(10-1)+1,
+	name: 'key_press_first_one_comp_4',
+	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+
+// key_press task second time
+const key_press_first_two_comp_4 = magpieViews.view_generator("key_press", {
+	trials: 1,
+	name: 'key_press_first_two_comp_4',
+	data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+
+// key_press task second time
+const key_press_second_one_comp_4 = magpieViews.view_generator("key_press", {
+	trials: Math.random()*(15-1)+1,
+	name: 'key_press_second_one_comp_4',
+	data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+
+// key_press task second time
+const key_press_second_two_comp_4 = magpieViews.view_generator("key_press", {
+	trials: 1,
+	name: 'key_press_second',
+	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  fix_duration: 250,
+});
+/////////////////////////
 
 
 // shows continuation of previous iteration
@@ -324,6 +389,22 @@ const experiment_replication_A2 = experiment_replication({
   trials: 1,
   name: 'experiment_replication_A2',
   data: trial_info.experiment_replication,
+  pause: 2500,
+  fix_duration: 2500,
+});
+
+// shows continuation of previous iteration
+const fractal_view_2D_fractal = fractal_view({
+	trials: 1,
+	name: 'fractal_view_2D_fractal',
+	data: trial_info.fractal_view_fractal,
+});
+
+// shows iteration
+const experiment_replication_A2_fractal = experiment_replication({
+  trials: 1,
+  name: 'experiment_replication_A2_fractal',
+  data: trial_info.experiment_replication_fractal,
   pause: 2500,
   fix_duration: 2500,
 });

@@ -16,6 +16,9 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
+            //_.sample([[forced_choice_preQ, key_press_first_one],[fractal_view_instruction, key_press_first_two]]),
+            //_.shuffle(loop([forced_choice_preQ, key_press_first_one],1), loop([fractal_view_instruction, key_press_first_two],1)),
+            //_.shuffle( loop([key_press_first_one_comp_3, key_press_first_two_comp_3],1),loop([key_press_second_one_comp_4, key_press_second_two_comp_4],1) ),
             instructions,
             //fractal_view_2D, //TESTING
             forced_choice_preQ,
@@ -24,38 +27,27 @@ $("document").ready(function() {
             key_press_instruction,
             key_press_testTrial,
 		        key_press_instruction_post_test,
-            //1
-            key_press_first_one,
-            key_press_first_two,
-            //2
-            key_press_first_one,
-            key_press_first_two,
-            //3
-            key_press_first_one,
-            key_press_first_two,
-            //4
-            key_press_first_one,
-            key_press_first_two,
-            //5
-            key_press_first_one,
-            key_press_first_two,
-            //6
-            key_press_first_one,
-            key_press_first_two,
-            //7
-            key_press_first_one,
-            key_press_first_two,
-            //8
-            key_press_first_one,
-            key_press_first_two,
-            //9
-            key_press_first_one,
-            key_press_first_two,
-            //10
-            key_press_first_one,
-            key_press_first_two,
-            ///
-            ///
+            // 1
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 2
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 3
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 4
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 5
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 6
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 7
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 8
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 9
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+            // 10
+            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
+              ///
             fractal_view_instruction,
             ///1
             experiment_replication_A2,
@@ -78,63 +70,48 @@ $("document").ready(function() {
             fractal_view_2D,
             blank_screen_short_A2,
             ///5
-            experiment_replication_A2,
+            experiment_replication_A2_fractal,
             blank_screen_long_A3,
-            fractal_view_2D,
+            fractal_view_2D_fractal,
             blank_screen_short_A2,
             ///6
-            experiment_replication_A2,
+            experiment_replication_A2_fractal,
             blank_screen_long_A3,
-            fractal_view_2D,
+            fractal_view_2D_fractal,
             blank_screen_short_A2,
             ///7
-            experiment_replication_A2,
+            experiment_replication_A2_fractal,
             blank_screen_long_A3,
-            fractal_view_2D,
+            fractal_view_2D_fractal,
             blank_screen_short_A2,
             ///8
-            experiment_replication_A2,
+            experiment_replication_A2_fractal,
             blank_screen_long_A3,
-            fractal_view_2D,
+            fractal_view_2D_fractal,
             blank_screen_short_A2,
-            //key_press_iteration,
-            //fractal_continuation,
-		        //image_selection_2B,
             ///
             second_key_press_instruction,
-            //1
-            key_press_second_one,
-            key_press_second_two,
-            //2
-            key_press_second_one,
-            key_press_second_two,
-            //3
-            key_press_second_one,
-            key_press_second_two,
-            //4
-            key_press_second_one,
-            key_press_second_two,
-            //5
-            key_press_second_one,
-            key_press_second_two,
-            //6
-            key_press_second_one,
-            key_press_second_two,
-            //7
-            key_press_second_one,
-            key_press_second_two,
-            //8
-            key_press_second_one,
-            key_press_second_two,
-            //9
-            key_press_second_one,
-            key_press_second_two,
-            //10
-            key_press_second_one,
-            key_press_second_two,
-            //key_press_2C,
+            // 1
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 2
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 3
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 4
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 5
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 6
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 7
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 8
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 9
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
+            // 10
+            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
 
-			// _.shuffle([task1, task2]), for shuffling tasks
             post_test,
             thanks,
         ],
@@ -154,12 +131,23 @@ $("document").ready(function() {
             in: [
                 // list the view-names of the views for which you want a progress bar
 				        //image_selection_2B.name,
-                key_press_first_one.name,
-                key_press_first_two.name,
+                //key_press_first_one.name,
+                //key_press_first_two.name,
+                key_press_testTrial.name,
+                key_press_first_one_comp_3.name,
+                key_press_first_two_comp_3.name,
+                key_press_first_one_comp_4.name,
+                key_press_first_two_comp_4.name,
+                key_press_second_one_comp_3.name,
+                key_press_second_two_comp_3.name,
+                key_press_second_one_comp_4.name,
+                key_press_second_two_comp_4.name,
                 key_press_second_one.name,
                 key_press_second_two.name,
                 fractal_view_2D.name,
                 experiment_replication_A2.name,
+                fractal_view_2D_fractal.name,
+                experiment_replication_A2_fractal.name,
             ],
              // Possible styles are "default", "separate" and "chunks"
             style: "default",
