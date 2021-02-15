@@ -39,19 +39,19 @@ const intro = magpieViews.view_generator("intro", {
             <br />
             <br />
             The data collected is strictly anonymous.
-            With participation in this study you consent to using you data on a strict anonymous basis.
+            With participation in this study you consent us to use your data on a strict anonymous basis.
             <br />
             <br />
             <strong>You can stop the experiment at any time!</strong>
             <br />
-            No data will then be stored.
+            No data will then be stored!
             <br />
             <br />
-            If you have any questions or concerns, please write me an email to: <strong> janlschroede@uni-osnabrueck.de</strong>.
+            If you have any questions or concerns, please write me an email to: <strong>janlschroede@uni-osnabrueck.de</strong>.
             <br />
             <br />
             <br />
-            If you want to be notified of possible findings of this study, you can also write me an email to the adress above and I will inform you after the experiment is over.
+            If you want to be notified of findings or results of this study, you can also write me an email to the adress above and I will inform you after the experiment is over.
             <br />
             <br />
             Enjoy.`,
@@ -65,10 +65,13 @@ const instructions = magpieViews.view_generator("instructions", {
   title: 'General Instructions',
   text: `On the next two pages you will be shown some questions.
       <br />
-      We are asking these to check your current understanding of a concept.
+      These are not test trials yet.
       <br />
       <br />
-      Afterwards you will be presented with two different types of experiments.
+      We are asking these to check your current understanding of a specific concept.
+      <br />
+      <br />
+      Afterwards you will be presented with two different types of tests.
 			<br />
       You will get the corresponding instructions right before the tests.
       <br />
@@ -77,6 +80,10 @@ const instructions = magpieViews.view_generator("instructions", {
       If possible, please make this window fullscreen.
       <br />
       (e.g. press <strong>(F11)</strong> or <strong>(Fn + F11)</strong>).
+      <br />
+      <br />
+      <br />
+      <strong>Please read all the text carefully.</strong>
       <br />`,
   buttonText: 'go to the questions'
 });
@@ -88,11 +95,10 @@ const fractal_view_instruction = magpieViews.view_generator("instructions", {
   title: 'Continuation Task - Instructions',
   text: `In this task you have to look closely at the pictures flasing on the screen.
         <br />
-        These are either the first 3 or the first 4 iterations steps.
+        These are either 3 or 4 iterations steps.
         <br />
         <br />
         Then will follow a short pause. Afterwards you will be presented with two pictures.
-        <br />
         <br />
         One of these pictures represent the correct next iteration step, the other is an incorrect step.
         <br />
@@ -104,7 +110,35 @@ const fractal_view_instruction = magpieViews.view_generator("instructions", {
         <br />
         <br />
         <br />
-        If you feel ready, press the button below.`,
+        You will first have the chance to test this in <strong>2</strong> test trials.
+        <br />
+        Afterwards there will be another instruction page after which the actual trials begin.
+        <br />
+        <br />
+        If you feel ready for the test trials, press the button below.`,
+        buttonText: "Begin TEST-trial",
+});
+
+const fractal_view_instruction_post_test = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'fractal_view_instruction_post_test',
+  title: 'Continuation Task - After test trials',
+  text: `Those were the test trials.
+        <br />
+        <br />
+        If you feel ready, press the button below.
+        <br />
+        <br />
+        <br />
+        <strong>Reminder:</strong>
+        <br />
+        You have to decide which is the correct continuation step.
+        <br />
+        If you feel ready for the trials, press the button below.
+        <br />
+        <br />
+        <br />
+        <br />`,
         buttonText: "Begin trial",
 });
 
@@ -112,12 +146,12 @@ const key_press_instruction = magpieViews.view_generator("instructions", {
 	trials: 1,
 	name: 'key_press_instruction',
 	title: 'Key-Press task',
-	text: `In this task you have to press eihter the "F" or the "J" key to fullfill the test.
+	text: `In this task you have to press eihter the "F" or the "J" key to complete the task.
 			<br />
 			<br />
-			Pressing the-"F"-key means the picture is a fractal.
+			Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
 			<br />
-			Pressing the-"J"-key means the picture is not a fractal.
+			Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
 			<br />
 			<br />
       First there will be a few test rounds,
@@ -140,15 +174,15 @@ const key_press_instruction_post_test = magpieViews.view_generator("instructions
 			<br />
 			<br />
       <br />
-			Reminder:
+			<strong>Reminder:</strong>
       <br />
 			<br />
-			Pressing the-"F"-key means the picture is a fractal.
+			Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
 			<br />
-			Pressing the-"J"-key means the picture is not a fractal.
+			Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
 			<br />
 			<br />
-      If you feel ready for the actual test press the button below.
+      If you feel ready for the actual trials press the button below.
 			<br />
 			<br />
 			<br />
@@ -171,12 +205,12 @@ const second_key_press_instruction = magpieViews.view_generator("instructions", 
 			Reminder:
       <br />
 			<br />
-			Pressing the-"F"-key means the picture is a fractal.
+			Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
 			<br />
-			Pressing the-"J"-key means the picture is not a fractal.
+			Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
 			<br />
 			<br />
-      If you feel ready for the test, press the button below.
+      If you feel ready for the trials, press the button below.
 			<br />
 			<br />
 			<br />
@@ -212,7 +246,7 @@ const post_test = magpieViews.view_generator("post_test", {
 const thanks = magpieViews.view_generator("thanks", {
   trials: 1,
   name: 'thanks',
-  title: 'Thank you for taking part in this experiment!',
+  title: 'Thank you very much for taking part in this experiment!',
   prolificConfirmText: 'Press the button'
 });
 
@@ -394,17 +428,33 @@ const experiment_replication_A2 = experiment_replication({
 });
 
 // shows continuation of previous iteration
-const fractal_view_2D_fractal = fractal_view({
+const fractal_view_2D_fractal = fractal_view_fractal({
 	trials: 1,
 	name: 'fractal_view_2D_fractal',
 	data: trial_info.fractal_view_fractal,
 });
 
 // shows iteration
-const experiment_replication_A2_fractal = experiment_replication({
+const experiment_replication_A2_fractal = experiment_replication_fractal({
   trials: 1,
   name: 'experiment_replication_A2_fractal',
   data: trial_info.experiment_replication_fractal,
+  pause: 2500,
+  fix_duration: 2500,
+});
+
+// shows continuation of previous iteration
+const fractal_view_2D_TT = fractal_view_TT({
+	trials: 1,
+	name: 'fractal_view_2D_TT',
+	data: trial_info.fractal_view_TT,
+});
+
+// shows iteration
+const experiment_replication_A2_TT = experiment_replication_TT({
+  trials: 1,
+  name: 'experiment_replication_A2_TT',
+  data: trial_info.experiment_replication_TT,
   pause: 2500,
   fix_duration: 2500,
 });

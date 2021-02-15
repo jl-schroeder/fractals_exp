@@ -16,102 +16,32 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
-            //_.sample([[forced_choice_preQ, key_press_first_one],[fractal_view_instruction, key_press_first_two]]),
-            //_.shuffle(loop([forced_choice_preQ, key_press_first_one],1), loop([fractal_view_instruction, key_press_first_two],1)),
-            //_.shuffle( loop([key_press_first_one_comp_3, key_press_first_two_comp_3],1),loop([key_press_second_one_comp_4, key_press_second_two_comp_4],1) ),
+            fractal_view_2D_TT,
+            fractal_view_2D_TT,
             instructions,
-            //fractal_view_2D, //TESTING
             forced_choice_preQ,
-            ///
             //key-press first test
             key_press_instruction,
             key_press_testTrial,
 		        key_press_instruction_post_test,
             // 1
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 2
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 3
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 4
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 5
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 6
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 7
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 8
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 9
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-            // 10
-            _.sample([[key_press_first_one_comp_3, key_press_first_two_comp_3],[key_press_first_one_comp_4, key_press_first_two_comp_4]]),
-              ///
+            loop([key_press_first_one_comp_3, key_press_first_two_comp_3],5),
+            loop([key_press_first_one_comp_4, key_press_first_two_comp_4],5),
+            ///
             fractal_view_instruction,
-            ///1
-            experiment_replication_A2,
-            blank_screen_long_A3,
-            fractal_view_2D,
-            blank_screen_short_A2,
-            ///2
-            experiment_replication_A2,
-            blank_screen_long_A3,
-			      fractal_view_2D,
-            blank_screen_short_A2,
-            ///3
-            experiment_replication_A2,
-            blank_screen_long_A3,
-            fractal_view_2D,
-            blank_screen_short_A2,
-            ///4
-            experiment_replication_A2,
-            blank_screen_long_A3,
-            fractal_view_2D,
-            blank_screen_short_A2,
-            ///5
-            experiment_replication_A2_fractal,
-            blank_screen_long_A3,
-            fractal_view_2D_fractal,
-            blank_screen_short_A2,
-            ///6
-            experiment_replication_A2_fractal,
-            blank_screen_long_A3,
-            fractal_view_2D_fractal,
-            blank_screen_short_A2,
-            ///7
-            experiment_replication_A2_fractal,
-            blank_screen_long_A3,
-            fractal_view_2D_fractal,
-            blank_screen_short_A2,
-            ///8
-            experiment_replication_A2_fractal,
-            blank_screen_long_A3,
-            fractal_view_2D_fractal,
-            blank_screen_short_A2,
+            /// Test trials
+            loop([experiment_replication_A2_TT, blank_screen_long_A3, fractal_view_2D_TT, blank_screen_short_A2,],2),
+            ////
+            fractal_view_instruction_post_test,
+            ///
+            loop([experiment_replication_A2, blank_screen_long_A3, fractal_view_2D, blank_screen_short_A2,],4),
+            ///
+            loop([experiment_replication_A2_fractal, blank_screen_long_A3, fractal_view_2D_fractal, blank_screen_short_A2,],4),
             ///
             second_key_press_instruction,
-            // 1
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 2
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 3
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 4
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 5
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 6
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 7
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 8
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 9
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-            // 10
-            _.sample([[key_press_second_one_comp_3, key_press_second_two_comp_3],[key_press_second_one_comp_4, key_press_second_two_comp_4]]),
-
+            ///
+            loop([key_press_second_one_comp_4, key_press_second_two_comp_4],5),
+            loop([key_press_second_one_comp_3, key_press_second_two_comp_3],5),
             post_test,
             thanks,
         ],
@@ -122,7 +52,7 @@ $("document").ready(function() {
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
-            deployMethod: "debug",
+            deployMethod: "directLink",
             contact_email: "janlschroede@uni-osnabrueck.de",
             prolificURL: "https://app.prolific.ac/submissions/complete?cc=SAMPLE1234"
         },
@@ -151,7 +81,7 @@ $("document").ready(function() {
             ],
              // Possible styles are "default", "separate" and "chunks"
             style: "default",
-            width: 100
+            width: 250
         }
     });
 });
