@@ -6,15 +6,15 @@
 
 * Obligatory properties
 
-    * trials: int - the number of trials this view will appear
-    * name: string
+* trials: int - the number of trials this view will appear
+* name: string
 
 *Optional properties
-    * buttonText: string - the text on the button (default: 'next')
-    * text: string - the text to be displayed in this view
-    * title: string - the title of this view
+* buttonText: string - the text on the button (default: 'next')
+* text: string - the text to be displayed in this view
+* title: string - the title of this view
 
-    * More about the properties and functions of the wrapping views - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#wrapping-views
+* More about the properties and functions of the wrapping views - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#wrapping-views
 
 */
 
@@ -25,36 +25,36 @@ const intro = magpieViews.view_generator("intro", {
   // If you use JavaScripts Template String `I am a Template String`, you can use HTML <></> and javascript ${} inside
   // (This experiment will currently not take longer than 15 minutes.)
   text: `Thank you for participating in this experiment.
-            <br />
-            <br />
-            On the following slides you will be presented with a few tests.
-            <br />
-            You will find the specific instructions before the test.
-            where you will get the dedicated Instructions
-            <br />
-            Please read all the text carefully.
-            <br />
-            You will have to look at some structures and answer questions according to the instructions you get.
-            <br />
-            <br />
-            <br />
-            The data collected is strictly anonymous.
-            With participation in this study you consent us to use your data on a strict anonymous basis.
-            <br />
-            <br />
-            <strong>You can stop the experiment at any time!</strong>
-            <br />
-            No data will then be stored!
-            <br />
-            <br />
-            If you have any questions or concerns, please write me an email to: <strong>janlschroede@uni-osnabrueck.de</strong>.
-            <br />
-            <br />
-            <br />
-            If you want to be notified of findings or results of this study, you can also write me an email to the adress above and I will inform you after the experiment is over.
-            <br />
-            <br />
-            Enjoy.`,
+  <br />
+  <br />
+  On the following slides you will be presented with a few tests.
+  <br />
+  You will find the specific instructions before the test.
+  where you will get the dedicated Instructions
+  <br />
+  Please read all the text carefully.
+  <br />
+  You will have to look at some structures and answer questions according to the instructions you get.
+  <br />
+  <br />
+  <br />
+  The data collected is strictly anonymous.
+  With participation in this study you consent us to use your data on a strict anonymous basis.
+  <br />
+  <br />
+  <strong>You can stop the experiment at any time!</strong>
+  <br />
+  No data will then be stored!
+  <br />
+  <br />
+  If you have any questions or concerns, please write me an email to: <strong>janlschroede@uni-osnabrueck.de</strong>.
+  <br />
+  <br />
+  <br />
+  If you want to be notified of findings or results of this study, you can also write me an email to the adress above and I will inform you after the experiment is over.
+  <br />
+  <br />
+  Enjoy.`,
   buttonText: 'begin the experiment'
 });
 
@@ -64,27 +64,27 @@ const instructions = magpieViews.view_generator("instructions", {
   name: 'instructions',
   title: 'General Instructions',
   text: `On the next two pages you will be shown some questions.
-      <br />
-      These are not test trials yet.
-      <br />
-      <br />
-      We are asking these to check your current understanding of a specific concept.
-      <br />
-      <br />
-      Afterwards you will be presented with two different types of tests.
-			<br />
-      You will get the corresponding instructions right before the tests.
-      <br />
-			<br />
-      <br />
-      If possible, please make this window fullscreen.
-      <br />
-      (e.g. press <strong>(F11)</strong> or <strong>(Fn + F11)</strong>).
-      <br />
-      <br />
-      <br />
-      <strong>Please read all the text carefully.</strong>
-      <br />`,
+  <br />
+  These are not test trials yet.
+  <br />
+  <br />
+  We are asking these to check your current understanding of a specific concept.
+  <br />
+  <br />
+  Afterwards you will be presented with two different types of tests.
+  <br />
+  You will get the corresponding instructions right before the tests.
+  <br />
+  <br />
+  <br />
+  If possible, please make this window fullscreen.
+  <br />
+  (e.g. press <strong>(F11)</strong> or <strong>(Fn + F11)</strong>).
+  <br />
+  <br />
+  <br />
+  <strong>Please read all the text carefully.</strong>
+  <br />`,
   buttonText: 'go to the questions'
 });
 
@@ -94,29 +94,29 @@ const fractal_view_instruction = magpieViews.view_generator("instructions", {
   name: 'fractal_view_instruction',
   title: 'Continuation Task - Instructions',
   text: `In this task you have to look closely at the pictures flasing on the screen.
-        <br />
-        These are either 3 or 4 iterations steps.
-        <br />
-        <br />
-        Then will follow a short pause. Afterwards you will be presented with two pictures.
-        <br />
-        One of these pictures represent the correct next iteration step, the other is an incorrect step.
-        <br />
-        You than have to decide which one is the correct continuation.
-        <br />
-        <br />
-        <br />
-        For this you press either the LEFT or the RIGHT button located below the pictures.
-        <br />
-        <br />
-        <br />
-        You will first have the chance to test this in <strong>2</strong> test trials.
-        <br />
-        Afterwards there will be another instruction page after which the actual trials begin.
-        <br />
-        <br />
-        If you feel ready for the test trials, press the button below.`,
-        buttonText: "Begin TEST-trial",
+  <br />
+  These are either 3 or 4 iterations steps.
+  <br />
+  <br />
+  Then will follow a short pause. Afterwards you will be presented with two pictures.
+  <br />
+  One of these pictures represent the correct next iteration step, the other is an incorrect step.
+  <br />
+  You than have to decide which one is the correct continuation.
+  <br />
+  <br />
+  <br />
+  For this you press either the LEFT or the RIGHT button located below the pictures.
+  <br />
+  <br />
+  <br />
+  You will first have the chance to test this in <strong>2</strong> test trials.
+  <br />
+  Afterwards there will be another instruction page after which the actual trials begin.
+  <br />
+  <br />
+  If you feel ready for the test trials, press the button below.`,
+  buttonText: "Begin TEST-trial",
 });
 
 const fractal_view_instruction_post_test = magpieViews.view_generator("instructions", {
@@ -124,98 +124,124 @@ const fractal_view_instruction_post_test = magpieViews.view_generator("instructi
   name: 'fractal_view_instruction_post_test',
   title: 'Continuation Task - After test trials',
   text: `Those were the test trials.
-        <br />
-        <br />
-        If you feel ready, press the button below.
-        <br />
-        <br />
-        <br />
-        <strong>Reminder:</strong>
-        <br />
-        You have to decide which is the correct continuation step.
-        <br />
-        If you feel ready for the trials, press the button below.
-        <br />
-        <br />
-        <br />
-        <br />`,
-        buttonText: "Begin trial",
+  <br />
+  <br />
+  If you feel ready, press the button below.
+  <br />
+  <br />
+  <br />
+  <strong>Reminder:</strong>
+  <br />
+  You have to decide which is the correct continuation step.
+  <br />
+  If you feel ready for the trials, press the button below.
+  <br />
+  <br />
+  <br />
+  <br />`,
+  buttonText: "Begin trial",
+});
+
+const second_continuation_instruction = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'second_continuation_instruction',
+  title: 'Continuation Task - second trials',
+  text: `This is the second iteration of the continuation task.
+  <br />
+  <br />
+  <br />
+  <strong>Reminder:</strong>
+  <br />
+  You have to decide which is the correct continuation step.
+  <br />
+  You will be presented with a sequence of pictures and then have to decide which of two pictures is the correct continuation step.
+  <br />
+  <br />
+  <br />
+  If you feel ready for the trials, press the button below.
+  <br />
+  <br />
+  <br />
+  `,
+  buttonText: "Begin trial",
 });
 
 const key_press_instruction = magpieViews.view_generator("instructions", {
-	trials: 1,
-	name: 'key_press_instruction',
-	title: 'Key-Press task',
-	text: `In this task you have to press eihter the "F" or the "J" key to complete the task.
-			<br />
-			<br />
-			Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
-			<br />
-			Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
-			<br />
-			<br />
-      First there will be a few test rounds,
-      afterwards you will be shown another instruction test, where you can then start the actual test.
-      <br />
-      <br />
-			If you feel ready for the test trials press the button below.
-			<br />
-			<br />
-			<br />
-			As a reminder: Fractal vs Non-Fractal`,
-			buttonText: "Begin test trial",
+  trials: 1,
+  name: 'key_press_instruction',
+  title: 'Key-Press task',
+  text: `In this task you have to press eihter the "F" or the "J" key to complete the task.
+  <br />
+  <br />
+  Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
+  <br />
+  Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
+  <br />
+  <br />
+  First there will be a few test rounds,
+  afterwards you will be shown another instruction test, where you can then start the actual test.
+  <br />
+  <br />
+  If you feel ready for the test trials press the button below.
+  <br />
+  <br />
+  <br />
+  As a reminder: Decide between Fractal vs Non-Fractal`,
+  buttonText: "Begin test trial",
 });
 
 const key_press_instruction_post_test = magpieViews.view_generator("instructions", {
-	trials: 1,
-	name: 'key_press_instruction_post_test',
-	title: 'Key-Press task - After test trials',
-	text: `These were the test trials.
-			<br />
-			<br />
-      <br />
-			<strong>Reminder:</strong>
-      <br />
-			<br />
-			Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
-			<br />
-			Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
-			<br />
-			<br />
-      If you feel ready for the actual trials press the button below.
-			<br />
-			<br />
-			<br />
-      `,
-			buttonText: "Begin task",
+  trials: 1,
+  name: 'key_press_instruction_post_test',
+  title: 'Key-Press task - After test trials',
+  text: `These were the test trials.
+  <br />
+  <br />
+  On the next page we will continue with the trials of this task.
+  <br />
+  <br />
+  <strong>Reminder:</strong>
+  <br />
+  <br />
+  Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
+  <br />
+  Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
+  <br />
+  <br />
+  If you feel ready for the trials press the button below.
+  <br />
+  <br />
+  <br />
+  `,
+  buttonText: "Begin trial",
 });
 
 
 const second_key_press_instruction = magpieViews.view_generator("instructions", {
-	trials: 1,
-	name: 'second_key_press_instruction',
-	title: 'Key-Press task - Second iteration',
-	text: `This is another iteration of the key press task.
-			<br />
-      <br />
-      <br />
-      You will again be presented with diferent pictures where you have to press a button according to the type of structure.
-			<br />
-      <br />
-			Reminder:
-      <br />
-			<br />
-			Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
-			<br />
-			Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
-			<br />
-			<br />
-      If you feel ready for the trials, press the button below.
-			<br />
-			<br />
-			<br />
-      `,
-			buttonText: "Begin task",
+  trials: 1,
+  name: 'second_key_press_instruction',
+  title: 'Key-Press task - Second iteration',
+  text: `This is another iteration of the key press task.
+  <br />
+  <br />
+  <br />
+  You will again be presented with diferent pictures where you have to press a button according to the type of structure.
+  <br />
+  <br />
+  Reminder:
+  <br />
+  <br />
+  Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
+  <br />
+  Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
+  <br />
+  <br />
+  If you feel ready for the trials, press the button below.
+  <br />
+  <br />
+  <br />
+  `,
+  buttonText: "Begin trial",
 });
 
 
@@ -255,38 +281,25 @@ const thanks = magpieViews.view_generator("thanks", {
 
 * Obligatory properties
 
-    - trials: int - the number of trials this view will appear
-    - name: string - the name of the view type as it shall be known to _magpie (e.g. for use with a progress bar)
-            and the name of the trial as you want it to appear in the submitted data
-    - data: array - an array of trial objects
+- trials: int - the number of trials this view will appear
+- name: string - the name of the view type as it shall be known to _magpie (e.g. for use with a progress bar)
+and the name of the trial as you want it to appear in the submitted data
+- data: array - an array of trial objects
 
 * Optional properties
 
-    - pause: number (in ms) - blank screen before the fixation point or stimulus show
-    - fix_duration: number (in ms) - blank screen with fixation point in the middle
-    - stim_duration: number (in ms) - for how long to have the stimulus on the screen
-      More about trial life cycle - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
+- pause: number (in ms) - blank screen before the fixation point or stimulus show
+- fix_duration: number (in ms) - blank screen with fixation point in the middle
+- stim_duration: number (in ms) - for how long to have the stimulus on the screen
+More about trial life cycle - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
 
-    - hook: object - option to hook and add custom functions to the view
-      More about hooks - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
+- hook: object - option to hook and add custom functions to the view
+More about hooks - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
 
 * All about the properties of trial views
 * https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#trial-views
 */
 
-
-/*// Here, we initialize a normal forced_choice view
-const forced_choice_2A = magpieViews.view_generator("forced_choice", {
-  // This will use all trials specified in `data`, you can user a smaller value (for testing), but not a larger value
-  trials: trial_info.forced_choice.length,
-  // name should be identical to the variable name
-  name: 'forced_choice_2A',
-  data: trial_info.forced_choice, // to shuffle: _.shuffle(trial_info.forced_choice)
-  // you can add custom functions at different stages through a view's life cycle
-  // hook: {
-  //     after_response_enabled: check_response
-  // }
-}); */
 
 // pre experiment questions
 const forced_choice_preQ = magpieViews.view_generator("forced_choice", {
@@ -296,126 +309,144 @@ const forced_choice_preQ = magpieViews.view_generator("forced_choice", {
 });
 
 
-// key-press task
-const key_press_2C = magpieViews.view_generator("key_press", {
-	trials: trial_info.key_press.length,
-	name: 'key_press_2C',
-	data: _.shuffle(trial_info.key_press), // For different groups: //_.sample([_.shuffle(trial_info.key_press_testing),_.shuffle(trial_info.key_press)]),
-  fix_duration: 250,
-});
-
 // key-press task TEST
 const key_press_testTrial = magpieViews.view_generator("key_press", {
-	trials: 8,//trial_info.key_press_testing.length,
-	name: 'key_press_testTrial',
-	data: _.shuffle(trial_info.key_press_testing),
+  trials: 8,//trial_info.key_press_testing.length,
+  name: 'key_press_testTrial',
+  data: _.shuffle(trial_info.key_press_testing),
   fix_duration: 250,
 });
 
 
 // key_press task first time
 const key_press_first_one = magpieViews.view_generator("key_press", {
-	trials: Math.random()*(10-1)+1,
-	name: 'key_press_first_one',
-	data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: Math.random()*(10-1)+1,
+  name: 'key_press_first_one',
+  data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
 
 // key_press task second time
 const key_press_first_two = magpieViews.view_generator("key_press", {
-	trials: 1,
-	name: 'key_press_first_two',
-	data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: 1,
+  name: 'key_press_first_two',
+  data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
 
 // key_press task second time
 const key_press_second_one = magpieViews.view_generator("key_press", {
-	trials: Math.random()*(15-1)+1,
-	name: 'key_press_second_one',
-	data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: Math.random()*(10-1)+1,
+  name: 'key_press_second_one',
+  data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
 
 // key_press task second time
 const key_press_second_two = magpieViews.view_generator("key_press", {
-	trials: 1,
-	name: 'key_press_second_two',
-	data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: 1,
+  name: 'key_press_second_two',
+  data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
 });
 
 /////////////////////////
 // key_press task first time
 const key_press_first_one_comp_3 = magpieViews.view_generator("key_press", {
-	trials: Math.random()*(10-1)+1,
-	name: 'key_press_first_one_comp_3',
-	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: Math.random()*(10-1)+1,
+  name: 'key_press_first_one_comp_3',
+  data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
+
+// test:
+/*
+,
+{
+  key_press: function(config, CT) {
+    return `<div class="magpie-view">
+    <h1 class='magpie-view-title'>${config.title}</h1>
+    <p class='magpie-response-keypress-header'>
+    <strong>${config.data[0].key1}</strong> = ${config.data[0][config.data[0].key1]},
+    <strong>${config.data[0].key2}</strong> = ${config.data[0][config.data[0].key2]}</p>
+    <div class='magpie-view-stimulus-container'>
+    <div class='magpie-view-stimulus magpie-nodisplay'></div>
+    </div>
+    </div>`;
+  },
+}
+*/
 
 // key_press task second time
 const key_press_first_two_comp_3 = magpieViews.view_generator("key_press", {
-	trials: 1,
-	name: 'key_press_first_two_comp_3',
-	data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: 1,
+  name: 'key_press_first_two_comp_3',
+  data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
 
 // key_press task second time
 const key_press_second_one_comp_3 = magpieViews.view_generator("key_press", {
-	trials: Math.random()*(15-1)+1,
-	name: 'key_press_second_one_comp_3',
-	data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: Math.random()*(10-1)+1,
+  name: 'key_press_second_one_comp_3',
+  data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
 
 // key_press task second time
 const key_press_second_two_comp_3 = magpieViews.view_generator("key_press", {
-	trials: 1,
-	name: 'key_press_second_two_comp_3',
-	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: 1,
+  name: 'key_press_second_two_comp_3',
+  data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
 // key_press task first time
 const key_press_first_one_comp_4 = magpieViews.view_generator("key_press", {
-	trials: Math.random()*(10-1)+1,
-	name: 'key_press_first_one_comp_4',
-	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: Math.random()*(10-1)+1,
+  name: 'key_press_first_one_comp_4',
+  data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
 
 // key_press task second time
 const key_press_first_two_comp_4 = magpieViews.view_generator("key_press", {
-	trials: 1,
-	name: 'key_press_first_two_comp_4',
-	data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: 1,
+  name: 'key_press_first_two_comp_4',
+  data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
 
 // key_press task second time
 const key_press_second_one_comp_4 = magpieViews.view_generator("key_press", {
-	trials: Math.random()*(15-1)+1,
-	name: 'key_press_second_one_comp_4',
-	data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: Math.random()*(10-1)+1,
+  name: 'key_press_second_one_comp_4',
+  data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
 
 // key_press task second time
 const key_press_second_two_comp_4 = magpieViews.view_generator("key_press", {
-	trials: 1,
-	name: 'key_press_second',
-	data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+  trials: 1,
+  name: 'key_press_second',
+  data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   fix_duration: 250,
-});
+}
+);
 /////////////////////////
 
 
 // shows continuation of previous iteration
 const fractal_view_2D = fractal_view({
-	trials: 1,
-	name: 'fractal_view_2D',
-	data: trial_info.fractal_view,
+  trials: 1,
+  name: 'fractal_view_2D',
+  data: trial_info.fractal_view,
 });
 
 // shows iteration
@@ -423,15 +454,13 @@ const experiment_replication_A2 = experiment_replication({
   trials: 1,
   name: 'experiment_replication_A2',
   data: trial_info.experiment_replication,
-  pause: 2500,
-  fix_duration: 2500,
 });
 
 // shows continuation of previous iteration
 const fractal_view_2D_fractal = fractal_view_fractal({
-	trials: 1,
-	name: 'fractal_view_2D_fractal',
-	data: trial_info.fractal_view_fractal,
+  trials: 1,
+  name: 'fractal_view_2D_fractal',
+  data: trial_info.fractal_view_fractal,
 });
 
 // shows iteration
@@ -439,15 +468,13 @@ const experiment_replication_A2_fractal = experiment_replication_fractal({
   trials: 1,
   name: 'experiment_replication_A2_fractal',
   data: trial_info.experiment_replication_fractal,
-  pause: 2500,
-  fix_duration: 2500,
 });
 
 // shows continuation of previous iteration
 const fractal_view_2D_TT = fractal_view_TT({
-	trials: 1,
-	name: 'fractal_view_2D_TT',
-	data: trial_info.fractal_view_TT,
+  trials: 1,
+  name: 'fractal_view_2D_TT',
+  data: trial_info.fractal_view_TT,
 });
 
 // shows iteration
@@ -455,21 +482,19 @@ const experiment_replication_A2_TT = experiment_replication_TT({
   trials: 1,
   name: 'experiment_replication_A2_TT',
   data: trial_info.experiment_replication_TT,
-  pause: 2500,
-  fix_duration: 2500,
 });
 
 // short blank screen
 const blank_screen_short_A2 = blank_screen_short({
   trials: 1,
-  name: 'blank_screen_A2',
+  name: 'blank_screen_short_A2',
   data: trial_info.blank_screen_short,
 });
 
 // longer blank screen
 const blank_screen_long_A3 = blank_screen_long({
   trials: 1,
-  name: 'blank_screen_A3',
+  name: 'blank_screen_long_A3',
   data: trial_info.blank_screen_long,
 });
 

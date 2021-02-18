@@ -7,15 +7,7 @@
 const coin = _.sample(["head", "tail"]); // You can determine global (random) parameters here
 // Declare your variables here
 
-//const key_press_task_list =
-
-
-var image_list = [{p1:"images/sequence.png", p2:"images/correct_continuation.png", p3:"images/incorrect_continuation.png", answer:"left"},
-{p1:"images/iteration_sequence.png", p2:"images/incorrect_iteration_continuation.png", p3:"images/correct_iteration_continuation.png", answer:"right"}
-];
-
-//tri-images fractal /// done
-
+// tri-images fractal /// done
 continuation_list_fractal = [
   {p1:"images/Generated_Pictures/Tri_circle_0.png", p2:"images/Generated_Pictures/Tri_circle_1.png", p3:"images/Generated_Pictures/Tri_circle_2.png", p4:"images/Generated_Pictures/Tri_circle_3.png",  p5:"images/Generated_Pictures/Tri_circle_4.png", p6:"images/Generated_Pictures/Tri_circle_4_false_4.png", answer:"left"},
   {p1:"images/Generated_Pictures/Tri_circle_0.png", p2:"images/Generated_Pictures/Tri_circle_1.png", p3:"images/Generated_Pictures/Tri_circle_2.png", p4:"images/Generated_Pictures/Tri_circle_3.png",  p5:"images/Generated_Pictures/Tri_circle_4.png", p6:"images/Generated_Pictures/Tri_circle_4_false_3.png", answer:"left"},
@@ -29,7 +21,6 @@ continuation_list_fractal = [
   {p1:"images/Generated_Pictures/Tri_arrow_0.png", p2:"images/Generated_Pictures/Tri_arrow_1.png", p3:"images/Generated_Pictures/Tri_arrow_2.png", p4:"images/Generated_Pictures/Tri_arrow_3.png",  p5:"images/Generated_Pictures/Tri_arrow_4_false_4.png", p6:"images/Generated_Pictures/Tri_arrow_4.png", answer:"right"},
   {p1:"images/Generated_Pictures/Tri_arrow_0.png", p2:"images/Generated_Pictures/Tri_arrow_1.png", p3:"images/Generated_Pictures/Tri_arrow_2.png", p4:"images/Generated_Pictures/Tri_arrow_3.png",  p5:"images/Generated_Pictures/Tri_arrow_4_false_3.png", p6:"images/Generated_Pictures/Tri_arrow_4.png", answer:"right"},
   {p1:"images/Generated_Pictures/Tri_arrow_0.png", p2:"images/Generated_Pictures/Tri_arrow_1.png", p3:"images/Generated_Pictures/Tri_arrow_2.png",  p5:"images/Generated_Pictures/Tri_arrow_3.png", p6:"images/Generated_Pictures/Tri_arrow_3_false_3.png", answer:"left"},
-
   //Quad-images fractal /// done
   {p1:"images/Generated_Pictures/Quad_circle_0.png", p2:"images/Generated_Pictures/Quad_circle_1.png", p3:"images/Generated_Pictures/Quad_circle_2.png", p4:"images/Generated_Pictures/Quad_circle_3.png",  p5:"images/Generated_Pictures/Quad_circle_4.png", p6:"images/Generated_Pictures/Quad_circle_4_false_4.png", answer:"left"},
   {p1:"images/Generated_Pictures/Quad_circle_0.png", p2:"images/Generated_Pictures/Quad_circle_1.png", p3:"images/Generated_Pictures/Quad_circle_2.png", p4:"images/Generated_Pictures/Quad_circle_3.png",  p5:"images/Generated_Pictures/Quad_circle_4_false_3.png", p6:"images/Generated_Pictures/Quad_circle_4.png", answer:"right"},
@@ -43,7 +34,6 @@ continuation_list_fractal = [
   {p1:"images/Generated_Pictures/Quad_arrow_0.png", p2:"images/Generated_Pictures/Quad_arrow_1.png", p3:"images/Generated_Pictures/Quad_arrow_2.png", p4:"images/Generated_Pictures/Quad_arrow_3.png",  p5:"images/Generated_Pictures/Quad_arrow_4_false_4.png", p6:"images/Generated_Pictures/Quad_arrow_4.png", answer:"right"},
   {p1:"images/Generated_Pictures/Quad_arrow_0.png", p2:"images/Generated_Pictures/Quad_arrow_1.png", p3:"images/Generated_Pictures/Quad_arrow_2.png", p4:"images/Generated_Pictures/Quad_arrow_3.png",  p5:"images/Generated_Pictures/Quad_arrow_4.png", p6:"images/Generated_Pictures/Quad_arrow_4_false_3.png", answer:"left"},
   {p1:"images/Generated_Pictures/Quad_arrow_0.png", p2:"images/Generated_Pictures/Quad_arrow_1.png", p3:"images/Generated_Pictures/Quad_arrow_2.png",  p5:"images/Generated_Pictures/Quad_arrow_3.png", p6:"images/Generated_Pictures/Quad_arrow_3_false_3.png", answer:"left"},
-
   //Penta-images fractal /// done
   {p1:"images/Generated_Pictures/Penta_circle_0.png", p2:"images/Generated_Pictures/Penta_circle_1.png", p3:"images/Generated_Pictures/Penta_circle_2.png", p5:"images/Generated_Pictures/Penta_circle_3.png", p6:"images/Generated_Pictures/Penta_circle_3_false_3.png", answer:"left"},
   {p1:"images/Generated_Pictures/Penta_circle_0.png", p2:"images/Generated_Pictures/Penta_circle_1.png", p3:"images/Generated_Pictures/Penta_circle_2.png", p5:"images/Generated_Pictures/Penta_circle_3.png", p6:"images/Generated_Pictures/Penta_circle_3_false_2.png", answer:"left"},
@@ -53,7 +43,6 @@ continuation_list_fractal = [
   {p1:"images/Generated_Pictures/Penta_triangle_0.png", p2:"images/Generated_Pictures/Penta_triangle_1.png", p3:"images/Generated_Pictures/Penta_triangle_2.png", p5:"images/Generated_Pictures/Penta_triangle_3_false_3.png", p6:"images/Generated_Pictures/Penta_triangle_3.png", answer:"right"},
   {p1:"images/Generated_Pictures/Penta_arrow_0.png", p2:"images/Generated_Pictures/Penta_arrow_1.png", p3:"images/Generated_Pictures/Penta_arrow_2.png", p5:"images/Generated_Pictures/Penta_arrow_3_false_3.png", p6:"images/Generated_Pictures/Penta_arrow_3.png", answer:"right"},
   {p1:"images/Generated_Pictures/Penta_arrow_0.png", p2:"images/Generated_Pictures/Penta_arrow_1.png", p3:"images/Generated_Pictures/Penta_arrow_2.png", p5:"images/Generated_Pictures/Penta_arrow_3.png", p6:"images/Generated_Pictures/Penta_arrow_3_false_2.png", answer:"left"},
-
   //Hexa-images fractal /// done
   {p1:"images/Generated_Pictures/Hexa_circle_0.png", p2:"images/Generated_Pictures/Hexa_circle_1.png", p3:"images/Generated_Pictures/Hexa_circle_2.png", p5:"images/Generated_Pictures/Hexa_circle_3.png", p6:"images/Generated_Pictures/Hexa_circle_3_false_3.png", answer:"left"},
   {p1:"images/Generated_Pictures/Hexa_circle_0.png", p2:"images/Generated_Pictures/Hexa_circle_1.png", p3:"images/Generated_Pictures/Hexa_circle_2.png", p5:"images/Generated_Pictures/Hexa_circle_3_false_2.png", p6:"images/Generated_Pictures/Hexa_circle_3.png", answer:"right"},
@@ -62,8 +51,10 @@ continuation_list_fractal = [
   {p1:"images/Generated_Pictures/Hexa_triangle_0.png", p2:"images/Generated_Pictures/Hexa_triangle_1.png", p3:"images/Generated_Pictures/Hexa_triangle_2.png", p5:"images/Generated_Pictures/Hexa_triangle_3_false_2.png", p6:"images/Generated_Pictures/Hexa_triangle_3.png", answer:"right"},
   {p1:"images/Generated_Pictures/Hexa_triangle_0.png", p2:"images/Generated_Pictures/Hexa_triangle_1.png", p3:"images/Generated_Pictures/Hexa_triangle_2.png", p5:"images/Generated_Pictures/Hexa_triangle_3_false_3.png", p6:"images/Generated_Pictures/Hexa_triangle_3.png", answer:"right"},
   {p1:"images/Generated_Pictures/Hexa_arrow_0.png", p2:"images/Generated_Pictures/Hexa_arrow_1.png", p3:"images/Generated_Pictures/Hexa_arrow_2.png", p5:"images/Generated_Pictures/Hexa_arrow_3_false_2.png", p6:"images/Generated_Pictures/Hexa_arrow_3.png", answer:"right"},
-  {p1:"images/Generated_Pictures/Hexa_arrow_0.png", p2:"images/Generated_Pictures/Hexa_arrow_1.png", p3:"images/Generated_Pictures/Hexa_arrow_2.png", p5:"images/Generated_Pictures/Hexa_arrow_3.png", p6:"images/Generated_Pictures/Hexa_arrow_3_false_3.png", answer:"left"}, 
+  {p1:"images/Generated_Pictures/Hexa_arrow_0.png", p2:"images/Generated_Pictures/Hexa_arrow_1.png", p3:"images/Generated_Pictures/Hexa_arrow_2.png", p5:"images/Generated_Pictures/Hexa_arrow_3.png", p6:"images/Generated_Pictures/Hexa_arrow_3_false_3.png", answer:"left"},
 ];
+
+continuation_list_fractal = shuffle(continuation_list_fractal);
 
 var continuation_list = [
 //tri-images iteration /// done
@@ -110,13 +101,11 @@ var continuation_list = [
 {p1:"images/Generated_Pictures/Hexa_square_3_iteration_1.png", p2:"images/Generated_Pictures/Hexa_square_3_iteration_2.png", p3:"images/Generated_Pictures/Hexa_square_3_iteration_3.png", p5:"images/Generated_Pictures/Hexa_square_3_iteration_4.png", p6:"images/Generated_Pictures/Hexa_square_3_iteration_4_false.png", answer:"left"},
 {p1:"images/Generated_Pictures/Hexa_triangle_3_iteration_1.png", p2:"images/Generated_Pictures/Hexa_triangle_3_iteration_2.png", p3:"images/Generated_Pictures/Hexa_triangle_3_iteration_3.png", p5:"images/Generated_Pictures/Hexa_triangle_3_iteration_4.png", p6:"images/Generated_Pictures/Hexa_triangle_3_iteration_4_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Hexa_arrow_3_iteration_1.png", p2:"images/Generated_Pictures/Hexa_arrow_3_iteration_2.png", p3:"images/Generated_Pictures/Hexa_arrow_3_iteration_3.png", p5:"images/Generated_Pictures/Hexa_arrow_3_iteration_4_false.png", p6:"images/Generated_Pictures/Hexa_arrow_3_iteration_4.png", answer:"right"},
-
-
 //hierarchical_iteration with turn ///-> What about Tri images? (only 3 iterations possible)
 {p1:"images/Generated_Pictures/Tri_triangle_2.png", p2:"images/Generated_Pictures/Tri_triangle_3_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_triangle_3_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_triangle_3_iteration_3_false.png", p6:"images/Generated_Pictures/Tri_triangle_3_iteration_3.png", answer:"left"},
 {p1:"images/Generated_Pictures/Tri_circle_2.png", p2:"images/Generated_Pictures/Tri_circle_3_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_circle_3_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_circle_3_iteration_3.png", p6:"images/Generated_Pictures/Tri_circle_3_iteration_3_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Tri_arrow_2.png", p2:"images/Generated_Pictures/Tri_arrow_3_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_arrow_3_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_arrow_3_iteration_3_false.png", p6:"images/Generated_Pictures/Tri_arrow_3_iteration_3.png", answer:"left"},
-{p1:"images/Generated_Pictures/Tri_square_2.png", p2:"images/Generated_Pictures/Tri_square_3_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_square_3_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_square_3_iteration_3.png", p6:"images/Generated_Pictures/Tri_square_3_false.png", answer:"right"},
+{p1:"images/Generated_Pictures/Tri_square_2.png", p2:"images/Generated_Pictures/Tri_square_3_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_square_3_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_square_3_iteration_3.png", p6:"images/Generated_Pictures/Tri_square_3_iteration_3_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Tri_triangle_3.png", p2:"images/Generated_Pictures/Tri_triangle_4_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_triangle_4_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_triangle_4_iteration_3_false.png", p6:"images/Generated_Pictures/Tri_triangle_4_iteration_3.png", answer:"left"},
 {p1:"images/Generated_Pictures/Tri_circle_3.png", p2:"images/Generated_Pictures/Tri_circle_4_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_circle_4_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_circle_4_iteration_3_false.png", p6:"images/Generated_Pictures/Tri_circle_4_iteration_3.png", answer:"left"},
 {p1:"images/Generated_Pictures/Tri_arrow_3.png", p2:"images/Generated_Pictures/Tri_arrow_4_iteration_1_false.png", p3:"images/Generated_Pictures/Tri_arrow_4_iteration_2_false.png", p5:"images/Generated_Pictures/Tri_arrow_4_iteration_3.png", p6:"images/Generated_Pictures/Tri_arrow_4_iteration_3_false.png", answer:"right"},
@@ -130,7 +119,6 @@ var continuation_list = [
 {p1:"images/Generated_Pictures/Quad_circle_3.png", p2:"images/Generated_Pictures/Quad_circle_4_iteration_1_false.png", p3:"images/Generated_Pictures/Quad_circle_4_iteration_2_false.png", p5:"images/Generated_Pictures/Quad_circle_4_iteration_3.png", p6:"images/Generated_Pictures/Quad_circle_4_iteration_3_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Quad_arrow_3.png", p2:"images/Generated_Pictures/Quad_arrow_4_iteration_1_false.png", p3:"images/Generated_Pictures/Quad_arrow_4_iteration_2_false.png", p5:"images/Generated_Pictures/Quad_arrow_4_iteration_3.png", p6:"images/Generated_Pictures/Quad_arrow_4_iteration_3_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Quad_square_3.png", p2:"images/Generated_Pictures/Quad_square_4_iteration_1_false.png", p3:"images/Generated_Pictures/Quad_square_4_iteration_2_false.png", p5:"images/Generated_Pictures/Quad_square_4_iteration_3.png", p6:"images/Generated_Pictures/Quad_square_4_iteration_3_false.png", answer:"right"},
-
 /// done
 {p1:"images/Generated_Pictures/Penta_triangle_2.png", p2:"images/Generated_Pictures/Penta_triangle_3_iteration_1_false.png", p3:"images/Generated_Pictures/Penta_triangle_3_iteration_2_false.png", p4:"images/Generated_Pictures/Penta_triangle_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_triangle_3_iteration_4_false.png", p6:"images/Generated_Pictures/Penta_triangle_3_iteration_4.png", answer:"left"},
 {p1:"images/Generated_Pictures/Penta_triangle_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_triangle_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_triangle_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_triangle_3_iteration_4.png", p6:"images/Generated_Pictures/Penta_triangle_3_iteration_4_false.png", answer:"right"},
@@ -144,10 +132,6 @@ var continuation_list = [
 {p1:"images/Generated_Pictures/Penta_circle_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_circle_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_circle_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_circle_3_iteration_4.png", p6:"images/Generated_Pictures/Penta_circle_3_iteration_4_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Penta_square_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_square_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_square_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_square_3_iteration_4.png", p6:"images/Generated_Pictures/Penta_square_3_iteration_4_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Penta_arrow_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_arrow_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_arrow_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_arrow_3_iteration_4_false.png", p6:"images/Generated_Pictures/Penta_arrow_3_iteration_4.png", answer:"left"},
-//{p1:"images/Generated_Pictures/Penta_circle_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_circle_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_circle_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_circle_3_iteration_4_false.png", p6:"images/Generated_Pictures/Penta_circle_3_iteration_4.png", answer:"left"}, // SHOUDL I USE THIS?
-//{p1:"images/Generated_Pictures/Penta_arrow_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_arrow_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_arrow_3_iteration_3_false.png", p4:"images/Generated_Pictures/Penta_arrow_3_iteration_4_false.png", p5:"images/Generated_Pictures/Penta_arrow_3_iteration_5_false.png", p6:"images/Generated_Pictures/Penta_arrow_3.png", answer:"left"},
-//{p1:"images/Generated_Pictures/Penta_square_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_square_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_square_3_iteration_3_false.png", p4:"images/Generated_Pictures/Penta_square_3_iteration_4_false.png", p5:"images/Generated_Pictures/Penta_square_3_iteration_3.png", p6:"images/Generated_Pictures/Penta_square_3_iteration_5_false.png", answer:"right"},
-
 /// done
 {p1:"images/Generated_Pictures/Hexa_triangle_2.png", p2:"images/Generated_Pictures/Hexa_triangle_3_iteration_1_false.png", p3:"images/Generated_Pictures/Hexa_triangle_3_iteration_2_false.png", p5:"images/Generated_Pictures/Hexa_triangle_3_iteration_3_false.png", p6:"images/Generated_Pictures/Hexa_triangle_3_iteration_3.png", answer:"left"},
 {p1:"images/Generated_Pictures/Hexa_circle_2.png", p2:"images/Generated_Pictures/Hexa_circle_3_iteration_1_false.png", p3:"images/Generated_Pictures/Hexa_circle_3_iteration_2_false.png", p5:"images/Generated_Pictures/Hexa_circle_3_iteration_3.png", p6:"images/Generated_Pictures/Hexa_circle_3_iteration_3_false.png", answer:"right"},
@@ -165,6 +149,11 @@ var continuation_list = [
 ];
 
 continuation_list = shuffle(continuation_list);
+
+//{p1:"images/Generated_Pictures/Penta_circle_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_circle_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_circle_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_circle_3_iteration_4_false.png", p6:"images/Generated_Pictures/Penta_circle_3_iteration_4.png", answer:"left"}, // SHOUDL I USE THIS?
+//{p1:"images/Generated_Pictures/Penta_arrow_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_arrow_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_arrow_3_iteration_3_false.png", p4:"images/Generated_Pictures/Penta_arrow_3_iteration_4_false.png", p5:"images/Generated_Pictures/Penta_arrow_3_iteration_5_false.png", p6:"images/Generated_Pictures/Penta_arrow_3.png", answer:"left"},
+//{p1:"images/Generated_Pictures/Penta_square_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_square_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_square_3_iteration_3_false.png", p4:"images/Generated_Pictures/Penta_square_3_iteration_4_false.png", p5:"images/Generated_Pictures/Penta_square_3_iteration_3.png", p6:"images/Generated_Pictures/Penta_square_3_iteration_5_false.png", answer:"right"},
+
 
 // {p1:"images/Generated_Pictures/", p2:"images/Generated_Pictures/", p3:"images/Generated_Pictures/", p4:"images/Generated_Pictures/",  p5:"images/Generated_Pictures/", p6:"images/Generated_Pictures/", answer:""},
 //{p1:"images/", p2:"images/", p3:"images/", answer:""}
