@@ -82,6 +82,9 @@ const instructions = magpieViews.view_generator("instructions", {
   (e.g. press <strong>(F11)</strong> or <strong>(Fn + F11)</strong>).
   <br />
   <br />
+  Press the same button(s) at the end to exit the fullscreen mode again.
+  <br />
+  <br />
   <br />
   <strong>Please read all the text carefully.</strong>
   <br />`,
@@ -171,6 +174,8 @@ const key_press_instruction = magpieViews.view_generator("instructions", {
   name: 'key_press_instruction',
   title: 'Key-Press task',
   text: `In this task you have to press eihter the "F" or the "J" key to complete the task.
+  <br />
+  Here you don't have to press buttons on the screen but keys on your keyboard.
   <br />
   <br />
   Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.

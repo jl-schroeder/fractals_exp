@@ -21,11 +21,11 @@ $("document").ready(function() {
             ///
             fractal_view_instruction,
             /// Test trials
-            loop([experiment_replication_A2_TT, blank_screen_long_A3, fractal_view_2D_TT, blank_screen_short_A2],2),
+            loop([experiment_replication_A2_TT, blank_screen_long_A3, fractal_view_2D_TT,],2),
             ///
             fractal_view_instruction_post_test,
             ///
-            loop([experiment_replication_A2, blank_screen_long_A3, fractal_view_2D, blank_screen_short_A2,],5),
+            loop([experiment_replication_A2, blank_screen_long_A3, fractal_view_2D,],5),
             ///
             //key-press first test
             key_press_instruction,
