@@ -32,7 +32,9 @@ const intro = magpieViews.view_generator("intro", {
   You will find the specific instructions before the test,
   where you will get the dedicated instructions.
   <br />
+  <br />
   Please read all the instructions carefully.
+  <br />
   <br />
   You will have to look at some structures and answer questions according to the instructions you get.
   <br />
