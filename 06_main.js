@@ -27,13 +27,14 @@ $("document").ready(function() {
             ///
             loop([experiment_replication_A2, blank_screen_long_A3, fractal_view_2D,],5),
             ///
+
             //key-press first test
             key_press_instruction,
             key_press_testTrial,
 		        key_press_instruction_post_test,
             ///
-            loop([key_press_first_one_comp_3, key_press_first_two_comp_3],5),
-            loop([key_press_first_one_comp_4, key_press_first_two_comp_4,],5),
+            loop([key_press_first_one_comp_3, key_press_first_two_comp_3],6),
+            loop([key_press_first_one_comp_4, key_press_first_two_comp_4,],6),
             ///
             second_continuation_instruction,
             ///
@@ -41,8 +42,8 @@ $("document").ready(function() {
             ///
             second_key_press_instruction,
             ///
-            loop([key_press_second_one_comp_4, key_press_second_two_comp_4],5),
-            loop([key_press_second_one_comp_3, key_press_second_two_comp_3,],5),
+            loop([key_press_second_one_comp_4, key_press_second_two_comp_4],6),
+            loop([key_press_second_one_comp_3, key_press_second_two_comp_3,],6),
             post_test,
             thanks,
         ],

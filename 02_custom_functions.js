@@ -189,6 +189,7 @@ function shuffle(array) {
   return array;
 }
 
+
  function loop(arr, count, shuffleFlag) {
             return _.flatMapDeep(_.range(count), function(i) {
                 return arr;

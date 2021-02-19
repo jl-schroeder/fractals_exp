@@ -19,7 +19,7 @@ const blank_screen_short = function(config) {
     `);
 
 
-    setTimeout(function(){magpie.findNextView();},3000);
+    setTimeout(function(){magpie.findNextView();},2000);
     }
   };
   return view;
@@ -36,7 +36,7 @@ const blank_screen_long = function(config) {
     `);
 
 
-    setTimeout(function(){magpie.findNextView();},6000);
+    setTimeout(function(){magpie.findNextView();},4000);
     }
   };
   return view;
@@ -65,8 +65,8 @@ const experiment_replication = function(config) {
       var img1 = document.createElement("img");
 
       img1.src = continuation_list[CT].p1;//imageArray[0];//"images/correct_continuation.png";
-      img1.height = "600";
-      img1.width = "600";
+      img1.height = "550";
+      img1.width = "550";
       var src1 = document.getElementById("picture1");
       src1.appendChild(img1);
       //setTimeout(function(){ alert("Hello"); }, 3000);
@@ -75,16 +75,16 @@ const experiment_replication = function(config) {
 
       setTimeout(function(){
         img1.src = continuation_list[CT].p2;//imageArray[1];
-        img1.height = "600";
-        img1.width = "600";
+        img1.height = "550";
+        img1.width = "550";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },3000);
 
       setTimeout(function(){
         img1.src = continuation_list[CT].p3;//imageArray[2];
-        img1.height = "600";
-        img1.width = "600";
+        img1.height = "550";
+        img1.width = "550";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },6000);
@@ -92,8 +92,8 @@ const experiment_replication = function(config) {
       if(continuation_list[CT].p4 != null){
         setTimeout(function(){
           img1.src = continuation_list[CT].p4;
-          img1.height = "600";
-          img1.width = "600";
+          img1.height = "550";
+          img1.width = "550";
           var src1 = document.getElementById("picture1");
           src1.appendChild(img1);
         },9000);
@@ -133,8 +133,8 @@ const fractal_view = function(config) {
         <span id="pic2"></span>
       </div>
 			<center>
-        <div style="padding: 50px; width: 400px; display: inline-block;"> <button id="leftButton">LEFT!!!</button> </div>
-        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="rightButton">RIGHT!!!</button> </div>
+        <div style="padding: 50px; width: 400px; display: inline-block;"> <button id="leftButton">Left</button> </div>
+        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="rightButton">Right</button> </div>
 			</center>
 			<center>
 				<div id="left"></div>
@@ -156,15 +156,15 @@ const fractal_view = function(config) {
 
       var img1 = document.createElement("img");
       img1.src = stringPic1;//"images/correct_continuation.png";
-      img1.height = "600";
-      img1.width = "600";
+      img1.height = "550";
+      img1.width = "550";
       var src1 = document.getElementById("pic1");
       src1.appendChild(img1);
 
       var img2 = document.createElement("img");
       img2.src = stringPic2;//"images/incorrect_continuation.png";
-      img2.height = "600";
-      img2.width = "600";
+      img2.height = "550";
+      img2.width = "550";
       var src2 = document.getElementById("pic2");
       src2.appendChild(img2);
 
@@ -205,19 +205,18 @@ const fractal_view = function(config) {
           }
 
 					// save data in trial_data
-					let trial_data = {
-						trial_name: config.name,
-            picture1: stringPic1,
-            picture2: stringPic2,
-						participant_ID: participantID,
-						trial_number: CT + 1,
-						ReactionTime: timeDifference,
-            key_pressed: correctness_check,
-            foil_Type: type_of_foil,
-            question: "Which is the correct continuation?",
-						correctness: correctAnswer,
+          let trial_data = {
+						"trial_name": config.name,
+            "picture1": stringPic1,
+            "picture2": stringPic2,
+						"participant_ID": participantID,
+						"trial_number": CT + 1,
+						"RT": timeDifference,
+            "key_pressed": correctness_check,
+            "foil_Type": type_of_foil,
+            "question": "Which is the correct continuation?",
+						"correctness": correctAnswer,
 					};
-
 
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);
@@ -260,19 +259,18 @@ const fractal_view = function(config) {
 
 
 					// save data in trial_data
-
-					let trial_data = {
-						trial_name: config.name,
-            picture1: stringPic1,
-            picture2: stringPic2,
-						participant_ID: participantID,
-						trial_number: CT + 1,
-						ReactionTime: timeDifference,
-            key_pressed: correctness_check,
-            foil_Type: type_of_foil,
-            question: "Which is the correct continuation?",
-						correctness: correctAnswer,
-					};
+          let trial_data = {
+            "trial_name": config.name,
+            "picture1": stringPic1,
+            "picture2": stringPic2,
+            "participant_ID": participantID,
+            "trial_number": CT + 1,
+            "RT": timeDifference,
+            "key_pressed": correctness_check,
+            "foil_Type": type_of_foil,
+            "question": "Which is the correct continuation?",
+            "correctness": correctAnswer,
+          };
 					//alert("4");
 
 					// push the data to the csv
@@ -314,8 +312,8 @@ const experiment_replication_fractal = function(config) {
       var img1 = document.createElement("img");
 
       img1.src = continuation_list_fractal[CT].p1;//imageArray[0];//"images/correct_continuation.png";
-      img1.height = "600";
-      img1.width = "600";
+      img1.height = "550";
+      img1.width = "550";
       var src1 = document.getElementById("picture1");
       src1.appendChild(img1);
       //setTimeout(function(){ alert("Hello"); }, 3000);
@@ -324,16 +322,16 @@ const experiment_replication_fractal = function(config) {
 
       setTimeout(function(){
         img1.src = continuation_list_fractal[CT].p2;//imageArray[1];
-        img1.height = "600";
-        img1.width = "600";
+        img1.height = "550";
+        img1.width = "550";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },3000);
 
       setTimeout(function(){
         img1.src = continuation_list_fractal[CT].p3;//imageArray[2];
-        img1.height = "600";
-        img1.width = "600";
+        img1.height = "550";
+        img1.width = "550";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },6000);
@@ -341,8 +339,8 @@ const experiment_replication_fractal = function(config) {
       if(continuation_list_fractal[CT].p4 != null){
         setTimeout(function(){
           img1.src = continuation_list_fractal[CT].p4;
-          img1.height = "600";
-          img1.width = "600";
+          img1.height = "550";
+          img1.width = "550";
           var src1 = document.getElementById("picture1");
           src1.appendChild(img1);
         },9000);
@@ -382,8 +380,8 @@ const fractal_view_fractal = function(config) {
         <span id="pic2"></span>
       </div>
 			<center>
-        <div style="padding: 50px; width: 400px; display: inline-block;"> <button id="leftButton">LEFT!!!</button> </div>
-        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="rightButton">RIGHT!!!</button> </div>
+        <div style="padding: 50px; width: 400px; display: inline-block;"> <button id="leftButton">Left</button> </div>
+        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="rightButton">Right</button> </div>
 			</center>
 			<center>
 				<div id="left"></div>
@@ -406,15 +404,15 @@ const fractal_view_fractal = function(config) {
 
       var img1 = document.createElement("img");
       img1.src = stringPic1;//"images/correct_continuation.png";
-      img1.height = "600";
-      img1.width = "600";
+      img1.height = "550";
+      img1.width = "550";
       var src1 = document.getElementById("pic1");
       src1.appendChild(img1);
 
       var img2 = document.createElement("img");
       img2.src = stringPic2;//"images/incorrect_continuation.png";
-      img2.height = "600";
-      img2.width = "600";
+      img2.height = "550";
+      img2.width = "550";
       var src2 = document.getElementById("pic2");
       src2.appendChild(img2);
 
@@ -454,16 +452,16 @@ const fractal_view_fractal = function(config) {
 					// save data in trial_data
 
 					let trial_data = {
-						trial_name: config.name,
-            picture1: stringPic1,
-            picture2: stringPic2,
-						participant_ID: participantID,
-						trial_number: CT + 1,
-						ReactionTime: timeDifference,
-            key_pressed: correctness_check,
-            foil_Type: type_of_foil,
-            question: "Which is the correct continuation?",
-						correctness: correctAnswer,
+						"trial_name": config.name,
+            "picture1": stringPic1,
+            "picture2": stringPic2,
+						"participant_ID": participantID,
+						"trial_number": CT + 1,
+						"RT": timeDifference,
+            "key_pressed": correctness_check,
+            "foil_Type": type_of_foil,
+            "question": "Which is the correct continuation?",
+						"correctness": correctAnswer,
 					};
 
 
@@ -510,16 +508,16 @@ const fractal_view_fractal = function(config) {
 					// save data in trial_data
 
 					let trial_data = {
-						trial_name: config.name,
-            picture1: stringPic1,
-            picture2: stringPic2,
-						participant_ID: participantID,
-						trial_number: CT + 1,
-						ReactionTime: timeDifference,
-            key_pressed: correctness_check,
-            foil_Type: type_of_foil,
-            question: "Which is the correct continuation?",
-						correctness: correctAnswer,
+						"trial_name": config.name,
+            "picture1": stringPic1,
+            "picture2": stringPic2,
+						"participant_ID": participantID,
+						"trial_number": CT + 1,
+						"RT": timeDifference,
+            "key_pressed": correctness_check,
+            "foil_Type": type_of_foil,
+            "question": "Which is the correct continuation?",
+						"correctness": correctAnswer,
 					};
 					//alert("4");
 
@@ -554,7 +552,7 @@ const experiment_replication_TT = function(config) {
       </div>
 			`);
 
-
+      continuation_list = shuffle(continuation_list);
       var imageArray = [continuation_list[CT].p1, continuation_list[CT].p2, continuation_list[CT].p3, continuation_list[CT].p4, continuation_list[CT].p5, continuation_list[CT].p6]
 
       var i = 0;
@@ -562,8 +560,8 @@ const experiment_replication_TT = function(config) {
       var img1 = document.createElement("img");
 
       img1.src = continuation_list[CT].p1;//imageArray[0];//"images/correct_continuation.png";
-      img1.height = "600";
-      img1.width = "600";
+      img1.height = "550";
+      img1.width = "550";
       var src1 = document.getElementById("picture1");
       src1.appendChild(img1);
       //setTimeout(function(){ alert("Hello"); }, 3000);
@@ -572,16 +570,16 @@ const experiment_replication_TT = function(config) {
 
       setTimeout(function(){
         img1.src = continuation_list[CT].p2;//imageArray[1];
-        img1.height = "600";
-        img1.width = "600";
+        img1.height = "550";
+        img1.width = "550";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },3000);
 
       setTimeout(function(){
         img1.src = continuation_list[CT].p3;//imageArray[2];
-        img1.height = "600";
-        img1.width = "600";
+        img1.height = "550";
+        img1.width = "550";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },6000);
@@ -589,8 +587,8 @@ const experiment_replication_TT = function(config) {
       if(continuation_list[CT].p4 != null){
         setTimeout(function(){
           img1.src = continuation_list[CT].p4;
-          img1.height = "600";
-          img1.width = "600";
+          img1.height = "550";
+          img1.width = "550";
           var src1 = document.getElementById("picture1");
           src1.appendChild(img1);
         },9000);
@@ -630,8 +628,8 @@ const fractal_view_TT = function(config) {
         <span id="pic2"></span>
       </div>
 			<center>
-        <div style="padding: 50px; width: 400px; display: inline-block;"> <button id="leftButton">LEFT!!!</button> </div>
-        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="rightButton">RIGHT!!!</button> </div>
+        <div style="padding: 50px; width: 400px; display: inline-block;"> <button id="leftButton">Left</button> </div>
+        <div style="padding: 50px; width: 100px; display: inline-block;"> <button id="rightButton">Right</button> </div>
 			</center>
 			<center>
 				<div id="left"></div>
@@ -652,15 +650,15 @@ const fractal_view_TT = function(config) {
 
       var img1 = document.createElement("img");
       img1.src = stringPic1;//"images/correct_continuation.png";
-      img1.height = "600";
-      img1.width = "600";
+      img1.height = "550";
+      img1.width = "550";
       var src1 = document.getElementById("pic1");
       src1.appendChild(img1);
 
       var img2 = document.createElement("img");
       img2.src = stringPic2;//"images/incorrect_continuation.png";
-      img2.height = "600";
-      img2.width = "600";
+      img2.height = "550";
+      img2.width = "550";
       var src2 = document.getElementById("pic2");
       src2.appendChild(img2);
 
@@ -747,6 +745,7 @@ const fractal_view_TT = function(config) {
 
         }
     };
+    continuation_list = shuffle(continuation_list);
     // We have to return the view, so that it can be used in 05_views.js
     return view;
 };
