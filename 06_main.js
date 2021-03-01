@@ -1,5 +1,6 @@
 // In this file you initialize and configure your experiment using magpieInit
 
+
 $("document").ready(function() {
     // prevent scrolling when space is pressed
     window.onkeydown = function(e) {
@@ -15,8 +16,10 @@ $("document").ready(function() {
     window.magpie_monitor = magpieInit({
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
+            //view_seq_pre,
             intro,
             instructions,
+            //loop([key_press_first_one_comp_3, key_press_first_two_comp_3],6),
             forced_choice_preQ,
             ///
             fractal_view_instruction,
@@ -25,7 +28,7 @@ $("document").ready(function() {
             ///
             fractal_view_instruction_post_test,
             ///
-            loop([experiment_replication_A2, blank_screen_long_A3, fractal_view_2D,],5),
+            loop([experiment_replication_A2, blank_screen_long_A3, fractal_view_2D,],6),
             ///
 
             //key-press first test
@@ -33,17 +36,17 @@ $("document").ready(function() {
             key_press_testTrial,
 		        key_press_instruction_post_test,
             ///
-            loop([key_press_first_one_comp_3, key_press_first_two_comp_3],6),
-            loop([key_press_first_one_comp_4, key_press_first_two_comp_4,],6),
+            loop([key_press_first_one_comp_3, key_press_first_two_comp_3],5),
+            loop([key_press_first_one_comp_4, key_press_first_two_comp_4,],5),
             ///
             second_continuation_instruction,
             ///
-            loop([experiment_replication_A2_fractal, blank_screen_long_A3, fractal_view_2D_fractal,],5),
+            loop([experiment_replication_A2_fractal, blank_screen_long_A3, fractal_view_2D_fractal,],6),
             ///
             second_key_press_instruction,
             ///
-            loop([key_press_second_one_comp_4, key_press_second_two_comp_4],6),
-            loop([key_press_second_one_comp_3, key_press_second_two_comp_3,],6),
+            loop([key_press_second_one_comp_4, key_press_second_two_comp_4],5),
+            loop([key_press_second_one_comp_3, key_press_second_two_comp_3,],5),
             post_test,
             thanks,
         ],
@@ -54,7 +57,7 @@ $("document").ready(function() {
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
-            deployMethod: "directLink",
+            deployMethod: "debug",
             contact_email: "janlschroede@uni-osnabrueck.de",
             prolificURL: "https://app.prolific.ac/submissions/complete?cc=SAMPLE1234"
         },

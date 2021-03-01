@@ -148,10 +148,10 @@ const fractal_view = function(config) {
 			var curr_Time = curr_Date.getTime();
 			var button_pressed = 0;
 
-			var trial_data = null;
+			//var trial_data = null;
 
-      const stringPic1 = continuation_list[CT].p5;
-      const stringPic2 = continuation_list[CT].p6;
+      var stringPic1 = continuation_list[CT].p5;
+      var stringPic2 = continuation_list[CT].p6;
 
 
       var img1 = document.createElement("img");
@@ -206,17 +206,19 @@ const fractal_view = function(config) {
 
 					// save data in trial_data
           let trial_data = {
-						"trial_name": config.name,
-            "picture1": stringPic1,
-            "picture2": stringPic2,
-						"participant_ID": participantID,
-						"trial_number": CT + 1,
-						"RT": timeDifference,
-            "key_pressed": correctness_check,
-            "foil_Type": type_of_foil,
-            "question": "Which is the correct continuation?",
-						"correctness": correctAnswer,
+						trial_name: config.name,
+            picture1: stringPic1,
+            picture2: stringPic2,
+						participant_ID: participantID,
+						trial_number: CT + 1,
+						RT: timeDifference,
+            key_pressed: correctness_check,
+            foil_Type: type_of_foil,
+            question: "Which is the correct continuation?",
+						correctness: correctAnswer
 					};
+
+
 
 					// push the data to the csv
 					magpie.trial_data.push(trial_data);
@@ -260,16 +262,16 @@ const fractal_view = function(config) {
 
 					// save data in trial_data
           let trial_data = {
-            "trial_name": config.name,
-            "picture1": stringPic1,
-            "picture2": stringPic2,
-            "participant_ID": participantID,
-            "trial_number": CT + 1,
-            "RT": timeDifference,
-            "key_pressed": correctness_check,
-            "foil_Type": type_of_foil,
-            "question": "Which is the correct continuation?",
-            "correctness": correctAnswer,
+            trial_name: config.name,
+            picture1: stringPic1,
+            picture2: stringPic2,
+            participant_ID: participantID,
+            trial_number: CT + 1,
+            RT: timeDifference,
+            key_pressed: correctness_check,
+            foil_Type: type_of_foil,
+            question: "Which is the correct continuation?",
+            correctness: correctAnswer
           };
 					//alert("4");
 
@@ -397,10 +399,10 @@ const fractal_view_fractal = function(config) {
 			var curr_Time = curr_Date.getTime();
 			var button_pressed = 0;
 
-			var trial_data = null;
+			//var trial_data = null;
 
-      const stringPic1 = continuation_list_fractal[CT].p5;
-      const stringPic2 = continuation_list_fractal[CT].p6;
+      var stringPic1 = continuation_list_fractal[CT].p5;
+      var stringPic2 = continuation_list_fractal[CT].p6;
 
       var img1 = document.createElement("img");
       img1.src = stringPic1;//"images/correct_continuation.png";
@@ -449,19 +451,19 @@ const fractal_view_fractal = function(config) {
             type_of_foil = assessFoil(stringPic1);
           }
 
-					// save data in trial_data
+					// save data in trial_data | Keys must be strings, and values must be a valid JSON data type (string, number, object, array, boolean or null).
 
 					let trial_data = {
-						"trial_name": config.name,
-            "picture1": stringPic1,
-            "picture2": stringPic2,
-						"participant_ID": participantID,
-						"trial_number": CT + 1,
-						"RT": timeDifference,
-            "key_pressed": correctness_check,
-            "foil_Type": type_of_foil,
-            "question": "Which is the correct continuation?",
-						"correctness": correctAnswer,
+						trial_name: config.name,
+            picture1: stringPic1,
+            picture2: stringPic2,
+						participant_ID: participantID,
+						trial_number: CT + 1,
+						RT: timeDifference,
+            key_pressed: correctness_check,
+            foil_Type: type_of_foil,
+            question: "Which is the correct continuation?",
+						correctness: correctAnswer
 					};
 
 
@@ -508,16 +510,16 @@ const fractal_view_fractal = function(config) {
 					// save data in trial_data
 
 					let trial_data = {
-						"trial_name": config.name,
-            "picture1": stringPic1,
-            "picture2": stringPic2,
-						"participant_ID": participantID,
-						"trial_number": CT + 1,
-						"RT": timeDifference,
-            "key_pressed": correctness_check,
-            "foil_Type": type_of_foil,
-            "question": "Which is the correct continuation?",
-						"correctness": correctAnswer,
+						trial_name: config.name,
+            picture1: stringPic1,
+            picture2: stringPic2,
+						participant_ID: participantID,
+						trial_number: CT + 1,
+						RT: timeDifference,
+            key_pressed: correctness_check,
+            foil_Type: type_of_foil,
+            question: "Which is the correct continuation?",
+						correctness: correctAnswer
 					};
 					//alert("4");
 
@@ -552,14 +554,14 @@ const experiment_replication_TT = function(config) {
       </div>
 			`);
 
-      continuation_list = shuffle(continuation_list);
-      var imageArray = [continuation_list[CT].p1, continuation_list[CT].p2, continuation_list[CT].p3, continuation_list[CT].p4, continuation_list[CT].p5, continuation_list[CT].p6]
+      //continuation_list = shuffle(continuation_list);
+      var imageArray = [continuation_test_list[CT].p1, continuation_test_list[CT].p2, continuation_test_list[CT].p3, continuation_test_list[CT].p4, continuation_test_list[CT].p5, continuation_test_list[CT].p6]
 
       var i = 0;
 
       var img1 = document.createElement("img");
 
-      img1.src = continuation_list[CT].p1;//imageArray[0];//"images/correct_continuation.png";
+      img1.src = continuation_test_list[CT].p1;//imageArray[0];//"images/correct_continuation.png";
       img1.height = "550";
       img1.width = "550";
       var src1 = document.getElementById("picture1");
@@ -569,7 +571,7 @@ const experiment_replication_TT = function(config) {
       i++;
 
       setTimeout(function(){
-        img1.src = continuation_list[CT].p2;//imageArray[1];
+        img1.src = continuation_test_list[CT].p2;//imageArray[1];
         img1.height = "550";
         img1.width = "550";
         var src1 = document.getElementById("picture1");
@@ -577,16 +579,16 @@ const experiment_replication_TT = function(config) {
       },3000);
 
       setTimeout(function(){
-        img1.src = continuation_list[CT].p3;//imageArray[2];
+        img1.src = continuation_test_list[CT].p3;//imageArray[2];
         img1.height = "550";
         img1.width = "550";
         var src1 = document.getElementById("picture1");
         src1.appendChild(img1);
       },6000);
 
-      if(continuation_list[CT].p4 != null){
+      if(continuation_test_list[CT].p4 != null){
         setTimeout(function(){
-          img1.src = continuation_list[CT].p4;
+          img1.src = continuation_test_list[CT].p4;
           img1.height = "550";
           img1.width = "550";
           var src1 = document.getElementById("picture1");
@@ -596,7 +598,7 @@ const experiment_replication_TT = function(config) {
 
 
 
-      if(continuation_list[CT].p4 != null){
+      if(continuation_test_list[CT].p4 != null){
         setTimeout(function(){magpie.findNextView();},12000);
       } else {
         setTimeout(function(){magpie.findNextView();},9000);
@@ -643,10 +645,10 @@ const fractal_view_TT = function(config) {
 			var curr_Time = curr_Date.getTime();
 			var button_pressed = 0;
 
-			var trial_data = null;
+			//var trial_data = null;
 
-      const stringPic1 = continuation_list[CT].p5;
-      const stringPic2 = continuation_list[CT].p6;
+      var stringPic1 = continuation_test_list[CT].p5;
+      var stringPic2 = continuation_test_list[CT].p6;
 
       var img1 = document.createElement("img");
       img1.src = stringPic1;//"images/correct_continuation.png";
@@ -681,7 +683,7 @@ const fractal_view_TT = function(config) {
 					button_pressed = 1;
 
 					// get correct answer out of array
-					var correctness_check = continuation_list[CT].answer;
+					var correctness_check = continuation_test_list[CT].answer;
 
           //
           type_of_foil == null;
@@ -719,7 +721,7 @@ const fractal_view_TT = function(config) {
 
 					//alert("1");
 					// get correct answer out of array
-					var correctness_check = continuation_list[CT].answer;
+					var correctness_check = continuation_test_list[CT].answer;
 
 					//alert("2");
 					// save in variable
@@ -745,7 +747,7 @@ const fractal_view_TT = function(config) {
 
         }
     };
-    continuation_list = shuffle(continuation_list);
+    //continuation_list = shuffle(continuation_list);
     // We have to return the view, so that it can be used in 05_views.js
     return view;
 };

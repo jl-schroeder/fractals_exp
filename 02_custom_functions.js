@@ -7,7 +7,12 @@
 const coin = _.sample(["head", "tail"]); // You can determine global (random) parameters here
 // Declare your variables here
 
-// tri-images fractal /// done
+continuation_test_list = [
+  {p1:"images/Generated_Pictures/Quad_arrow_0.png", p2:"images/Generated_Pictures/Quad_arrow_1.png", p3:"images/Generated_Pictures/Quad_arrow_2.png", p4:"images/Generated_Pictures/Quad_arrow_3.png",  p5:"images/Generated_Pictures/Quad_arrow_4_false_4.png", p6:"images/Generated_Pictures/Quad_arrow_4.png", answer:"right"},
+  {p1:"images/Generated_Pictures/Quad_square_3.png", p2:"images/Generated_Pictures/Quad_square_4_iteration_1.png", p3:"images/Generated_Pictures/Quad_square_4_iteration_2.png", p5:"images/Generated_Pictures/Quad_square_4_iteration_3_false.png", p6:"images/Generated_Pictures/Quad_square_4_iteration_3.png", answer:"right"},
+];
+
+// tri-images fractal /// done //PROBLEM: Quad_circle_4_iteration_3_false (?)
 continuation_list_fractal = [
   {p1:"images/Generated_Pictures/Tri_circle_0.png", p2:"images/Generated_Pictures/Tri_circle_1.png", p3:"images/Generated_Pictures/Tri_circle_2.png", p4:"images/Generated_Pictures/Tri_circle_3.png",  p5:"images/Generated_Pictures/Tri_circle_4.png", p6:"images/Generated_Pictures/Tri_circle_4_false_4.png", answer:"left"},
   {p1:"images/Generated_Pictures/Tri_circle_0.png", p2:"images/Generated_Pictures/Tri_circle_1.png", p3:"images/Generated_Pictures/Tri_circle_2.png", p4:"images/Generated_Pictures/Tri_circle_3.png",  p5:"images/Generated_Pictures/Tri_circle_4.png", p6:"images/Generated_Pictures/Tri_circle_4_false_3.png", answer:"left"},
@@ -159,7 +164,7 @@ continuation_list = shuffle(continuation_list);
 //{p1:"images/", p2:"images/", p3:"images/", answer:""}
 
 // get individual ID for each participant
-var participantID = getRandomInt(999999);
+const participantID = getRandomInt(999999);
 /* Helper functions
 *
 *

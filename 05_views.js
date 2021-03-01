@@ -32,9 +32,7 @@ const intro = magpieViews.view_generator("intro", {
   You will find the specific instructions before the test,
   where you will get the dedicated instructions.
   <br />
-  <br />
   Please read all the instructions carefully.
-  <br />
   <br />
   You will have to look at some structures and answer questions according to the instructions you get.
   <br />
@@ -166,14 +164,17 @@ const key_press_instruction = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'key_press_instruction',
   title: 'Key-Press task',
-  text: `In this task, you have to press either the "F" or the "J" key to complete the task.
+  text: `In this task, you have to press either the "G" or the "H" key to complete the task.
   <br />
   Here, you don't have to press buttons on the screen but keys on your keyboard.
   <br />
   <br />
-  Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
+  Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
   <br />
-  Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
+  Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
+  <br />
+  <br />
+  Please use you primary hand to press the keys (e.g. index and middle finger).
   <br />
   <br />
   First, there will be a few test rounds where you can tryout the task.
@@ -195,9 +196,9 @@ const key_press_instruction_post_test = magpieViews.view_generator("instructions
   <strong>Reminder:</strong>
   <br />
   <br />
-  Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
+  Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
   <br />
-  Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
+  Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
   <br />
   <br />
   If you feel ready, press the button below.
@@ -223,9 +224,9 @@ const second_key_press_instruction = magpieViews.view_generator("instructions", 
   Reminder:
   <br />
   <br />
-  Pressing the-"<strong>F</strong>"-key means the picture is a <strong>fractal</strong>.
+  Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
   <br />
-  Pressing the-"<strong>J</strong>"-key means the picture is <strong>not a fractal</strong>.
+  Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
   <br />
   <br />
   If you feel ready, press the button below.
@@ -309,7 +310,7 @@ const key_press_testTrial = magpieViews.view_generator("key_press", {
   trials: 8,//trial_info.key_press_testing.length,
   name: 'key_press_testTrial',
   data: _.shuffle(trial_info.key_press_testing),
-  fix_duration: 250,
+  pause: 1000,
 });
 
 
@@ -318,7 +319,7 @@ const key_press_first_one = magpieViews.view_generator("key_press", {
   trials: Math.random()*(10-1)+1,
   name: 'key_press_first_one',
   data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 });
 
 // key_press task second time
@@ -326,7 +327,7 @@ const key_press_first_two = magpieViews.view_generator("key_press", {
   trials: 1,
   name: 'key_press_first_two',
   data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 });
 
 // key_press task second time
@@ -334,7 +335,7 @@ const key_press_second_one = magpieViews.view_generator("key_press", {
   trials: Math.random()*(8-1)+1,
   name: 'key_press_second_one',
   data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 });
 
 // key_press task second time
@@ -342,7 +343,7 @@ const key_press_second_two = magpieViews.view_generator("key_press", {
   trials: 1,
   name: 'key_press_second_two',
   data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 });
 
 /////////////////////////
@@ -351,7 +352,7 @@ const key_press_first_one_comp_3 = magpieViews.view_generator("key_press", {
   trials: Math.random()*(8-1)+1,
   name: 'key_press_first_one_comp_3',
   data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 
@@ -378,7 +379,7 @@ const key_press_first_two_comp_3 = magpieViews.view_generator("key_press", {
   trials: 1,
   name: 'key_press_first_two_comp_3',
   data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 
@@ -387,7 +388,7 @@ const key_press_second_one_comp_3 = magpieViews.view_generator("key_press", {
   trials: Math.random()*(8-1)+1,
   name: 'key_press_second_one_comp_3',
   data: _.shuffle(trial_info.key_press_find_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 
@@ -396,7 +397,7 @@ const key_press_second_two_comp_3 = magpieViews.view_generator("key_press", {
   trials: 1,
   name: 'key_press_second_two_comp_3',
   data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 // key_press task first time
@@ -404,7 +405,7 @@ const key_press_first_one_comp_4 = magpieViews.view_generator("key_press", {
   trials: Math.random()*(8-1)+1,
   name: 'key_press_first_one_comp_4',
   data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 
@@ -413,7 +414,7 @@ const key_press_first_two_comp_4 = magpieViews.view_generator("key_press", {
   trials: 1,
   name: 'key_press_first_two_comp_4',
   data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 
@@ -422,7 +423,7 @@ const key_press_second_one_comp_4 = magpieViews.view_generator("key_press", {
   trials: Math.random()*(8-1)+1,
   name: 'key_press_second_one_comp_4',
   data: _.shuffle(trial_info.key_press_find_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 
@@ -431,7 +432,7 @@ const key_press_second_two_comp_4 = magpieViews.view_generator("key_press", {
   trials: 1,
   name: 'key_press_second',
   data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  fix_duration: 250,
+  pause: 1000,
 }
 );
 /////////////////////////
