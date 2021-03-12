@@ -19,7 +19,6 @@ $("document").ready(function() {
             //view_seq_pre,
             intro,
             instructions,
-            //loop([key_press_first_one_comp_3, key_press_first_two_comp_3],6),
             forced_choice_preQ,
             ///
             fractal_view_instruction,
@@ -57,7 +56,7 @@ $("document").ready(function() {
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
-            deployMethod: "debug",
+            deployMethod: "directLink",
             contact_email: "janlschroede@uni-osnabrueck.de",
             prolificURL: "https://app.prolific.ac/submissions/complete?cc=SAMPLE1234"
         },
@@ -65,6 +64,10 @@ $("document").ready(function() {
         progress_bar: {
             in: [
                 // list the view-names of the views for which you want a progress bar
+                forced_choice_preQ.name,
+                fractal_view_2D_TT.name,
+                experiment_replication_A2_TT.name,
+                fractal_view_2D_TT.name,
                 fractal_view_instruction.name,
                 fractal_view_instruction_post_test.name,
                 key_press_instruction.name,
