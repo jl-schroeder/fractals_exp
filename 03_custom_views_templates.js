@@ -196,6 +196,7 @@ const fractal_view = function(config) {
           // save data in trial_data
           let trial_data = {
             trial_name: config.name,
+            participant_ID: participantID,
             picture1: picture_1_name,
             picture2: picture_2_name,
             trial_number: CT + 1,
@@ -245,6 +246,7 @@ const fractal_view = function(config) {
           // save data in trial_data
           let trial_data = {
             trial_name: config.name,
+            participant_ID: participantID,
             picture1: picture_1_name,
             picture2: picture_2_name,
             trial_number: CT + 1,
@@ -418,6 +420,7 @@ const fractal_view_fractal = function(config) {
           // save data in trial_data
           let trial_data = {
             trial_name: config.name,
+            participant_ID: participantID,
             picture1: picture_1_name,
             picture2: picture_2_name,
             trial_number: CT + 1,
@@ -467,6 +470,7 @@ const fractal_view_fractal = function(config) {
           // save data in trial_data
           let trial_data = {
             trial_name: config.name,
+            participant_ID: participantID,
             picture1: picture_1_name,
             picture2: picture_2_name,
             trial_number: CT + 1,
@@ -643,6 +647,7 @@ const fractal_view_TT = function(config) {
           // save data in trial_data
           let trial_data = {
             trial_name: config.name,
+            participant_ID: participantID,
             picture1: picture_1_name,
             picture2: picture_2_name,
             trial_number: CT + 1,
@@ -692,6 +697,7 @@ const fractal_view_TT = function(config) {
           // save data in trial_data
           let trial_data = {
             trial_name: config.name,
+            participant_ID: participantID,
             picture1: picture_1_name,
             picture2: picture_2_name,
             trial_number: CT + 1,
