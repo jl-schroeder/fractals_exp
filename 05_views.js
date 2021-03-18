@@ -88,289 +88,337 @@ const instructions = magpieViews.view_generator("instructions", {
   buttonText: 'go to the questions'
 });
 
-
-const fractal_view_instruction = magpieViews.view_generator("instructions", {
+const fractal_introduction = magpieViews.view_generator("instructions",{
   trials: 1,
-  name: 'fractal_view_instruction',
-  title: 'Continuation Task - Instructions',
-  text: `In this task you have to look closely at the pictures appearing on the screen.
-  <br />
-  <br />
-  Afterwards the screen will go blank for a short time. Afterwards you will be presented with two pictures.
-  <br />
-  One of these pictures represents the correct continuation, the other is a incorrect continuation.
-  <br />
-  You than have to decide which one is the correct continuation.
-  <br />
-  <br />
-  To do so you press either the LEFT or the RIGHT button located below the pictures.
-  <br />
-  <br />
-  <br />
-  First you can test this task twice.
-  <br />
-  Afterwards there will be another instruction page after which the actual trials begin.
-  <br />
-  <br />
-  If you feel ready, press the button below.`,
-  buttonText: "Begin TEST-trial",
-});
-
-const fractal_view_instruction_post_test = magpieViews.view_generator("instructions", {
-  trials: 1,
-  name: 'fractal_view_instruction_post_test',
-  title: 'Continuation Task',
+  name: "fractal_introduction",
+  title: "A small introduction into fractals",
   text: `
-  <br />
-  <br />
-  <br />
-  <strong>Reminder:</strong>
-  <br />
-  You have to decide which is the correct continuation.
-  <br />
-  If you feel ready, press the button below.
-  <br />
-  <br />
-  <br />
-  <br />`,
-  buttonText: "Begin trial",
-});
 
-const second_continuation_instruction = magpieViews.view_generator("instructions", {
-  trials: 1,
-  name: 'second_continuation_instruction',
-  title: 'Continuation Task',
-  text: `This is the second appearance of the continuation task.
-  <br />
-  <br />
-  <br />
-  <strong>Reminder:</strong>
-  <br />
-  You have to decide which is the correct continuation step.
-  <br />
-  You will be presented with a sequence of pictures and then have to decide which of two pictures is the correct continuation step.
-  <br />
-  <br />
-  <br />
-  If you feel ready, press the button below.
-  <br />
-  <br />
-  <br />
   `,
-  buttonText: "Begin trial",
-});
-
-const key_press_instruction = magpieViews.view_generator("instructions", {
-  trials: 1,
-  name: 'key_press_instruction',
-  title: 'Key-Press task',
-  text: `In this task, you have to press either the "G" or the "H" key to complete the task.
-  <br />
-  Here, you don't have to press buttons on the screen but keys on your keyboard.
-  <br />
-  <br />
-  Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
-  <br />
-  Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
-  <br />
-  <br />
-  Please use you primary hand to press the keys (e.g. index and middle finger).
-  <br />
-  <br />
-  First, there will be a few test rounds where you can tryout the task.
-  <br />
-  <br />
-  If you feel ready, press the button below.
-  <br />`,
-  buttonText: "Begin test trial",
-});
-
-const key_press_instruction_post_test = magpieViews.view_generator("instructions", {
-  trials: 1,
-  name: 'key_press_instruction_post_test',
-  title: 'Key-Press task',
-  text: `
-  On the next page we will continue with the trials of this task.
-  <br />
-  <br />
-  <strong>Reminder:</strong>
-  <br />
-  <br />
-  Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
-  <br />
-  Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
-  <br />
-  <br />
-  If you feel ready, press the button below.
-  <br />
-  <br />
-  <br />
-  `,
-  buttonText: "Begin trial",
-});
+  buttonText: "go to the first task"
+},
+// custom generator functions
+{
+  stimulus_container_generator: function (config, CT) {
+    return `<div class='magpie-view'>
+    <center>
+    <h1 class='magpie-view-title'>A small introduction into fractals</h1>
+    <p class='magpie-view-text'>Below you can see two structures where one represents a "correct" fractal, the other one represents an "incorrect" fractal. </p>
+    <br />
+    <br />
+    <p class='magpie-view-text'>If you look at the <strong>left</strong> picture, you can see that the structure is the same in every level.
+    <br />
+    This <strong>is a fractal!</strong>.
+    <br /> All fractals are build up on a repeating structure.
+    </p>
+    <br />
+    <br />
+    <p class='magpie-view-text'>If you look at the <strong>right</strong> picture, you can see that the structure on the last level differs from the previous ones.
+    <br />
+    Therefore this on is <strong>not a fractal!</strong>
+    <br />
+    <br />
+    <i>A higher level is represented here by bigger symbols and a later/lower level has smaller symbols.</i>
+    </p>
+    <div style="display:flex">
+    <img src="images/Generated_Pictures/Tri_triangle_3.png" height="500" width="500">
+    <img src="images/Generated_Pictures/Tri_triangle_3_false_3.png" height="500" width="500">
+    </div>
+    <div style="display:flex">
+    <p class='magpie-view-text'>&#x2191; This is a fractal &#x2191;</p>
+    <p class='magpie-view-text'>&#x2191; This <strong>not</strong> is a fractal &#x2191;</p>
+    </div>
+    </center>
+    </div>
+    <br />
+    <br />
+    <br />
+    `;}
+  });
 
 
-const second_key_press_instruction = magpieViews.view_generator("instructions", {
-  trials: 1,
-  name: 'second_key_press_instruction',
-  title: 'Key-Press task',
-  text: `This is the second appearance of the key press task.
-  <br />
-  <br />
-  <br />
-  You will be presented with diferent pictures where you have to press a button according to the type of structure.
-  <br />
-  <br />
-  Reminder:
-  <br />
-  <br />
-  Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
-  <br />
-  Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
-  <br />
-  <br />
-  If you feel ready, press the button below.
-  <br />
-  <br />
-  <br />
-  `,
-  buttonText: "Begin trial",
-});
+  const fractal_view_instruction = magpieViews.view_generator("instructions", {
+    trials: 1,
+    name: 'fractal_view_instruction',
+    title: 'Continuation Task - Instructions',
+    text: `In this task you have to look closely at the pictures appearing on the screen.
+    <br />
+    <br />
+    Afterwards the screen will go blank for a short time. Afterwards you will be presented with two pictures.
+    <br />
+    One of these pictures represents the correct continuation, the other is a incorrect continuation.
+    <br />
+    You than have to decide which one is the correct continuation.
+    <br />
+    <br />
+    To do so you press either the LEFT or the RIGHT button located below the pictures.
+    <br />
+    <br />
+    <br />
+    First you can test this task twice.
+    <br />
+    Afterwards there will be another instruction page after which the actual trials begin.
+    <br />
+    <br />
+    If you feel ready, press the button below.`,
+    buttonText: "Begin TEST-trial",
+  });
+
+  const fractal_view_instruction_post_test = magpieViews.view_generator("instructions", {
+    trials: 1,
+    name: 'fractal_view_instruction_post_test',
+    title: 'Continuation Task',
+    text: `
+    <br />
+    <br />
+    <br />
+    <strong>Reminder:</strong>
+    <br />
+    You have to decide which is the correct continuation.
+    <br />
+    If you feel ready, press the button below.
+    <br />
+    <br />
+    <br />
+    <br />`,
+    buttonText: "Begin trial",
+  });
+
+  const second_continuation_instruction = magpieViews.view_generator("instructions", {
+    trials: 1,
+    name: 'second_continuation_instruction',
+    title: 'Continuation Task',
+    text: `This is the second appearance of the continuation task.
+    <br />
+    <br />
+    <br />
+    <strong>Reminder:</strong>
+    <br />
+    You have to decide which is the correct continuation step.
+    <br />
+    You will be presented with a sequence of pictures and then have to decide which of two pictures is the correct continuation step.
+    <br />
+    <br />
+    <br />
+    If you feel ready, press the button below.
+    <br />
+    <br />
+    <br />
+    `,
+    buttonText: "Begin trial",
+  });
+
+  const key_press_instruction = magpieViews.view_generator("instructions", {
+    trials: 1,
+    name: 'key_press_instruction',
+    title: 'Key-Press task',
+    text: `In this task, you have to press either the "G" or the "H" key to complete the task.
+    <br />
+    Here, you don't have to press buttons on the screen but keys on your keyboard.
+    <br />
+    <br />
+    Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
+    <br />
+    Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
+    <br />
+    <br />
+    Please use you primary hand to press the keys (e.g. index and middle finger).
+    <br />
+    <br />
+    First, there will be a few test rounds where you can tryout the task.
+    <br />
+    <br />
+    If you feel ready, press the button below.
+    <br />`,
+    buttonText: "Begin test trial",
+  });
+
+  const key_press_instruction_post_test = magpieViews.view_generator("instructions", {
+    trials: 1,
+    name: 'key_press_instruction_post_test',
+    title: 'Key-Press task',
+    text: `
+    On the next page we will continue with the trials of this task.
+    <br />
+    <br />
+    <strong>Reminder:</strong>
+    <br />
+    <br />
+    Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
+    <br />
+    Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
+    <br />
+    <br />
+    If you feel ready, press the button below.
+    <br />
+    <br />
+    <br />
+    `,
+    buttonText: "Begin trial",
+  });
 
 
-// In the post test questionnaire you can ask your participants addtional questions
-const post_test = magpieViews.view_generator("post_test", {
-  trials: 1,
-  name: 'post_test',
-  title: 'Additional information',
-  text: 'You are done. Answering the following questions is optional, but your answers will help us analyze our results.',
-  edu_graduated_high_school: 'Abitur / High School',
-  edu_graduated_college: 'Hochschulabschluss / College',
-  edu_higher_degree: 'Universitärer Abschluss / Higher Degree',
-
-  // You can change much of what appears here, e.g., to present it in a different language, as follows:
-  // buttonText: 'Weiter',
-  // age_question: 'Alter',
-  // gender_question: 'Geschlecht',
-  // gender_male: 'männlich',
-  // gender_female: 'weiblich',
-  // gender_other: 'divers',
-  // edu_question: 'Höchster Bildungsabschluss',
-  // edu_graduated_high_school: 'Abitur',
-  // edu_graduated_college: 'Hochschulabschluss',
-  // edu_higher_degree: 'Universitärer Abschluss',
-  // languages_question: 'Muttersprache',
-  // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
-  // comments_question: 'Weitere Kommentare'
-});
-
-// The 'thanks' view is crucial; never delete it; it submits the results!
-const thanks = magpieViews.view_generator("thanks", {
-  trials: 1,
-  name: 'thanks',
-  title: 'Thank you very much for taking part in this experiment!',
-  prolificConfirmText: 'Press the button'
-});
+  const second_key_press_instruction = magpieViews.view_generator("instructions", {
+    trials: 1,
+    name: 'second_key_press_instruction',
+    title: 'Key-Press task',
+    text: `This is the second appearance of the key press task.
+    <br />
+    <br />
+    <br />
+    You will be presented with diferent pictures where you have to press a button according to the type of structure.
+    <br />
+    <br />
+    Reminder:
+    <br />
+    <br />
+    Pressing the-"<strong>G</strong>"-key means the picture is a <strong>fractal</strong>.
+    <br />
+    Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
+    <br />
+    <br />
+    If you feel ready, press the button below.
+    <br />
+    <br />
+    <br />
+    `,
+    buttonText: "Begin trial",
+  });
 
 
-/** trial (magpie's Trial Type Views) below
+  // In the post test questionnaire you can ask your participants addtional questions
+  const post_test = magpieViews.view_generator("post_test", {
+    trials: 1,
+    name: 'post_test',
+    title: 'Additional information',
+    text: 'You are done. Answering the following questions is optional, but your answers will help us analyze our results.',
+    edu_graduated_high_school: 'Abitur / High School',
+    edu_graduated_college: 'Hochschulabschluss / College',
+    edu_higher_degree: 'Universitärer Abschluss / Higher Degree',
 
-* Obligatory properties
+    // You can change much of what appears here, e.g., to present it in a different language, as follows:
+    // buttonText: 'Weiter',
+    // age_question: 'Alter',
+    // gender_question: 'Geschlecht',
+    // gender_male: 'männlich',
+    // gender_female: 'weiblich',
+    // gender_other: 'divers',
+    // edu_question: 'Höchster Bildungsabschluss',
+    // edu_graduated_high_school: 'Abitur',
+    // edu_graduated_college: 'Hochschulabschluss',
+    // edu_higher_degree: 'Universitärer Abschluss',
+    // languages_question: 'Muttersprache',
+    // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
+    // comments_question: 'Weitere Kommentare'
+  });
 
-- trials: int - the number of trials this view will appear
-- name: string - the name of the view type as it shall be known to _magpie (e.g. for use with a progress bar)
-and the name of the trial as you want it to appear in the submitted data
-- data: array - an array of trial objects
-
-* Optional properties
-
-- pause: number (in ms) - blank screen before the fixation point or stimulus show
-- fix_duration: number (in ms) - blank screen with fixation point in the middle
-- stim_duration: number (in ms) - for how long to have the stimulus on the screen
-More about trial life cycle - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
-
-- hook: object - option to hook and add custom functions to the view
-More about hooks - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
-
-* All about the properties of trial views
-* https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#trial-views
-*/
-
-
-// pre experiment questions
-const forced_choice_preQ = magpieViews.view_generator("forced_choice", {
-  trials: trial_info.forced_choice.length,
-  name: 'forced_choice_preQ',
-  data: trial_info.forced_choice,
-});
-
-
-// key-press task TEST
-const key_press_testTrial = magpieViews.view_generator("key_press", {
-  trials: 8,//trial_info.key_press_testing.length,
-  name: 'key_press_testTrial',
-  data: _.shuffle(trial_info.key_press_testing),
-  pause: 1000,
-});
+  // The 'thanks' view is crucial; never delete it; it submits the results!
+  const thanks = magpieViews.view_generator("thanks", {
+    trials: 1,
+    name: 'thanks',
+    title: 'Thank you very much for taking part in this experiment!',
+    prolificConfirmText: 'Press the button'
+  });
 
 
-// key_press task first time
-const key_press_first_one = magpieViews.view_generator("key_press", {
-  trials: Math.random()*(10-1)+1,
-  name: 'key_press_first_one',
-  data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  pause: 1000,
-});
+  /** trial (magpie's Trial Type Views) below
 
-// key_press task second time
-const key_press_first_two = magpieViews.view_generator("key_press", {
-  trials: 1,
-  name: 'key_press_first_two',
-  data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  pause: 1000,
-});
+  * Obligatory properties
 
-// key_press task second time
-const key_press_second_one = magpieViews.view_generator("key_press", {
-  trials: Math.random()*(8-1)+1,
-  name: 'key_press_second_one',
-  data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  pause: 1000,
-});
+  - trials: int - the number of trials this view will appear
+  - name: string - the name of the view type as it shall be known to _magpie (e.g. for use with a progress bar)
+  and the name of the trial as you want it to appear in the submitted data
+  - data: array - an array of trial objects
 
-// key_press task second time
-const key_press_second_two = magpieViews.view_generator("key_press", {
-  trials: 1,
-  name: 'key_press_second_two',
-  data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  pause: 1000,
-});
+  * Optional properties
 
-/////////////////////////
-// key_press task first time
-const key_press_first_one_comp_3 = magpieViews.view_generator("key_press", {
-  trials: Math.random()*(8-1)+1,
-  name: 'key_press_first_one_comp_3',
-  data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
-  pause: 1000,
-}
+  - pause: number (in ms) - blank screen before the fixation point or stimulus show
+  - fix_duration: number (in ms) - blank screen with fixation point in the middle
+  - stim_duration: number (in ms) - for how long to have the stimulus on the screen
+  More about trial life cycle - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
+
+  - hook: object - option to hook and add custom functions to the view
+  More about hooks - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
+
+  * All about the properties of trial views
+  * https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#trial-views
+  */
+
+
+  // pre experiment questions
+  const forced_choice_preQ = magpieViews.view_generator("forced_choice", {
+    trials: trial_info.forced_choice.length,
+    name: 'forced_choice_preQ',
+    data: trial_info.forced_choice,
+  });
+
+
+  // key-press task TEST
+  const key_press_testTrial = magpieViews.view_generator("key_press", {
+    trials: 8,//trial_info.key_press_testing.length,
+    name: 'key_press_testTrial',
+    data: _.shuffle(trial_info.key_press_testing),
+    pause: 1000,
+  });
+
+
+  // key_press task first time
+  const key_press_first_one = magpieViews.view_generator("key_press", {
+    trials: Math.random()*(10-1)+1,
+    name: 'key_press_first_one',
+    data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+    pause: 1000,
+  });
+
+  // key_press task second time
+  const key_press_first_two = magpieViews.view_generator("key_press", {
+    trials: 1,
+    name: 'key_press_first_two',
+    data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+    pause: 1000,
+  });
+
+  // key_press task second time
+  const key_press_second_one = magpieViews.view_generator("key_press", {
+    trials: Math.random()*(8-1)+1,
+    name: 'key_press_second_one',
+    data: _.shuffle(trial_info.key_press_find_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+    pause: 1000,
+  });
+
+  // key_press task second time
+  const key_press_second_two = magpieViews.view_generator("key_press", {
+    trials: 1,
+    name: 'key_press_second_two',
+    data: _.shuffle(trial_info.key_press_find_non_fractal),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+    pause: 1000,
+  });
+
+  /////////////////////////
+  // key_press task first time
+  const key_press_first_one_comp_3 = magpieViews.view_generator("key_press", {
+    trials: Math.random()*(8-1)+1,
+    name: 'key_press_first_one_comp_3',
+    data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_3),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
+    pause: 1000,
+  }
 );
 
 // test:
 /*
 ,
 {
-  key_press: function(config, CT) {
-    return `<div class="magpie-view">
-    <h1 class='magpie-view-title'>${config.title}</h1>
-    <p class='magpie-response-keypress-header'>
-    <strong>${config.data[0].key1}</strong> = ${config.data[0][config.data[0].key1]},
-    <strong>${config.data[0].key2}</strong> = ${config.data[0][config.data[0].key2]}</p>
-    <div class='magpie-view-stimulus-container'>
-    <div class='magpie-view-stimulus magpie-nodisplay'></div>
-    </div>
-    </div>`;
-  },
+key_press: function(config, CT) {
+return `<div class="magpie-view">
+<h1 class='magpie-view-title'>${config.title}</h1>
+<p class='magpie-response-keypress-header'>
+<strong>${config.data[0].key1}</strong> = ${config.data[0][config.data[0].key1]},
+<strong>${config.data[0].key2}</strong> = ${config.data[0][config.data[0].key2]}</p>
+<div class='magpie-view-stimulus-container'>
+<div class='magpie-view-stimulus magpie-nodisplay'></div>
+</div>
+</div>`;
+},
 }
 */
 

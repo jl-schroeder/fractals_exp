@@ -20,6 +20,7 @@ $("document").ready(function() {
             intro,
             instructions,
             forced_choice_preQ,
+            fractal_introduction,
             ///
             fractal_view_instruction,
             /// Test trials
@@ -64,6 +65,7 @@ $("document").ready(function() {
         progress_bar: {
             in: [
                 // list the view-names of the views for which you want a progress bar
+                fractal_introduction.name,
                 forced_choice_preQ.name,
                 fractal_view_2D_TT.name,
                 experiment_replication_A2_TT.name,
