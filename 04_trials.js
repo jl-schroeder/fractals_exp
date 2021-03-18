@@ -6,15 +6,6 @@ const trial_info = {
 	key_press_testing: [
 		{
 			question: "Is this a fractal? - <strong>TEST</strong>",
-			picture: "images/non_fractals/square_4_non_0.png",
-			key1: "g",
-			key2: "h",
-			g: "fractal",
-			h: "non-fractal",
-			expected: "non-fractal"
-		},
-		{
-			question: "Is this a fractal? - <strong>TEST</strong>",
 			picture: "images/Generated_Pictures/Tri_square_2.png",
 			key1: "g",
 			key2: "h",
