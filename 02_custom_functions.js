@@ -55,8 +55,8 @@ continuation_list_fractal = [
   {p1:"images/Generated_Pictures/Hexa_arrow_0.png", p2:"images/Generated_Pictures/Hexa_arrow_1.png", p3:"images/Generated_Pictures/Hexa_arrow_2.png", p5:"images/Generated_Pictures/Hexa_arrow_3_false_2.png", p6:"images/Generated_Pictures/Hexa_arrow_3.png", answer:"right"},
   {p1:"images/Generated_Pictures/Hexa_arrow_0.png", p2:"images/Generated_Pictures/Hexa_arrow_1.png", p3:"images/Generated_Pictures/Hexa_arrow_2.png", p5:"images/Generated_Pictures/Hexa_arrow_3.png", p6:"images/Generated_Pictures/Hexa_arrow_3_false_3.png", answer:"left"},
 ];
-
-continuation_list_fractal = shuffle(continuation_list_fractal);
+fisherYatesShuffle(continuation_list_fractal);
+//continuation_list_fractal = shuffle(continuation_list_fractal);
 
 var continuation_list = [
 {p1:"images/Generated_Pictures/Tri_circle_3.png", p2:"images/Generated_Pictures/Tri_circle_4_iteration_1.png", p3:"images/Generated_Pictures/Tri_circle_4_iteration_2.png", p5:"images/Generated_Pictures/Tri_circle_4_iteration_3.png", p6:"images/Generated_Pictures/Tri_circle_4_iteration_3_false.png", answer:"left"},
@@ -140,8 +140,8 @@ var continuation_list = [
 {p1:"images/Generated_Pictures/Hexa_arrow_2.png", p2:"images/Generated_Pictures/Hexa_arrow_3_iteration_1_false.png", p3:"images/Generated_Pictures/Hexa_arrow_3_iteration_2_false.png", p4:"images/Generated_Pictures/Hexa_arrow_3_iteration_3_false.png", p5:"images/Generated_Pictures/Hexa_arrow_3_iteration_4.png", p6:"images/Generated_Pictures/Hexa_arrow_3_iteration_4_false.png", answer:"right"},
 {p1:"images/Generated_Pictures/Hexa_arrow_3_iteration_1_false.png", p2:"images/Generated_Pictures/Hexa_arrow_3_iteration_2_false.png", p3:"images/Generated_Pictures/Hexa_arrow_3_iteration_3_false.png", p5:"images/Generated_Pictures/Hexa_arrow_3_iteration_4_false.png", p6:"images/Generated_Pictures/Hexa_arrow_3_iteration_4.png", answer:"left"},
 ];
-
-continuation_list = shuffle(continuation_list);
+fisherYatesShuffle(continuation_list);
+//continuation_list = shuffle(continuation_list);
 
 //{p1:"images/Generated_Pictures/Penta_circle_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_circle_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_circle_3_iteration_3_false.png", p5:"images/Generated_Pictures/Penta_circle_3_iteration_4_false.png", p6:"images/Generated_Pictures/Penta_circle_3_iteration_4.png", answer:"left"}, // SHOUDL I USE THIS?
 //{p1:"images/Generated_Pictures/Penta_arrow_3_iteration_1_false.png", p2:"images/Generated_Pictures/Penta_arrow_3_iteration_2_false.png", p3:"images/Generated_Pictures/Penta_arrow_3_iteration_3_false.png", p4:"images/Generated_Pictures/Penta_arrow_3_iteration_4_false.png", p5:"images/Generated_Pictures/Penta_arrow_3_iteration_5_false.png", p6:"images/Generated_Pictures/Penta_arrow_3.png", answer:"left"},
@@ -181,6 +181,13 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+function fisherYatesShuffle(arr){
+    for(var i =arr.length-1 ; i>0 ;i--){
+        var j = Math.floor( Math.random() * (i + 1) ); //random index
+        [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
+    }
 }
 
 
