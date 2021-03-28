@@ -1,0 +1,132 @@
+#lucaExperiment.Marie <- read.csv("C:/Users/slott/OneDrive/Desktop/fractals_exp/Analysis/lucaExperiment-Marie.csv")
+#results_Sophie <- read.csv("C:/Users/slott/OneDrive/Desktop/fractals_exp/Analysis/results_Sophie.csv")
+
+#exp_data <- rbind(lucaExperiment.Marie, results_Sophie)
+
+exp_data <- read.csv("C:/Users/slott/OneDrive/Desktop/fractals_exp/Analysis/csv_19_03_21.csv")
+#exp_data <- read.csv("C:/Users/slott/OneDrive/Desktop/fractals_exp/Analysis/Test_results.csv")
+
+#exp_data <- subset(exp_data_full, submission_id == "95")
+
+key_press_with_out <- subset(exp_data, question == "Is this a fractal?")
+# outlier deletion
+outlier_key_press = quantile(key_press_with_out$RT, 0.75,names = FALSE) + 1.5*(quantile(key_press_with_out$RT, 0.75,names = FALSE)-quantile(key_press_with_out$RT, 0.25,names = FALSE)) # IQR
+key_press <- subset(key_press_with_out, RT <= outlier_key_press)
+
+first_KP <- subset(key_press, trial_name == "key_press_first_one_comp_3" | trial_name == "key_press_first_two_comp_3" | trial_name == "key_press_first_one_comp_4" | trial_name == "key_press_first_two_comp_4")
+second_KP <- subset(key_press, trial_name == "key_press_second_one_comp_3" | trial_name == "key_press_second_two_comp_3" | trial_name == "key_press_second_one_comp_4" | trial_name == "key_press_second_two_comp_4")
+
+first_KP_correct <- subset(first_KP, correctness == "correct")
+second_KP_correct <- subset(second_KP, correctness == "correct")
+
+Continuation_with_out <- subset(exp_data, question == "Which is the correct continuation?")
+# outlier deletion
+outlier_Continuation = quantile(Continuation_with_out$RT, 0.75,names = FALSE) + 1.5*(quantile(Continuation_with_out$RT, 0.75,names = FALSE)-quantile(Continuation_with_out$RT, 0.25,names = FALSE)) # IQR
+Continuation <- subset(Continuation_with_out, RT <= outlier_Continuation)
+
+
+Continuation_fractal <- subset(Continuation, trial_name == "fractal_view_2D_fractal")
+Continuation_non_fractal <- subset(Continuation, trial_name == "fractal_view_2D")
+
+Continuation_fractal_correct <- subset(Continuation_fractal, correctness == "correct")
+Continuation_non_fractal_correct <- subset(Continuation_non_fractal, correctness == "correct")
+
+first_comp_3 <- subset(first_KP, trial_name == "key_press_first_one_comp_3" | trial_name == "key_press_first_two_comp_3")
+first_comp_4 <- subset(first_KP, trial_name == "key_press_first_one_comp_4" | trial_name == "key_press_first_two_comp_4")
+second_comp_3 <- subset(second_KP, trial_name == "key_press_second_one_comp_3" | trial_name == "key_press_second_two_comp_3")
+second_comp_4 <- subset(second_KP, trial_name == "key_press_second_one_comp_4" | trial_name == "key_press_second_two_comp_4")
+
+first_comp_3_correct <- subset(first_comp_3, correctness == "correct")
+first_comp_4_correct <- subset(first_comp_4, correctness == "correct")
+second_comp_3_correct <- subset(second_comp_3, correctness == "correct")
+second_comp_4_correct <- subset(second_comp_4, correctness == "correct")
+
+key_press_Tri <- subset(key_press, TRUE  == grepl("images/Generated_Pictures/Tri.*", key_press$picture))
+key_press_Quad <- subset(key_press, TRUE  == grepl("images/Generated_Pictures/Quad.*", key_press$picture))
+key_press_Penta <- subset(key_press, TRUE  == grepl("images/Generated_Pictures/Penta.*", key_press$picture))
+key_press_Hexa <- subset(key_press, TRUE  == grepl("images/Generated_Pictures/Hexa.*", key_press$picture))
+
+key_press_Tri_correct <- subset(key_press_Tri, correctness == "correct")
+key_press_Quad_correct <- subset(key_press_Quad, correctness == "correct")
+key_press_Penta_correct <- subset(key_press_Penta, correctness == "correct")
+key_press_Hexa_correct <- subset(key_press_Hexa, correctness == "correct")
+
+
+##
+#summary(Continuation$correctness)
+Continuation_fractal_Tri <- subset(Continuation_fractal_correct, grepl("Tri_", picture1))
+Continuation_fractal_Quad <- subset(Continuation_fractal_correct, grepl("Quad_", picture1))
+Continuation_non_fractal_Tri <- subset(Continuation_non_fractal_correct, grepl("Tri_", picture1))
+Continuation_non_fractal_Quad <- subset(Continuation_non_fractal_correct, grepl("Quad_", picture1))
+Continuation_fractal_Penta <- subset(Continuation_fractal_correct, grepl("Penta_", picture1))
+Continuation_fractal_Hexa <- subset(Continuation_fractal_correct, grepl("Hexa_", picture1))
+Continuation_non_fractal_Penta <- subset(Continuation_non_fractal_correct, grepl("Penta_", picture1))
+Continuation_non_fractal_Hexa <- subset(Continuation_non_fractal_correct, grepl("Hexa_", picture1))
+
+Continuation_fractal_circle <- subset(Continuation_fractal_correct, grepl("_circle_", picture1))
+Continuation_fractal_square <- subset(Continuation_fractal_correct, grepl("_square_", picture1))
+Continuation_fractal_arrow <- subset(Continuation_fractal_correct, grepl("_arrow_", picture1))
+Continuation_fractal_triangle <- subset(Continuation_fractal_correct, grepl("_triangle_", picture1))
+Continuation_non_fractal_circle <- subset(Continuation_non_fractal_correct, grepl("_circle_", picture1))
+Continuation_non_fractal_square <- subset(Continuation_non_fractal_correct, grepl("_square_", picture1))
+Continuation_non_fractal_arrow <- subset(Continuation_non_fractal_correct, grepl("_arrow_", picture1))
+Continuation_non_fractal_triangle <- subset(Continuation_non_fractal_correct, grepl("_triangle_", picture1))
+
+# data-tables down below!
+
+results <- matrix(c( mean(first_KP_correct$RT), mean(second_KP_correct$RT), mean(Continuation_fractal_correct$RT), mean(Continuation_non_fractal_correct$RT), median(first_KP_correct$RT), median(second_KP_correct$RT), median(Continuation_fractal_correct$RT), median(Continuation_non_fractal_correct$RT), var(first_KP$RT), var(second_KP_correct$RT), var(Continuation_fractal_correct$RT), var(Continuation_non_fractal_correct$RT),sd(first_KP$RT), sd(second_KP_correct$RT), sd(Continuation_fractal$RT), sd(Continuation_non_fractal_correct$RT), sum(first_KP$correctness == "correct")/nrow(first_KP), sum(second_KP$correctness == "correct")/nrow(second_KP), sum(Continuation_fractal$correctness == "correct")/nrow(Continuation_fractal), sum(Continuation_non_fractal$correctness == "correct")/nrow(Continuation_non_fractal)), ncol = 4, byrow=TRUE)
+rownames(results)<-c("mean", "median", "variance", "SD", "correctness")
+colnames(results)<-c("first Key-press", "second key-press", "Cont. Fractal", "Cont. non Fractal")
+resultsTab <- as.table(results)
+#resultsTab
+
+results_complexity <- matrix(c( mean(first_comp_3_correct$RT), mean(first_comp_4_correct$RT), mean(second_comp_3_correct$RT), mean(second_comp_4_correct$RT), median(first_comp_3_correct$RT), median(first_comp_4_correct$RT), median(second_comp_3_correct$RT), median(second_comp_4_correct$RT), var(first_comp_3$RT), var(first_comp_4_correct$RT), var(second_comp_3_correct$RT), var(second_comp_4_correct$RT),sd(first_comp_3_correct$RT), sd(first_comp_4_correct$RT), sd(second_comp_3$RT), sd(second_comp_4_correct$RT), sum(first_comp_3$correctness == "correct")/nrow(first_comp_3), sum(first_comp_4$correctness == "correct")/nrow(first_comp_4), sum(second_comp_3$correctness == "correct")/nrow(second_comp_3), sum(second_comp_4$correctness == "correct")/nrow(second_comp_4)), ncol = 4, byrow=TRUE)
+rownames(results_complexity)<-c("mean", "median", "variance", "SD", "correctness")
+colnames(results_complexity)<-c("1-KP-3", "1-KP-4", "2-KP-3", "2-KP-4")
+results_complexityTab <- as.table(results_complexity)
+#results_complexityTab
+
+results_geometry <- matrix(c( mean(key_press_Tri_correct$RT), mean(key_press_Quad_correct$RT), mean(key_press_Penta_correct$RT), mean(key_press_Hexa_correct$RT), median(key_press_Tri_correct$RT), median(key_press_Quad_correct$RT), median(key_press_Penta$RT), median(key_press_Hexa_correct$RT), var(key_press_Tri_correct$RT), var(key_press_Quad$RT), var(key_press_Penta_correct$RT), var(key_press_Hexa_correct$RT),sd(key_press_Tri$RT), sd(key_press_Quad_correct$RT), sd(key_press_Penta_correct$RT), sd(key_press_Hexa_correct$RT), sum(key_press_Tri$correctness == "correct")/nrow(key_press_Tri), sum(key_press_Quad$correctness == "correct")/nrow(key_press_Quad), sum(key_press_Penta$correctness == "correct")/nrow(key_press_Penta), sum(key_press_Hexa$correctness == "correct")/nrow(key_press_Hexa)), ncol = 4, byrow=TRUE)
+rownames(results_geometry)<-c("mean", "median", "variance", "SD", "correctness")
+colnames(results_geometry)<-c("KP-Tri", "KP-Quad", "KP-Penta", "KP-Hexa")
+results_geometryTab <- as.table(results_geometry)
+#results_geometryTab
+
+#continuation results sorted by shape
+results_contuniation_shape <- matrix(c(mean(Continuation_fractal_correct$RT),median(Continuation_fractal_correct$RT),var(Continuation_fractal_correct$RT),sd(Continuation_fractal_correct$RT),sum(Continuation_fractal$correctness == "correct")/nrow(Continuation_fractal),
+                                          mean(Continuation_non_fractal_correct$RT),median(Continuation_non_fractal_correct$RT),var(Continuation_non_fractal_correct$RT),sd(Continuation_non_fractal_correct$RT),sum(Continuation_non_fractal$correctness == "correct")/nrow(Continuation_non_fractal),
+                                          mean(Continuation_fractal_Tri$RT),median(Continuation_fractal_Tri$RT),var(Continuation_fractal_Tri$RT),sd(Continuation_fractal_Tri$RT),1,
+                                          mean(Continuation_fractal_Quad$RT),median(Continuation_fractal_Quad$RT),var(Continuation_fractal_Quad$RT),sd(Continuation_fractal_Quad$RT),1,
+                                          mean(Continuation_non_fractal_Tri$RT),median(Continuation_non_fractal_Tri$RT),var(Continuation_non_fractal_Tri$RT),sd(Continuation_non_fractal_Tri$RT),1,
+                                          mean(Continuation_non_fractal_Quad$RT),median(Continuation_non_fractal_Quad$RT),var(Continuation_non_fractal_Quad$RT),sd(Continuation_non_fractal_Quad$RT),1),ncol = 6, byrow=FALSE)
+rownames(results_contuniation_shape)<-c("mean", "median", "variance", "SD", "correctness")
+colnames(results_contuniation_shape) <- c("Continuation Fractal", "Continuation non Fractal","Continuation Fractal Tri", "Continuation Fractal Quad", "Continuation Fractal Non Tri", "Continuation Non Fractal Quad")
+results_contuniation_shapeTab <- as.table(results_contuniation_shape)
+
+#continuation results sorted by icon
+results_continuation_geometry <- matrix(c(mean(Continuation_fractal_circle$RT),median(Continuation_fractal_circle$RT),var(Continuation_fractal_circle$RT),sd(Continuation_fractal_circle$RT),
+                                          mean(Continuation_fractal_square$RT),median(Continuation_fractal_square$RT),var(Continuation_fractal_square$RT),sd(Continuation_fractal_square$RT),
+                                          mean(Continuation_fractal_arrow$RT),median(Continuation_fractal_arrow$RT),var(Continuation_fractal_arrow$RT),sd(Continuation_fractal_arrow$RT),
+                                          mean(Continuation_fractal_triangle$RT),median(Continuation_fractal_triangle$RT),var(Continuation_fractal_triangle$RT),sd(Continuation_fractal_triangle$RT),
+                                          mean(Continuation_non_fractal_circle$RT),median(Continuation_non_fractal_circle$RT),var(Continuation_non_fractal_circle$RT),sd(Continuation_non_fractal_circle$RT),
+                                          mean(Continuation_non_fractal_square$RT),median(Continuation_non_fractal_square$RT),var(Continuation_non_fractal_square$RT),sd(Continuation_non_fractal_square$RT),
+                                          mean(Continuation_non_fractal_arrow$RT),median(Continuation_non_fractal_arrow$RT),var(Continuation_non_fractal_arrow$RT),sd(Continuation_non_fractal_arrow$RT),
+                                          mean(Continuation_non_fractal_triangle$RT),median(Continuation_non_fractal_triangle$RT),var(Continuation_non_fractal_triangle$RT),sd(Continuation_non_fractal_triangle$RT)),ncol = 8, byrow=FALSE)
+rownames(results_continuation_geometry)<-c("mean", "median", "variance", "SD")
+colnames(results_continuation_geometry)<-c("Fractal circle", "Fractal square", "Fractal arrow", "Fractal triangle", "Non Fractal circle", "Non Fractal square", "Non Fractal arrow", "Non Fractal triangle")
+results_continuation_geometryTab <- as.table(results_continuation_geometry)
+
+resultsTab
+results_complexityTab
+results_geometryTab
+results_contuniation_shapeTab
+results_continuation_geometryTab
+
+#IQR_RT = 3109-2248
+#Upfen_RT = 3109+1.5*IQR_RT
+#Upfen_RT
+#key_press_clean <- subset(key_press, RT <= 4400.5)
+
+
+#matrix(c(mean(),median(),var(),sd(),sum()/nrow()),ncol = 4, byrow=FALSE)
+
