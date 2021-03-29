@@ -115,14 +115,14 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     <br />
     <p class='magpie-view-text'>If you look at the <strong>right</strong> picture, you can see that the structure on the last level differs from the previous ones.
     <br />
-    Therefore this on is <strong>not a fractal!</strong>
+    Therefore this one is <strong>not a fractal!</strong>
     <br />
     <br />
-    <i>A higher level is represented here by bigger symbols and a later/lower level has smaller symbols.</i>
+    <i>A earlier level is represented here by bigger symbols and a later level has smaller symbols.</i>
     </p>
     <div style="display:flex">
-    <img src="images/Generated_Pictures/Tri_triangle_3.png" height="500" width="500">
-    <img src="images/Generated_Pictures/Tri_triangle_3_false_3.png" height="500" width="500">
+    <img src="images/Generated_Pictures/Quad_triangle_3.png" height="500" width="500">
+    <img src="images/Generated_Pictures/Quad_triangle_3_false_3.png" height="500" width="500">
     </div>
     <div style="display:flex">
     <p class='magpie-view-text'>&#x2191; This is a fractal &#x2191;</p>
