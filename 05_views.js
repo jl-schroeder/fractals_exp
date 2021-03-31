@@ -40,7 +40,7 @@ const intro = magpieViews.view_generator("intro", {
   <br />
   The data collected is strictly anonymous.
   Your anonymously collected data will then be used for analysis for scientific work.
-  With participation to this study you conset to your data being used for this cause.
+  With participation in this study you conset to your data being used for this cause.
   <br />
   <br />
   <strong>You can stop the experiment at any time and then no data will be submitted.</strong>
@@ -50,7 +50,7 @@ const intro = magpieViews.view_generator("intro", {
   <br />
   <br />
   <br />
-  If you are interested in our results, you can write an email to the address above and you will be notified.
+  If you are interested in our results, you can write an email to the address above and you will be notified when they are ready.
   <br />
   <br />
   Enjoy.`,
@@ -63,9 +63,6 @@ const instructions = magpieViews.view_generator("instructions", {
   name: 'instructions',
   title: 'General Instructions',
   text: `On the next two pages you will be shown some questions.
-  <br />
-  <br />
-  (We are asking these to check your understanding of a specific concept.)
   <br />
   <br />
   Afterwards you will be presented with two different types of tests.
@@ -118,7 +115,7 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     Therefore this one is <strong>not a fractal!</strong>
     <br />
     <br />
-    <i>A earlier level is represented here by bigger symbols and a later level has smaller symbols.</i>
+    <i>An earlier level is represented here by bigger symbols and a later level has smaller symbols.</i>
     </p>
     <div style="display:flex">
     <img src="images/Generated_Pictures/Quad_triangle_3.png" height="500" width="500">
@@ -141,23 +138,23 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     trials: 1,
     name: 'fractal_view_instruction',
     title: 'Continuation Task - Instructions',
-    text: `In this task you have to look closely at the pictures appearing on the screen.
+    text: `In this task, you have to look closely at the pictures appearing on the screen.
     <br />
     <br />
-    Afterwards the screen will go blank for a short time. Afterwards you will be presented with two pictures.
+    Afterwards the screen will go blank for a short time. You will then be presented with two pictures.
     <br />
-    One of these pictures represents the correct continuation, the other is a incorrect continuation.
+    One of these pictures represents the correct continuation, the other is an incorrect continuation.
     <br />
     You than have to decide which one is the correct continuation.
     <br />
     <br />
-    To do so you press either the LEFT or the RIGHT button located below the pictures.
+    To do so you press either the LEFT or the RIGHT button located below the pictures, marked with "correct" and "incorrect", respectively.
     <br />
     <br />
     <br />
-    First you can test this task twice.
+    First, you can test this task twice.
     <br />
-    Afterwards there will be another instruction page after which the actual trials begin.
+    Afterwards, there will be another instruction page after which the actual trials begin.
     <br />
     <br />
     If you feel ready, press the button below.`,
@@ -174,7 +171,7 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     <br />
     <strong>Reminder:</strong>
     <br />
-    You have to decide which is the correct continuation.
+    You have to decide which is the correct continuation step.
     <br />
     If you feel ready, press the button below.
     <br />
@@ -194,7 +191,6 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     <br />
     <strong>Reminder:</strong>
     <br />
-    You have to decide which is the correct continuation step.
     <br />
     You will be presented with a sequence of pictures and then have to decide which of two pictures is the correct continuation step.
     <br />
@@ -225,7 +221,7 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     Please use you primary hand to press the keys (e.g. index and middle finger).
     <br />
     <br />
-    First, there will be a few test rounds where you can tryout the task.
+    First, you can try this this task in a few test rounds.
     <br />
     <br />
     If you feel ready, press the button below.
@@ -266,7 +262,7 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     <br />
     <br />
     <br />
-    You will be presented with diferent pictures where you have to press a button according to the type of structure.
+    You will be presented different pictures and have to decide whether it depicts a fractal.
     <br />
     <br />
     Reminder:
