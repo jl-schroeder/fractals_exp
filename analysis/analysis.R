@@ -68,52 +68,67 @@ Continuation_non_fractal_Hexa <- subset(Continuation_non_fractal_correct, grepl(
 
 # Continuation fractal vs non-fractal
 #Continuation_fractal_iteration <- subset(Continuation, correctness == "correct")
-Continuation_fractal_iteration_right <- subset(Continuation, expected == "right")
-Continuation_fractal_iteration_right_fractal <- subset(Continuation_fractal_iteration_right, grepl("false", picture1))
-Continuation_fractal_iteration_right_nonFractal <- subset(Continuation_fractal_iteration_right, grepl("false", picture2))
-Continuation_fractal_iteration_left <- subset(Continuation, expected == "left")
-Continuation_fractal_iteration_left_fractal <-subset(Continuation_fractal_iteration_left, grepl("false",picture2))
-Continuation_fractal_iteration_left_nonFractal <-subset(Continuation_fractal_iteration_left, grepl("false", picture1))
+Continuation_iteration_right <- subset(Continuation, expected == "right")
+Continuation_iteration_right_fractal <- subset(Continuation_iteration_right, grepl("false", picture1))
+Continuation_iteration_right_nonFractal <- subset(Continuation_iteration_right, grepl("false", picture2))
+Continuation_iteration_left <- subset(Continuation, expected == "left")
+Continuation_iteration_left_fractal <-subset(Continuation_iteration_left, grepl("false",picture2))
+Continuation_iteration_left_nonFractal <-subset(Continuation_iteration_left, grepl("false", picture1))
 
-Continuation_non_fractal_iteration_Fractal <- rbind(Continuation_fractal_iteration_left_fractal, Continuation_fractal_iteration_right_fractal)
-Continuation_non_fractal_iteration_nonFractal <- rbind(Continuation_fractal_iteration_left_nonFractal, Continuation_fractal_iteration_right_nonFractal)
-Continuation_non_fractal_iteration_nonFractal_allAnswers <- Continuation_non_fractal_iteration_nonFractal
-Continuation_non_fractal_iteration_Fractal_allAnswers <- Continuation_non_fractal_iteration_Fractal
-Continuation_non_fractal_iteration_Fractal <- subset(Continuation_non_fractal_iteration_Fractal,  correctness == "correct")
-Continuation_non_fractal_iteration_nonFractal <- subset(Continuation_non_fractal_iteration_nonFractal,  correctness == "correct")
+Continuation_iteration_Fractal <- rbind(Continuation_iteration_left_fractal, Continuation_iteration_right_fractal)
+Continuation_iteration_nonFractal <- rbind(Continuation_iteration_left_nonFractal, Continuation_iteration_right_nonFractal)
+Continuation_iteration_nonFractal_allAnswers <- Continuation_iteration_nonFractal
+Continuation_iteration_Fractal_allAnswers <- Continuation_iteration_Fractal
+Continuation_iteration_Fractal <- subset(Continuation_iteration_Fractal,  correctness == "correct")
+Continuation_iteration_nonFractal <- subset(Continuation_iteration_nonFractal,  correctness == "correct")
+
+# Continuation complexity
+Continuation_frac_4 <- rbind(subset(Continuation_iteration_Fractal_allAnswers, grepl("_triangle_3",picture1)),subset(Continuation_iteration_Fractal_allAnswers, grepl("_circle_3",picture1)),subset(Continuation_iteration_Fractal_allAnswers, grepl("_arrow_3",picture1)),subset(Continuation_iteration_Fractal_allAnswers, grepl("_square_3",picture1)))
+Continuation_frac_5 <- rbind(subset(Continuation_iteration_Fractal_allAnswers, grepl("_triangle_4",picture1)),subset(Continuation_iteration_Fractal_allAnswers, grepl("_circle_4",picture1)),subset(Continuation_iteration_Fractal_allAnswers, grepl("_arrow_4",picture1)),subset(Continuation_iteration_Fractal_allAnswers, grepl("_square_4",picture1)))
+Continuation_N_frac_4 <- rbind(subset(Continuation_iteration_nonFractal_allAnswers, grepl("_triangle_3",picture1)),subset(Continuation_iteration_nonFractal_allAnswers, grepl("_circle_3",picture1)),subset(Continuation_iteration_nonFractal_allAnswers, grepl("_arrow_3",picture1)),subset(Continuation_iteration_nonFractal_allAnswers, grepl("_square_3",picture1)))
+Continuation_N_frac_5 <- rbind(subset(Continuation_iteration_nonFractal_allAnswers, grepl("_triangle_4",picture1)),subset(Continuation_iteration_nonFractal_allAnswers, grepl("_circle_4",picture1)),subset(Continuation_iteration_nonFractal_allAnswers, grepl("_arrow_4",picture1)),subset(Continuation_iteration_nonFractal_allAnswers, grepl("_square_4",picture1)))
+Continuation_frac_4_correct <- subset(Continuation_frac_4, correctness == "correct")
+Continuation_frac_5_correct <- subset(Continuation_frac_5, correctness == "correct")
+Continuation_N_frac_4_correct <- subset(Continuation_N_frac_4, correctness == "correct")
+Continuation_N_frac_5_correct <- subset(Continuation_N_frac_5, correctness == "correct")
+
 ## data-tables ##
+
+# results overview
 result_overview <- matrix(c(mean(Continuation_fractal_correct$RT),median(Continuation_fractal_correct$RT),var(Continuation_fractal_correct$RT),sd(Continuation_fractal_correct$RT),sum(Continuation_fractal$correctness == "correct")/nrow(Continuation_fractal),
                             mean(Continuation_non_fractal_correct$RT),median(Continuation_non_fractal_correct$RT),var(Continuation_non_fractal_correct$RT),sd(Continuation_non_fractal_correct$RT),sum(Continuation_non_fractal$correctness == "correct")/nrow(Continuation_non_fractal),
                             mean(first_KP_correct$RT),median(first_KP_correct$RT),var(first_KP_correct$RT),sd(first_KP_correct$RT),sum(first_KP$correctness == "correct")/nrow(first_KP),
                             mean(second_KP_correct$RT),median(second_KP_correct$RT),var(second_KP_correct$RT),sd(second_KP_correct$RT),sum(second_KP$correctness == "correct")/nrow(second_KP)),ncol = 4, byrow=FALSE)
 rownames(result_overview)<-c("mean", "median", "variance", "SD", "correctness")
-colnames(result_overview)<-c("Fractal Cont.", "nonFractal Cont.", "KP non in fractal", "KP fractal in non")
+colnames(result_overview)<-c("Fractal Cont. |", "nonFractal Cont. |", "KP non in fractal |", "KP fractal in non")
 result_overviewTable <- as.table(result_overview)
 
+# results of key press regarding fractal or non fractal
 results_KP_by_fractal <- matrix(c(mean(first_KP_fractals$RT),median(first_KP_fractals$RT),var(first_KP_fractals$RT),sd(first_KP_fractals$RT),sum(first_KP_fractals$correctness == "correct")/nrow(first_KP_fractals),
                                   mean(first_KP_non_fractals$RT),median(first_KP_non_fractals$RT),var(first_KP_non_fractals$RT),sd(first_KP_non_fractals$RT),sum(first_KP_non_fractals$correctness == "correct")/nrow(first_KP_non_fractals),
                                   mean(second_KP_fractals$RT),median(second_KP_fractals$RT),var(second_KP_fractals$RT),sd(second_KP_fractals$RT),sum(second_KP_fractals$correctness == "correct")/nrow(second_KP_fractals),
                                   mean(second_KP_non_fractals$RT),median(second_KP_non_fractals$RT),var(second_KP_non_fractals$RT),sd(second_KP_non_fractals$RT),sum(second_KP_non_fractals$correctness == "correct")/nrow(second_KP_non_fractals)),ncol = 4, byrow=FALSE)
 rownames(results_KP_by_fractal)<-c("mean", "median", "variance", "SD", "correctness")
-colnames(results_KP_by_fractal)<-c("KP n in f -fractals", "KP n in f -nonFractals", "KP f in n -fractals", "KP f in n -nonFractals")
-results_KP_by_fractalTab <- as.table(results_KP_by_fractal)
+colnames(results_KP_by_fractal)<-c("KP n in f -fractals |", "KP n in f -nonFractals |", "KP f in n -fractals |", "KP f in n -nonFractals")
+results_KP_by_fractalTable <- as.table(results_KP_by_fractal)
 
-Continuation_by_fractal <- matrix(c(mean(Continuation_non_fractal_iteration_Fractal$RT),median(Continuation_non_fractal_iteration_Fractal$RT),var(Continuation_non_fractal_iteration_Fractal$RT),sd(Continuation_non_fractal_iteration_Fractal$RT),nrow(Continuation_non_fractal_iteration_Fractal)/nrow(Continuation_non_fractal_iteration_Fractal_allAnswers),
-                                        mean(Continuation_non_fractal_iteration_nonFractal$RT),median(Continuation_non_fractal_iteration_nonFractal$RT),var(Continuation_non_fractal_iteration_nonFractal$RT),sd(Continuation_non_fractal_iteration_nonFractal$RT),nrow(Continuation_non_fractal_iteration_nonFractal)/nrow(Continuation_non_fractal_iteration_nonFractal)),ncol = 2, byrow=FALSE)
+# results of Continuation regarding fractal or non fractal
+Continuation_by_fractal <- matrix(c(mean(Continuation_iteration_Fractal$RT),median(Continuation_iteration_Fractal$RT),var(Continuation_iteration_Fractal$RT),sd(Continuation_iteration_Fractal$RT),nrow(Continuation_iteration_Fractal)/nrow(Continuation_iteration_Fractal_allAnswers),
+                                        mean(Continuation_iteration_nonFractal$RT),median(Continuation_iteration_nonFractal$RT),var(Continuation_iteration_nonFractal$RT),sd(Continuation_iteration_nonFractal$RT),nrow(Continuation_iteration_nonFractal)/nrow(Continuation_iteration_nonFractal)),ncol = 2, byrow=FALSE)
 rownames(Continuation_by_fractal)<-c("mean", "median", "variance", "SD", "correctness")
 colnames(Continuation_by_fractal)<-c("Cont. Fractal","Cont. Non")
 Continuation_by_fractalTable <- as.table(Continuation_by_fractal)
 
-results_continuation_geometry <- matrix(c(mean(Continuation_fractal_correct$RT),median(Continuation_fractal_correct$RT),var(Continuation_fractal_correct$RT),sd(Continuation_fractal_correct$RT),sum(Continuation_fractal$correctness == "correct")/nrow(Continuation_fractal),
-                                       mean(Continuation_fractal_Tri$RT),median(Continuation_fractal_Tri$RT),var(Continuation_fractal_Tri$RT),sd(Continuation_fractal_Tri$RT),1,
+# results of continuation regarding geometry
+results_continuation_geometry <- matrix(c(mean(Continuation_fractal_Tri$RT),median(Continuation_fractal_Tri$RT),var(Continuation_fractal_Tri$RT),sd(Continuation_fractal_Tri$RT),1,
                                        mean(Continuation_fractal_Quad$RT),median(Continuation_fractal_Quad$RT),var(Continuation_fractal_Quad$RT),sd(Continuation_fractal_Quad$RT),1,
-                                       mean(Continuation_non_fractal_correct$RT),median(Continuation_non_fractal_correct$RT),var(Continuation_non_fractal_correct$RT),sd(Continuation_non_fractal_correct$RT),sum(Continuation_non_fractal$correctness == "correct")/nrow(Continuation_non_fractal),
                                        mean(Continuation_non_fractal_Tri$RT),median(Continuation_non_fractal_Tri$RT),var(Continuation_non_fractal_Tri$RT),sd(Continuation_non_fractal_Tri$RT),1,
-                                       mean(Continuation_non_fractal_Quad$RT),median(Continuation_non_fractal_Quad$RT),var(Continuation_non_fractal_Quad$RT),sd(Continuation_non_fractal_Quad$RT),1),ncol = 6, byrow=FALSE)
+                                       mean(Continuation_non_fractal_Quad$RT),median(Continuation_non_fractal_Quad$RT),var(Continuation_non_fractal_Quad$RT),sd(Continuation_non_fractal_Quad$RT),1),ncol = 4, byrow=FALSE)
 rownames(results_continuation_geometry)<-c("mean", "median", "variance", "SD", "correctness")
-colnames(results_continuation_geometry) <- c("Continuation Fractal", "Continuation Fractal Tri", "Continuation Fractal Quad", "Continuation non Fractal","Continuation Fractal Non Tri", "Continuation Non Fractal Quad")
-results_continuation_geometryTab <- as.table(results_continuation_geometry)
+colnames(results_continuation_geometry) <- c("Continuation Fractal Tri", "Continuation Fractal Quad", "Continuation Fractal Non Tri", "Continuation Non Fractal Quad")
+results_continuation_geometryTable <- as.table(results_continuation_geometry)
 
+# results of key-press regarding geometry
 key_press_geometry <- matrix(c( mean(key_press_Tri_correct$RT), median(key_press_Tri_correct$RT), var(key_press_Tri_correct$RT), sd(key_press_Tri_correct$RT), sum(key_press_Tri$correctness == "correct")/nrow(key_press_Tri),
                             mean(key_press_Quad_correct$RT), median(key_press_Quad_correct$RT), var(key_press_Quad_correct$RT), sd(key_press_Quad_correct$RT), sum(key_press_Quad$correctness == "correct")/nrow(key_press_Quad),
                             mean(key_press_Penta_correct$RT), median(key_press_Penta_correct$RT), var(key_press_Penta_correct$RT), sd(key_press_Penta_correct$RT), sum(key_press_Penta$correctness == "correct")/nrow(key_press_Penta),
@@ -122,12 +137,32 @@ rownames(key_press_geometry)<-c("mean", "median", "variance", "SD", "correctness
 colnames(key_press_geometry)<-c("KP-Tri", "KP-Quad", "KP-Penta", "KP-Hexa")
 key_press_geometryTable <- as.table(key_press_geometry)
 
+# results of continuation regarding complexity (sorted by fractal/non-fractal)
+results_continuation_complexity <- matrix(c(mean(Continuation_frac_4_correct$RT),median(Continuation_frac_4_correct$RT),var(Continuation_frac_4_correct$RT),sd(Continuation_frac_4_correct$RT),nrow(Continuation_frac_4_correct)/nrow(Continuation_frac_4),
+                                            mean(Continuation_frac_5_correct$RT),median(Continuation_frac_5_correct$RT),var(Continuation_frac_5_correct$RT),sd(Continuation_frac_5_correct$RT),nrow(Continuation_frac_5_correct)/nrow(Continuation_frac_5),
+                                            mean(Continuation_N_frac_4_correct$RT),median(Continuation_N_frac_4_correct$RT),var(Continuation_N_frac_4_correct$RT),sd(Continuation_N_frac_4_correct$RT),nrow(Continuation_N_frac_4_correct)/nrow(Continuation_N_frac_4),
+                                            mean(Continuation_N_frac_5_correct$RT),median(Continuation_N_frac_5_correct$RT),var(Continuation_N_frac_5_correct$RT),sd(Continuation_N_frac_5_correct$RT),nrow(Continuation_N_frac_5_correct)/nrow(Continuation_N_frac_5)),ncol = 4, byrow=FALSE)
+rownames(results_continuation_complexity)<-c("mean", "median", "variance", "SD", "correctness")
+colnames(results_continuation_complexity)<-c("Fractal 4 |", "Fractal 5 |", "Non-Fractal 4 |", "Non-Fractal 5 |")
+results_continuation_complexityTable <- as.table(results_continuation_complexity)
+
+# results of key-press regarding complexity (sorted by task)
+results_KP_complexity <- matrix(c(mean(first_comp_3_correct$RT), median(first_comp_3_correct$RT), var(first_comp_3_correct$RT), sd(first_comp_3_correct$RT), sum(first_comp_3$correctness == "correct")/nrow(first_comp_3),
+                                mean(first_comp_4_correct$RT), median(first_comp_4_correct$RT), var(first_comp_4_correct$RT), sd(first_comp_4_correct$RT), sum(first_comp_4$correctness == "correct")/nrow(first_comp_4),
+                                mean(second_comp_3_correct$RT), median(second_comp_3_correct$RT), var(second_comp_3_correct$RT), sd(second_comp_3_correct$RT), sum(second_comp_3$correctness == "correct")/nrow(second_comp_3),
+                                mean(second_comp_4_correct$RT), median(second_comp_4_correct$RT), var(second_comp_4_correct$RT), sd(second_comp_4_correct$RT), sum(second_comp_4$correctness == "correct")/nrow(second_comp_4)), ncol = 4, byrow=FALSE)
+rownames(results_KP_complexity)<-c("mean", "median", "variance", "SD", "correctness")
+colnames(results_KP_complexity)<-c("1-KP-4", "1-KP-5", "2-KP-4", "2-KP-5")
+results_KP_complexityTable <- as.table(results_KP_complexity)
+
 #open tables
 result_overviewTable
-results_KP_by_fractalTab
+results_KP_by_fractalTable
 Continuation_by_fractalTable
-results_continuation_geometryTab
+results_continuation_geometryTable
 key_press_geometryTable
+results_continuation_complexityTable
+results_KP_complexityTable
 
 # table template
 #table <- matrix(c(mean(),median(),var(),sd(),sum()/nrow()),ncol = 4, byrow=FALSE)
