@@ -40,7 +40,7 @@ const intro = magpieViews.view_generator("intro", {
   <br />
   The data collected is strictly anonymous.
   Your anonymously collected data will then be used for analysis for scientific work.
-  With participation in this study you conset to your data being used for this cause.
+  With participation in this study you consent to your data being used for this cause.
   <br />
   <br />
   <strong>You can stop the experiment at any time and then no data will be submitted.</strong>
@@ -50,7 +50,7 @@ const intro = magpieViews.view_generator("intro", {
   <br />
   <br />
   <br />
-  If you are interested in our results, you can write an email to the address above and you will be notified when they are ready.
+  If you are interested in our results, you can write an email to the address above, and you will be notified when they are ready.
   <br />
   <br />
   Enjoy.`,
@@ -71,12 +71,12 @@ const instructions = magpieViews.view_generator("instructions", {
   <br />
   <br />
   <br />
-  If possible, please make this window fullscreen.
+  If possible, please make this window full-screen.
   <br />
   (e.g. press <strong>(F11)</strong> or <strong>(Fn + F11)</strong>).
   <br />
   <br />
-  Press the same button(s) at the end to exit the fullscreen mode again.
+  Press the same button(s) at the end to exit the full-screen mode again.
   <br />
   <br />
   <br />
@@ -112,10 +112,10 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     <br />
     <p class='magpie-view-text'>If you look at the <strong>right</strong> picture, you can see that the structure on the last level differs from the previous ones.
     <br />
-    Therefore this one is <strong>not a fractal!</strong>
+    Therefore, this one is <strong>not a fractal!</strong>
     <br />
     <br />
-    <i>An earlier level is represented here by bigger symbols and a later level has smaller symbols.</i>
+    <i>An earlier level is represented by bigger symbols and a later level has smaller symbols.</i>
     </p>
     <div style="display:flex">
     <img src="images/Generated_Pictures/Quad_triangle_3.png" height="500" width="500">
@@ -145,7 +145,7 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     <br />
     One of these pictures represents the correct continuation, the other is an incorrect continuation.
     <br />
-    You than have to decide which one is the correct continuation.
+    You then have to decide which one is the correct continuation.
     <br />
     <br />
     To do so you press either the LEFT or the RIGHT button located below the pictures, marked with "correct" and "incorrect", respectively.
@@ -218,10 +218,10 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     Pressing the-"<strong>H</strong>"-key means the picture is <strong>not a fractal</strong>.
     <br />
     <br />
-    Please use you primary hand to press the keys (e.g. index and middle finger).
+    Please use your primary hand to press the keys (e.g. index and middle finger).
     <br />
     <br />
-    First, you can try this this task in a few test rounds.
+    First, you can try this task in a few test rounds.
     <br />
     <br />
     If you feel ready, press the button below.

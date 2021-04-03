@@ -15069,7 +15069,7 @@ const trial_info = {
 			option2: "right"
 		},
 		{
-			question: "Do you know or can you find a familiar idea behind these pictures?" ,
+			question: "Do you know, or can you find a familiar idea behind these pictures?" ,
 			picture: "images/Fractals_pre_Q.png",
 			option1: "Yes",
 			option2: "No"
