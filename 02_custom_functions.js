@@ -230,8 +230,8 @@ iteration: [A-Z]{1}[a-z]*_[a-z]*_[1-9]_iteration_[1-9]*.png
 function assessFoil(foil){
 
   const fractalRegEx = new RegExp('[A-Z]{1}[a-z]*_[a-z]*_[1-9].png');
-  const turnRegEx = new RegExp('[A-Z]{1}[a-z]*_[a-z]*_[1-9]_false_3');
-  const iterationRegEx = new RegExp('[A-Z]{1}[a-z]*_[a-z]*_[1-9]_iteration_[1-9]*.png');
+  const turnRegEx = new RegExp('[A-Z]{1}[a-z]*_[a-z]*_[1-9]_false_[1-9]');
+  const iterationRegEx = new RegExp('[A-Z]{1}[a-z]*_[a-z]*_[1-9]_iteration_[1-9].*.png');
 
   if(fractalRegEx.test(foil) == true){
     //console.log("frac"); //TESTING

@@ -17,6 +17,7 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             //view_seq_pre,
+            acronym_VP_instruction,
             intro,
             instructions,
             forced_choice_preQ,

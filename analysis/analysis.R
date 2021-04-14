@@ -5,6 +5,18 @@ library(rstatix)
 # read data
 exp_data <- read.csv("C:/Users/slott/OneDrive/Documents/UNI-DESKTOP-EIPRSGE/Bachelor_topics/exp_github/fractals_exp/analysis/csv_19_03_21.csv")
 
+# add shapes and complexity to data
+exp_data %>%
+  mutate(shape = case_when(grepl("images/Generated_Pictures/Tri.*", exp_data$picture) == TRUE | grepl("Tri_", picture1) == TRUE ~ "Tri",
+                           grepl("images/Generated_Pictures/Quad.*", exp_data$picture) == TRUE | grepl("Quad_", picture1) == TRUE ~ "Quad",
+                           grepl("images/Generated_Pictures/Penta.*", exp_data$picture) == TRUE | grepl("Penta_", picture1) == TRUE ~ "Penta",
+                           grepl("images/Generated_Pictures/Hexa.*", exp_data$picture) == TRUE | grepl("Hexa_", picture1) == TRUE ~ "Hexa"),
+         (complexity = case_when(trial_name == "key_press_first_one_comp_2" | trial_name == "key_press_first_two_comp_2" | trial_name == "key_press_second_one_comp_2" | trial_name == "key_press_second_two_comp_2" ~ 2,
+                                 trial_name == "key_press_first_one_comp_3" | trial_name == "key_press_first_two_comp_3" | trial_name == "key_press_second_one_comp_3" | trial_name == "key_press_second_two_comp_3" ~ 3,
+                                 trial_name == "key_press_first_one_comp_4" | trial_name == "key_press_first_two_comp_4" | trial_name == "key_press_second_one_comp_4" | trial_name == "key_press_second_two_comp_4" ~ 4
+                                 ))) -> exp_data
+
+
 # key-press data
 key_press_with_out <- subset(exp_data, question == "Is this a fractal?")
 outlier_key_press = quantile(key_press_with_out$RT, 0.75,names = FALSE) + 1.5*(quantile(key_press_with_out$RT, 0.75,names = FALSE)-quantile(key_press_with_out$RT, 0.25,names = FALSE)) # IQR
