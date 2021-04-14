@@ -11,10 +11,11 @@ exp_data %>%
                            grepl("images/Generated_Pictures/Quad.*", exp_data$picture) == TRUE | grepl("Quad_", picture1) == TRUE ~ "Quad",
                            grepl("images/Generated_Pictures/Penta.*", exp_data$picture) == TRUE | grepl("Penta_", picture1) == TRUE ~ "Penta",
                            grepl("images/Generated_Pictures/Hexa.*", exp_data$picture) == TRUE | grepl("Hexa_", picture1) == TRUE ~ "Hexa"),
-         (complexity = case_when(trial_name == "key_press_first_one_comp_2" | trial_name == "key_press_first_two_comp_2" | trial_name == "key_press_second_one_comp_2" | trial_name == "key_press_second_two_comp_2" ~ 2,
+         complexity = case_when(trial_name == "key_press_first_one_comp_2" | trial_name == "key_press_first_two_comp_2" | trial_name == "key_press_second_one_comp_2" | trial_name == "key_press_second_two_comp_2" ~ 2,
                                  trial_name == "key_press_first_one_comp_3" | trial_name == "key_press_first_two_comp_3" | trial_name == "key_press_second_one_comp_3" | trial_name == "key_press_second_two_comp_3" ~ 3,
-                                 trial_name == "key_press_first_one_comp_4" | trial_name == "key_press_first_two_comp_4" | trial_name == "key_press_second_one_comp_4" | trial_name == "key_press_second_two_comp_4" ~ 4
-                                 ))) -> exp_data
+                                 trial_name == "key_press_first_one_comp_4" | trial_name == "key_press_first_two_comp_4" | trial_name == "key_press_second_one_comp_4" | trial_name == "key_press_second_two_comp_4" ~ 4),
+          key_press_type = case_when(grepl(".*_first.*", exp_data$trial_name) == TRUE ~ "nF in F",
+                                     grepl(".*_second.*", exp_data$trial_name) == TRUE ~ "F in nF")) -> exp_data
 
 
 # key-press data

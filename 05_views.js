@@ -484,7 +484,7 @@ const key_press_second_one_comp_4 = magpieViews.view_generator("key_press", {
 // key_press task second time
 const key_press_second_two_comp_4 = magpieViews.view_generator("key_press", {
   trials: 1,
-  name: 'key_press_second',
+  name: 'key_press_second_two_comp_4',
   data: _.shuffle(trial_info.key_press_find_non_fractal_complexity_4),//_.sample(_.shuffle([trial_info.key_press_find_non_fractal, trial_info.key_press_find_fractal])),
   pause: 1000,
 }
