@@ -48,6 +48,7 @@ $("document").ready(function() {
             loop([key_press_first_one_comp_2, key_press_first_two_comp_2],5),
             loop([key_press_first_one_comp_3, key_press_first_two_comp_3],5),
             loop([key_press_first_one_comp_4, key_press_first_two_comp_4,],5),
+            acronym_VP_instruction,
             post_test,
             thanks,
         ],

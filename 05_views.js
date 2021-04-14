@@ -281,6 +281,14 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     buttonText: "Begin trial",
   });
 
+  const acronym_VP_instruction = magpieViews.view_generator("textbox_input", {
+    trials: 1,
+    name: 'acronym_VP_instruction',
+    title: 'Instructions for recieving VP hours',
+    data: trial_info.vp_acronym_question,
+    //buttonText: "Finish the experiment."
+  });
+
 
   // In the post test questionnaire you can ask your participants addtional questions
   const post_test = magpieViews.view_generator("post_test", {

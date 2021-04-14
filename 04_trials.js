@@ -3,6 +3,40 @@
 
 const trial_info = {
 
+	vp_acronym_question: [
+		{
+			QUD: `You are done, but please don't close this page yet.
+	    <br />
+	    <br />
+	    If you want to receive  VP-hours read the instructions below, otherwise just put <strong>????</strong> into the field below.
+	    <br />
+	    <br />
+	    You need to create a codeword. This codeword consists of:
+	    <br />
+	    1. : First letter of your mothers-name (e.g. <strong>E</strong>lke) <br />
+	    2. : First letter of your fathers-name (e.g. <strong>P</strong>eter) <br />
+	    3. : First letter of the city you were born in (e.g. <strong>O</strong>snabrück) <br />
+	    4. : The day of your birthday (e.g. <strong>14</strong>.02.2021) <br />
+	    <br />
+	    <br />
+	    You then need to add those together to create one codeword <br /> (in this example: <strong>EPO12</strong>)
+	    <br />
+	    <br />
+	    <br />
+	    Please remember your codeword and write it into the comment section on the next page.
+	    <br />
+	    <br />
+	    Then (after the experiment) please write an email including: <br />
+			your codeword, <br />
+			your studentID <br />
+			and your name <br /> to <strong>janlschroede@uos.de</strong> in order to receive  the VP-hours.
+	    <br />
+	    `,
+			questions:"Please enter your codeword below",
+			min_chars: 0,
+		},
+	],
+
 	key_press_testing: [
 		{
 			question: "Is this a fractal? - <strong>TEST</strong>",
