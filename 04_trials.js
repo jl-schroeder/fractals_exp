@@ -5,10 +5,11 @@ const trial_info = {
 
 	vp_acronym_question: [
 		{
+			question:"Please enter your personal codeword below",
 			QUD: `You are done, but please don't close this page yet.
 	    <br />
 	    <br />
-	    If you want to receive  VP-hours read the instructions below, otherwise just put <strong>????</strong> into the field below.
+	    If you want to receive  VP-hours read the instructions below, <br /> otherwise just put <strong>????</strong> into the field below.
 	    <br />
 	    <br />
 	    You need to create a codeword. This codeword consists of:
@@ -32,7 +33,6 @@ const trial_info = {
 			and your name <br /> to <strong>janlschroede@uos.de</strong> in order to receive  the VP-hours.
 	    <br />
 	    `,
-			questions:"Please enter your codeword below",
 			min_chars: 0,
 		},
 	],
