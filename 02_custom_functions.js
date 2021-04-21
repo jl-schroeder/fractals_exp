@@ -7,6 +7,21 @@
 const coin = _.sample(["head", "tail"]); // You can determine global (random) parameters here
 // Declare your variables here
 
+// decide if this experiement is the counterbalanced version of the key-press task
+const counterBal = _.sample(["normal","balance"]);
+
+var gKeyRole = "";
+var hKeyRole = "";
+
+// assign value to kes for instructions
+if(counterBal == "normal"){
+  gKeyRole = "a fractal";
+  hKeyRole = "not a fractal";
+} else {
+  hKeyRole = "a fractal";
+  gKeyRole = "not a fractal";
+}
+
 continuation_test_list = [
   {p1:"images/Generated_Pictures/Quad_arrow_0.png", p2:"images/Generated_Pictures/Quad_arrow_1.png", p3:"images/Generated_Pictures/Quad_arrow_2.png", p4:"images/Generated_Pictures/Quad_arrow_3.png",  p5:"images/Generated_Pictures/Quad_arrow_4_false_4.png", p6:"images/Generated_Pictures/Quad_arrow_4.png", answer:"right"},
   {p1:"images/Generated_Pictures/Quad_square_3.png", p2:"images/Generated_Pictures/Quad_square_4_iteration_1.png", p3:"images/Generated_Pictures/Quad_square_4_iteration_2.png", p5:"images/Generated_Pictures/Quad_square_4_iteration_3_false.png", p6:"images/Generated_Pictures/Quad_square_4_iteration_3.png", answer:"right"},

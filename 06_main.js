@@ -16,8 +16,10 @@ $("document").ready(function() {
     window.magpie_monitor = magpieInit({
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
-            //view_seq_pre,
-            acronym_VP_instruction,
+            // key_press_instruction,
+            // key_press_instruction_post_test,
+            // loop([key_press_second_one_comp_2, key_press_second_two_comp_2],5),
+            // second_key_press_instruction,
             intro,
             instructions,
             forced_choice_preQ,
@@ -49,7 +51,6 @@ $("document").ready(function() {
             loop([key_press_first_one_comp_2, key_press_first_two_comp_2],5),
             loop([key_press_first_one_comp_3, key_press_first_two_comp_3],5),
             loop([key_press_first_one_comp_4, key_press_first_two_comp_4,],5),
-            acronym_VP_instruction,
             post_test,
             thanks,
         ],
