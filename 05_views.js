@@ -294,7 +294,7 @@ const fractal_introduction = magpieViews.view_generator("instructions",{
     trials: 1,
     name: 'post_test',
     title: 'Additional information',
-    text: 'You are done. Answering the following questions is optional, but your answers will help us analyze our results. <br /><br /><i><b>VP-hour instruction:</b> <br /> If you want to recieve the 1 VP hour, please write an email including your full name and matriculation number to: <br /> <a href= "mailto:janlschroede@uni-osnabrueck.de">janlschroede@uos.de</a>.</i>',
+    text: 'You are done. Answering the following questions is optional, but your answers will help us analyze our results. <br /><br /><i><b>VP-hour instruction:</b> <br /> If you want to recieve the 1 VP-hour, please write an email including your full name, if you study Cognitive Scince or Psychology and matriculation number to: <br /> <a href= "mailto:janlschroede@uni-osnabrueck.de">janlschroede@uos.de</a>.</i>',
     edu_graduated_high_school: 'Abitur / High School',
     edu_graduated_college: 'Hochschulabschluss / College',
     edu_higher_degree: 'Universitärer Abschluss / Higher Degree',
